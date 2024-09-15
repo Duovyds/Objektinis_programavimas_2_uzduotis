@@ -2,6 +2,7 @@
 #include <vector>
 #include <numeric>
 #include <cmath>
+#include <algorithm>
 
 using namespace std;
 
@@ -11,7 +12,9 @@ struct Studentas {
     vector<int> namu_darbai;
     int egzaminas;
     float pazymiu_vidurkis;
-    float galutinis;
+    float mediana;
+    float galutinis_vid;
+    float galutinis_med;
 };
 
 
@@ -46,10 +49,26 @@ int main(int argc, const char * argv[]) {
         
         temp.pazymiu_vidurkis = round((accumulate(temp.namu_darbai.begin(), temp.namu_darbai.end(), 0.0) / temp.namu_darbai.size()) * 100) / 100;
         
-        temp.galutinis = round((0.4 * temp.pazymiu_vidurkis + 0.6 * temp.egzaminas) * 100) / 100;
+        temp.galutinis_vid = round((0.4 * temp.pazymiu_vidurkis + 0.6 * temp.egzaminas) * 100) / 100;
+        
+        
+        sort(temp.namu_darbai.begin(), temp.namu_darbai.end());
+        
+        if (ndSk % 2 != 0) {
+            temp.mediana = (float)temp.namu_darbai[ndSk / 2];
+        }else {
+            temp.mediana = (float)(temp.namu_darbai[(ndSk - 1) / 2] + temp.namu_darbai[ndSk / 2]) / 2.0;
+        }
+        
+        temp.galutinis_med = round((0.4 * temp.mediana + 0.6 * temp.egzaminas) * 100) / 100;
         
         studentai.push_back(temp);
     }
+    
+    
+    
+    
+    
     
     
     for (const auto& student : studentai) {
@@ -61,7 +80,8 @@ int main(int argc, const char * argv[]) {
                 }
                 cout << "\nPazymiu vidurkis: " << student.pazymiu_vidurkis;
                 cout << "\nEgzamino pazymys: " << student.egzaminas;
-                cout << "\nGalutinis: " << student.galutinis << endl;
+                cout << "\nGalutinis (vid.): " << student.galutinis_vid;
+                cout << "\nGalutinis (med.): " << student.galutinis_med << endl;
             }
         
         cout << endl;
@@ -69,10 +89,11 @@ int main(int argc, const char * argv[]) {
         
         
     //  Sutvarkyti formatavima.
-        cout << "Pavardė" << "       " << "Vardas" << "       " << "Galutinis (vid.)" << endl;
+        cout << "Pavardė" << "       " << "Vardas" << "       " << "Galutinis (vid.)" << "      " << "Galutinis (med.)" << endl;
         cout << "------------------------------------------------------" << endl;
         for (const auto& student: studentai) {
-            cout << student.pavarde << "       " << student.vardas << "       " << student.galutinis << endl;
+            cout << student.pavarde << "       " << student.vardas << "       " << student.galutinis_vid << "      " <<
+                student.galutinis_med << endl;
         }
     
     
