@@ -52,6 +52,30 @@ int main(int argc, const char * argv[]) {
     }
     
     
+    for (const auto& student : studentai) {
+                cout << "\nStudento vardas: " << student.vardas;
+                cout << "\nStudento pavarde: " << student.pavarde;
+                cout << "\nNamu darbu pazymiai: ";
+                for (int grade : student.namu_darbai) {
+                    cout << grade << " ";
+                }
+                cout << "\nPazymiu vidurkis: " << student.pazymiu_vidurkis;
+                cout << "\nEgzamino pazymys: " << student.egzaminas;
+                cout << "\nGalutinis: " << student.galutinis << endl;
+            }
+        
+        cout << endl;
+        
+        
+        
+    //  Sutvarkyti formatavima.
+        cout << "Pavardė" << "       " << "Vardas" << "       " << "Galutinis (vid.)" << endl;
+        cout << "------------------------------------------------------" << endl;
+        for (const auto& student: studentai) {
+            cout << student.pavarde << "       " << student.vardas << "       " << student.galutinis << endl;
+        }
+    
+    
     return 0;
 }
 
