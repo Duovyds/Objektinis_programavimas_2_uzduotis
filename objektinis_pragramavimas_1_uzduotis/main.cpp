@@ -1,13 +1,14 @@
 #include <iostream>
-#include <vector> // to be able to create a vector
+#include <vector> // vektoriaus<> sukurimui
 #include <numeric>
-#include <cmath> // to be able to use round function
+#include <cmath> // round() funkcijos naudojimui
 #include <algorithm>
 #include <iomanip>
-#include <random> // for generating random numbers
+#include <random> // Atsitiktiniu skaiciu generavimui
 
 using namespace std;
 
+// Sukuriame studento objekta
 struct Studentas {
     string vardas;
     string pavarde;
@@ -19,10 +20,11 @@ struct Studentas {
     float galutinis_med;
 };
 
-
+// Sukuriame studentu objekto vektoriu
 vector<Studentas> studentai;
 
 
+// Funkcija, kuri generuoja atstiktinius skaicius, juos iraso i vektoriu, o ta vektoriu grazina
 vector<int> random_pazymiai(int pazymiu_sk) {
     
     vector<int> random_pazymiai;
@@ -38,61 +40,64 @@ vector<int> random_pazymiai(int pazymiu_sk) {
 }
 
 
-int main(int argc, const char * argv[]) {
+
+// Funkcija, kuri iveda studentu pazymius
+void ivedimas(Studentas & Lok){
+    int ndSk = 0;
     
-    int studSk;
-    cout << "Iveskite studentu skaiciu\n";
-    cin >> studSk;
+    cout << "Iveskite studento varda" << endl;
+    cin >> Lok.vardas;
+    cout << "Iveskite studento pavarde" << endl;
+    cin >> Lok.pavarde;
+    cout << "Iveskite namu darbu skaiciu" << endl;
+    cin >> ndSk;
     
-    for (int i = 0; i < studSk; i++) {
-        Studentas temp;
-        int ndSk = 0;
-        cout << "Iveskite studento varda\n";
-        cin >> temp.vardas;
-        cout << "Iveskite studento pavarde\n";
-        cin >> temp.pavarde;
-        cout << "Iveskite namu darbu pazymiu skaiciu\n";
-        cin >> ndSk;
-        
-        temp.namu_darbai = random_pazymiai(ndSk); // generates random grades in a range of ndSk
-        
-        random_device rd;
-        mt19937 gen(rd());
-        uniform_int_distribution<> dis(0, 10);
-        
-        temp.egzaminas = dis(gen); // generates the exam grade randomly
-        
-        
-        // the code below alows the user to input grades manually
-        
-        //        cout << "Iveskite pazymius\n";
-        //        for (int j = 0; j < ndSk; j++) {
-        //            int pazymys;
-        //            cin >> pazymys;
-        //            temp.namu_darbai.push_back(pazymys);
-        //        }
-        //
-        //        cout << "Iveskite egzamino pazymi\n";
-        //        cin >> temp.egzaminas;
-        
-        
-        
-        temp.pazymiu_vidurkis = round((accumulate(temp.namu_darbai.begin(), temp.namu_darbai.end(), 0.0) / temp.namu_darbai.size()) * 100) / 100;
-        temp.galutinis_vid = round((0.4 * temp.pazymiu_vidurkis + 0.6 * temp.egzaminas) * 100) / 100;
-        
-        sort(temp.namu_darbai.begin(), temp.namu_darbai.end());
-        
-        if (ndSk % 2 != 0) {
-            temp.mediana = (float)temp.namu_darbai[ndSk / 2];
-        }else {
-            temp.mediana = (float)(temp.namu_darbai[(ndSk - 1) / 2] + temp.namu_darbai[ndSk / 2]) / 2.0;
-        }
-        
-        temp.galutinis_med = round((0.4 * temp.mediana + 0.6 * temp.egzaminas) * 100) / 100;
-        
-        studentai.push_back(temp);
+    // Rankinis duomenu ivedimas:
+    //        cout << "Iveskite pazymius\n";
+    //        for (int j = 0; j < ndSk; j++) {
+    //            int pazymys;
+    //            cin >> pazymys;
+    //            temp.namu_darbai.push_back(pazymys);
+    //        }
+    //
+    //        cout << "Iveskite egzamino pazymi\n";
+    //        cin >> temp.egzaminas;
+    
+    
+    // Atsitiktiniu pazymiu generavimas
+    Lok.namu_darbai = random_pazymiai(ndSk);
+    
+    // Atsitiktinio egzamino pazymio generavimas
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dis(0, 10);
+    
+    Lok.egzaminas = dis(gen);
+    
+    Lok.pazymiu_vidurkis = round((accumulate(Lok.namu_darbai.begin(), Lok.namu_darbai.end(), 0.0) / Lok.namu_darbai.size()) * 100) / 100;
+    Lok.galutinis_vid = round((0.4 * Lok.pazymiu_vidurkis + 0.6 * Lok.egzaminas) * 100) / 100;
+    
+    sort(Lok.namu_darbai.begin(), Lok.namu_darbai.end());
+    
+    if (ndSk % 2 != 0) {
+        Lok.mediana = (float)Lok.namu_darbai[ndSk / 2];
+    }else {
+        Lok.mediana = (float)(Lok.namu_darbai[(ndSk - 1) / 2] + Lok.namu_darbai[ndSk / 2]) / 2.0;
     }
     
+    Lok.galutinis_med = round((0.4 * Lok.mediana + 0.6 * Lok.egzaminas) * 100) / 100;
+}
+
+// Funkcija, kuri isvalo tam tikrus kintamojo elementus, kad nebutu rasoma salia
+void valymas(Studentas & Lok){
+    Lok.vardas.clear();
+    Lok.pavarde.clear();
+    Lok.namu_darbai.clear();
+}
+
+
+// Funkcija, kuri atspausdina studentu duomenis
+void isvedimas(vector<Studentas> studentai){
     
     for (const auto& student : studentai) {
                 cout << "\nStudento vardas: " << student.vardas;
@@ -111,15 +116,31 @@ int main(int argc, const char * argv[]) {
         
         
         
-    //  Need to fix the formating
+    //  Sutvarkyti formatavima
         cout << "Pavardė" << "       " << "Vardas" << "       " << "Galutinis (vid.)" << "      " << "Galutinis (med.)" << endl;
-        cout << "------------------------------------------------------" << endl;
+        cout << "-----------------------------------------------------------------" << endl;
         for (const auto& student: studentai) {
             cout << student.pavarde << "       " << student.vardas << "       " << student.galutinis_vid << "      " <<
                 student.galutinis_med << endl;
         }
+}
+
+
+int main(int argc, const char * argv[]) {
     
-    cout << endl;
+    
+    int studSk;
+    cout << "Iveskite studentu skaiciu\n";
+    cin >> studSk;
+    Studentas temp;
+    
+    for (int i = 0; i < studSk; i++) {
+        ivedimas(temp);
+        studentai.push_back(temp);
+        valymas(temp);
+    }
+    
+    isvedimas(studentai);
     
     
     return 0;
