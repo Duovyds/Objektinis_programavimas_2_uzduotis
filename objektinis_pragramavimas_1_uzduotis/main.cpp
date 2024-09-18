@@ -1,8 +1,10 @@
 #include <iostream>
-#include <vector>
+#include <vector> // to be able to create a vector
 #include <numeric>
-#include <cmath>
+#include <cmath> // to be able to use round function
 #include <algorithm>
+#include <iomanip>
+#include <random> // for generating random numbers
 
 using namespace std;
 
@@ -20,10 +22,25 @@ struct Studentas {
 
 vector<Studentas> studentai;
 
+
+vector<int> random_pazymiai(int pazymiu_sk) {
+    
+    vector<int> random_pazymiai;
+    
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dis(0, 10);
+    
+    for (int i = 0; i < pazymiu_sk ; i++) {
+        random_pazymiai.push_back(dis(gen));
+    }
+    return random_pazymiai;
+}
+
+
 int main(int argc, const char * argv[]) {
     
     int studSk;
-    
     cout << "Iveskite studentu skaiciu\n";
     cin >> studSk;
     
@@ -36,21 +53,32 @@ int main(int argc, const char * argv[]) {
         cin >> temp.pavarde;
         cout << "Iveskite namu darbu pazymiu skaiciu\n";
         cin >> ndSk;
-        cout << "Iveskite pazymius\n";
         
-        for (int j = 0; j < ndSk; j++) {
-            int pazymys;
-            cin >> pazymys;
-            temp.namu_darbai.push_back(pazymys);
-        }
+        temp.namu_darbai = random_pazymiai(ndSk); // generates random grades in a range of ndSk
         
-        cout << "Iveskite egzamino pazymi\n";
-        cin >> temp.egzaminas;
+        random_device rd;
+        mt19937 gen(rd());
+        uniform_int_distribution<> dis(0, 10);
+        
+        temp.egzaminas = dis(gen); // generates the exam grade randomly
+        
+        
+        // the code below alows the user to input grades manually
+        
+        //        cout << "Iveskite pazymius\n";
+        //        for (int j = 0; j < ndSk; j++) {
+        //            int pazymys;
+        //            cin >> pazymys;
+        //            temp.namu_darbai.push_back(pazymys);
+        //        }
+        //
+        //        cout << "Iveskite egzamino pazymi\n";
+        //        cin >> temp.egzaminas;
+        
+        
         
         temp.pazymiu_vidurkis = round((accumulate(temp.namu_darbai.begin(), temp.namu_darbai.end(), 0.0) / temp.namu_darbai.size()) * 100) / 100;
-        
         temp.galutinis_vid = round((0.4 * temp.pazymiu_vidurkis + 0.6 * temp.egzaminas) * 100) / 100;
-        
         
         sort(temp.namu_darbai.begin(), temp.namu_darbai.end());
         
@@ -64,11 +92,6 @@ int main(int argc, const char * argv[]) {
         
         studentai.push_back(temp);
     }
-    
-    
-    
-    
-    
     
     
     for (const auto& student : studentai) {
@@ -88,7 +111,7 @@ int main(int argc, const char * argv[]) {
         
         
         
-    //  Sutvarkyti formatavima.
+    //  Need to fix the formating
         cout << "Pavardė" << "       " << "Vardas" << "       " << "Galutinis (vid.)" << "      " << "Galutinis (med.)" << endl;
         cout << "------------------------------------------------------" << endl;
         for (const auto& student: studentai) {
@@ -96,8 +119,8 @@ int main(int argc, const char * argv[]) {
                 student.galutinis_med << endl;
         }
     
+    cout << endl;
+    
     
     return 0;
 }
-
-
