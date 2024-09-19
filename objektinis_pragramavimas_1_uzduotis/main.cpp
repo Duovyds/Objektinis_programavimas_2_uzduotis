@@ -88,7 +88,7 @@ void ivedimas(Studentas & Lok){
     Lok.galutinis_med = round((0.4 * Lok.mediana + 0.6 * Lok.egzaminas) * 100) / 100;
 }
 
-// Funkcija, kuri isvalo tam tikrus kintamojo elementus, kad nebutu rasoma salia
+// Funkcija, kuri isvalo tam tikrus objekto elementus, kad nebutu rasoma salia
 void valymas(Studentas & Lok){
     Lok.vardas.clear();
     Lok.pavarde.clear();
