@@ -131,6 +131,24 @@ void isvedimas(vector<Studentas> studentai){
 }
 
 
+void isvedimas_su_vidurkiu(vector<Studentas> studentai){
+    cout << "Pavardė" << "       " << "Vardas" << "       " << "Galutinis (vid.)" << endl;
+    cout << "---------------------------------------------" << endl;
+    for (const auto& student: studentai) {
+        cout << student.pavarde << "       " << student.vardas << "       " << student.galutinis_vid << endl;
+    }
+}
+
+
+void isvedimas_su_mediana(vector<Studentas> studentai){
+    cout << "Pavardė" << "       " << "Vardas" << "       " << "Galutinis (med.)" << endl;
+    cout << "---------------------------------------------" << endl;
+    for (const auto& student: studentai) {
+        cout << student.pavarde << "       " << student.vardas << "       " << student.galutinis_med << endl;
+    }
+}
+
+
 
 vector<Studentas> skaitymas_is_failo(){
     
@@ -197,7 +215,9 @@ int main(int argc, const char * argv[]) {
         studentai.push_back(temp);
         valymas(temp);
     }
-    isvedimas(studentai);
+//    isvedimas(studentai);
+//    isvedimas_su_vidurkiu(studentai);
+    isvedimas_su_mediana(studentai);
     
     return 0;
 }
