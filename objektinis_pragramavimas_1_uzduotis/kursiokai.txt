@@ -2,4 +2,4 @@ Pavardė         Vardas          ND1     ND2     ND3     ND4     ND5     Egzamin
 Jonaitis        Jonas           7       8       7       7       10      7
 Petraitis       Petras          9       9       4       7       8       6
 Gintauskas      Gintas          9       7       7       7       4       6
-Rimaitis        Rimantas        4       9       6       10      10      9
+Rimaitis        Rimantas        4       9       6       10      10      7
