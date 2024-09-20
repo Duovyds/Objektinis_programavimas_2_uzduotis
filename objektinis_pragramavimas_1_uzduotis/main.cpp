@@ -5,6 +5,10 @@
 #include <algorithm>
 #include <iomanip>
 #include <random> // Atsitiktiniu skaiciu generavimui
+#include <fstream> // Skaitymui is failo
+#include <sstream>
+#include <string>
+#include <cstdlib> // stoi
 
 using namespace std;
 
@@ -49,30 +53,32 @@ void ivedimas(Studentas & Lok){
     cin >> Lok.vardas;
     cout << "Iveskite studento pavarde" << endl;
     cin >> Lok.pavarde;
-    cout << "Iveskite namu darbu skaiciu" << endl;
-    cin >> ndSk;
-    
-    // Rankinis duomenu ivedimas:
-    //        cout << "Iveskite pazymius\n";
-    //        for (int j = 0; j < ndSk; j++) {
-    //            int pazymys;
-    //            cin >> pazymys;
-    //            temp.namu_darbai.push_back(pazymys);
-    //        }
-    //
-    //        cout << "Iveskite egzamino pazymi\n";
-    //        cin >> temp.egzaminas;
     
     
-    // Atsitiktiniu pazymiu generavimas
-    Lok.namu_darbai = random_pazymiai(ndSk);
+    // Rankinis namu darbu ir egzamino pazymiu ivedimas:
+    string input;
+    int p;
+    cout << "Iveskite pazymius. Norint sustabdyti pazymiu ivedima iveskite zodi stop" << endl;
+    cin >> input;
+    
+    while (input != "stop") {
+        p = stoi(input);
+        Lok.namu_darbai.push_back(p);
+        cin >> input;
+    }
+    
+    cout << "Iveskite egzamino pazymi\n";
+    cin >> Lok.egzaminas;
+    
+    
+    // Atsitiktiniu namu darbu ir egzamino pazymiu generavimas
+//    Lok.namu_darbai = random_pazymiai(ndSk);
     
     // Atsitiktinio egzamino pazymio generavimas
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_int_distribution<> dis(0, 10);
-    
-    Lok.egzaminas = dis(gen);
+//    random_device rd;
+//    mt19937 gen(rd());
+//    uniform_int_distribution<> dis(0, 10);
+//    Lok.egzaminas = dis(gen);
     
     Lok.pazymiu_vidurkis = round((accumulate(Lok.namu_darbai.begin(), Lok.namu_darbai.end(), 0.0) / Lok.namu_darbai.size()) * 100) / 100;
     Lok.galutinis_vid = round((0.4 * Lok.pazymiu_vidurkis + 0.6 * Lok.egzaminas) * 100) / 100;
@@ -115,7 +121,6 @@ void isvedimas(vector<Studentas> studentai){
         cout << endl;
         
         
-        
     //  Sutvarkyti formatavima
         cout << "Pavardė" << "       " << "Vardas" << "       " << "Galutinis (vid.)" << "      " << "Galutinis (med.)" << endl;
         cout << "-----------------------------------------------------------------" << endl;
@@ -126,22 +131,73 @@ void isvedimas(vector<Studentas> studentai){
 }
 
 
+
+vector<Studentas> skaitymas_is_failo(){
+    
+    ifstream failas("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/kursiokai.txt");
+    string eilute;
+    int nr;
+    Studentas temp;
+    
+    getline(failas, eilute);
+    
+    while (getline(failas, eilute)) {
+        
+        stringstream stream(eilute);
+
+        stream >> temp.vardas >> temp.pavarde;
+        
+        while (stream >> nr) {
+            temp.namu_darbai.push_back(nr);
+        }
+        
+        temp.egzaminas = temp.namu_darbai.back();
+        temp.namu_darbai.pop_back();
+        
+        temp.pazymiu_vidurkis = round((accumulate(temp.namu_darbai.begin(), temp.namu_darbai.end(), 0.0) / temp.namu_darbai.size()) * 100) / 100;
+        temp.galutinis_vid = round((0.4 * temp.pazymiu_vidurkis + 0.6 * temp.egzaminas) * 100) / 100;
+        
+        sort(temp.namu_darbai.begin(), temp.namu_darbai.end());
+        
+        if (temp.namu_darbai.size() % 2 != 0) {
+            temp.mediana = (float)temp.namu_darbai[temp.namu_darbai.size() / 2];
+        }else {
+            temp.mediana = (float)(temp.namu_darbai[(temp.namu_darbai.size() - 1) / 2] + temp.namu_darbai[temp.namu_darbai.size() / 2]) / 2.0;
+        }
+        
+        temp.galutinis_med = round((0.4 * temp.mediana + 0.6 * temp.egzaminas) * 100) / 100;
+        
+        studentai.push_back(temp);
+        valymas(temp);
+        
+    }
+    
+    failas.close();
+    
+    return studentai;
+}
+
+
 int main(int argc, const char * argv[]) {
     
     
+    
+    // Jei duomenis norime nuskaityti is failu:
+//    skaitymas_is_failo();
+//    isvedimas(studentai);
+    
+    
+    // Jei duomenis norime ivesti rankiniu budu:
     int studSk;
     cout << "Iveskite studentu skaiciu\n";
     cin >> studSk;
     Studentas temp;
-    
     for (int i = 0; i < studSk; i++) {
         ivedimas(temp);
         studentai.push_back(temp);
         valymas(temp);
     }
-    
     isvedimas(studentai);
-    
     
     return 0;
 }
