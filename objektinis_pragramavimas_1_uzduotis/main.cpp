@@ -3,12 +3,12 @@
 #include <numeric>
 #include <cmath> // round() funkcijos naudojimui
 #include <algorithm>
-#include <iomanip>
+#include <iomanip> // setw() funkcijos naudojimui
 #include <random> // Atsitiktiniu skaiciu generavimui
 #include <fstream> // Skaitymui is failo
 #include <sstream>
 #include <string>
-#include <cstdlib> // stoi
+#include <cstdlib> // stoi() funkcijos naudojimui
 
 using namespace std;
 
@@ -106,45 +106,45 @@ void valymas(Studentas & Lok){
 void isvedimas(vector<Studentas> studentai){
     
     for (const auto& student : studentai) {
-                cout << "\nStudento vardas: " << student.vardas;
-                cout << "\nStudento pavarde: " << student.pavarde;
-                cout << "\nNamu darbu pazymiai: ";
+            cout << "\nStudento vardas: " << student.vardas;
+            cout << "\nStudento pavarde: " << student.pavarde;
+            cout << "\nNamu darbu pazymiai: ";
                 for (int grade : student.namu_darbai) {
                     cout << grade << " ";
                 }
-                cout << "\nPazymiu vidurkis: " << student.pazymiu_vidurkis;
-                cout << "\nEgzamino pazymys: " << student.egzaminas;
-                cout << "\nGalutinis (vid.): " << student.galutinis_vid;
-                cout << "\nGalutinis (med.): " << student.galutinis_med << endl;
-            }
+            cout << "\nPazymiu vidurkis: " << student.pazymiu_vidurkis;
+            cout << "\nEgzamino pazymys: " << student.egzaminas;
+            cout << "\nGalutinis (vid.): " << student.galutinis_vid;
+            cout << "\nGalutinis (med.): " << student.galutinis_med << endl;
+        }
         
         cout << endl;
         
         
     //  Sutvarkyti formatavima
-        cout << "Pavardė" << "       " << "Vardas" << "       " << "Galutinis (vid.)" << "      " << "Galutinis (med.)" << endl;
+    cout << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (vid.)" << setw(20) << "Galutinis (med.)" << endl;
         cout << "-----------------------------------------------------------------" << endl;
-        for (const auto& student: studentai) {
-            cout << student.pavarde << "       " << student.vardas << "       " << student.galutinis_vid << "      " <<
-                student.galutinis_med << endl;
-        }
+    for (const auto& student: studentai) {
+        cout << left << setw(14) << student.pavarde << setw(15) << student.vardas << setw(20) << student.galutinis_vid << setw(20) << student.galutinis_med << endl;
+    }
 }
 
 
 void isvedimas_su_vidurkiu(vector<Studentas> studentai){
-    cout << "Pavardė" << "       " << "Vardas" << "       " << "Galutinis (vid.)" << endl;
+    cout << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (vid.)" << endl;
     cout << "---------------------------------------------" << endl;
     for (const auto& student: studentai) {
-        cout << student.pavarde << "       " << student.vardas << "       " << student.galutinis_vid << endl;
+        cout << left << setw(14) << student.pavarde << setw(15) << student.vardas << setw(20) << student.galutinis_vid << endl;
     }
 }
 
 
 void isvedimas_su_mediana(vector<Studentas> studentai){
-    cout << "Pavardė" << "       " << "Vardas" << "       " << "Galutinis (med.)" << endl;
+    
+    cout << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (med.)" << endl;
     cout << "---------------------------------------------" << endl;
     for (const auto& student: studentai) {
-        cout << student.pavarde << "       " << student.vardas << "       " << student.galutinis_med << endl;
+        cout << left << setw(14) << student.pavarde << setw(15) << student.vardas << setw(20) << student.galutinis_med << endl;
     }
 }
 
@@ -201,23 +201,24 @@ int main(int argc, const char * argv[]) {
     
     
     // Jei duomenis norime nuskaityti is failu:
-//    skaitymas_is_failo();
+    skaitymas_is_failo();
 //    isvedimas(studentai);
     
     
     // Jei duomenis norime ivesti rankiniu budu:
-    int studSk;
-    cout << "Iveskite studentu skaiciu\n";
-    cin >> studSk;
-    Studentas temp;
-    for (int i = 0; i < studSk; i++) {
-        ivedimas(temp);
-        studentai.push_back(temp);
-        valymas(temp);
-    }
-//    isvedimas(studentai);
+//    int studSk;
+//    cout << "Iveskite studentu skaiciu\n";
+//    cin >> studSk;
+//    Studentas temp;
+//    for (int i = 0; i < studSk; i++) {
+//        ivedimas(temp);
+//        studentai.push_back(temp);
+//        valymas(temp);
+//    }
+    
+    isvedimas(studentai);
 //    isvedimas_su_vidurkiu(studentai);
-    isvedimas_su_mediana(studentai);
+//    isvedimas_su_mediana(studentai);
     
     return 0;
 }
