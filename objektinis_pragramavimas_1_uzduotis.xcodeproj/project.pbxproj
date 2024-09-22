@@ -24,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		6F3F06072C9C302C00C1449D /* kursiokai.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = kursiokai.txt; sourceTree = "<group>"; };
+		6FAE88722CA08F9D007E4332 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		6FEFB5AC2C9715800004E9AF /* objektinis_pragramavimas_1_uzduotis */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = objektinis_pragramavimas_1_uzduotis; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FEFB5AF2C9715800004E9AF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,6 +61,7 @@
 			children = (
 				6F3F06072C9C302C00C1449D /* kursiokai.txt */,
 				6FEFB5AF2C9715800004E9AF /* main.cpp */,
+				6FAE88722CA08F9D007E4332 /* Header.h */,
 			);
 			path = objektinis_pragramavimas_1_uzduotis;
 			sourceTree = "<group>";

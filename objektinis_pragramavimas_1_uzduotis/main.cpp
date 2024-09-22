@@ -1,16 +1,4 @@
-#include <iostream>
-#include <vector> // vektoriaus<> sukurimui
-#include <numeric>
-#include <cmath> // round() funkcijos naudojimui
-#include <algorithm>
-#include <iomanip> // setw() funkcijos naudojimui
-#include <random> // Atsitiktiniu skaiciu generavimui
-#include <fstream> // Skaitymui is failo
-#include <sstream>
-#include <string>
-#include <cstdlib> // stoi() funkcijos naudojimui
-
-using namespace std;
+#include "Header.h"
 
 // Sukuriame studento objekta
 struct Studentas {
