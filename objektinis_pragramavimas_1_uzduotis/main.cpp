@@ -101,27 +101,25 @@ void valymas(Studentas & Lok){
     Lok.namu_darbai.clear();
 }
 
+// Funkcija, kuri palygina studentus pagal ju pavardes
+bool palyginti_pavardes(const Studentas& a, const Studentas& b){
+    return a.pavarde < b.pavarde;
+}
+
+// Funkcija, kuri palygina studentus pagal ju vardus
+bool palyginti_vardus(const Studentas& a, const Studentas& b){
+    return a.vardas < b.vardas;
+}
+
 
 // Funkcija, kuri atspausdina studentu duomenis
 void isvedimas(vector<Studentas> studentai){
+        
+    // Funkcija, kuri rusiuoja studentus pagal ju pavardes didejimo tvarka. (Tvarka galima pakeisti palyginti_pavardes funkcijos viduje).
+    sort(studentai.begin(), studentai.end(), palyginti_pavardes);
+    // Funkcija, kuri rusiuoja studentus pagal ju vardus didejimo tvarka. (Tvarka galima pakeisti palyginti_vardus funkcijos viduje).
+    sort(studentai.begin(), studentai.end(), palyginti_vardus);
     
-    for (const auto& student : studentai) {
-            cout << "\nStudento vardas: " << student.vardas;
-            cout << "\nStudento pavarde: " << student.pavarde;
-            cout << "\nNamu darbu pazymiai: ";
-                for (int grade : student.namu_darbai) {
-                    cout << grade << " ";
-                }
-            cout << "\nPazymiu vidurkis: " << student.pazymiu_vidurkis;
-            cout << "\nEgzamino pazymys: " << student.egzaminas;
-            cout << "\nGalutinis (vid.): " << student.galutinis_vid;
-            cout << "\nGalutinis (med.): " << student.galutinis_med << endl;
-        }
-        
-        cout << endl;
-        
-        
-    //  Sutvarkyti formatavima
     cout << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (vid.)" << setw(20) << "Galutinis (med.)" << endl;
         cout << "-----------------------------------------------------------------" << endl;
     for (const auto& student: studentai) {
@@ -131,6 +129,12 @@ void isvedimas(vector<Studentas> studentai){
 
 
 void isvedimas_su_vidurkiu(vector<Studentas> studentai){
+    
+    // Funkcija, kuri rusiuoja studentus pagal ju pavardes didejimo tvarka. (Tvarka galima pakeisti palyginti_pavardes funkcijos viduje).
+    sort(studentai.begin(), studentai.end(), palyginti_pavardes);
+    // Funkcija, kuri rusiuoja studentus pagal ju vardus didejimo tvarka. (Tvarka galima pakeisti palyginti_vardus funkcijos viduje).
+    sort(studentai.begin(), studentai.end(), palyginti_vardus);
+    
     cout << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (vid.)" << endl;
     cout << "---------------------------------------------" << endl;
     for (const auto& student: studentai) {
@@ -141,6 +145,11 @@ void isvedimas_su_vidurkiu(vector<Studentas> studentai){
 
 void isvedimas_su_mediana(vector<Studentas> studentai){
     
+    // Funkcija, kuri rusiuoja studentus pagal ju pavardes didejimo tvarka. (Tvarka galima pakeisti palyginti_pavardes funkcijos viduje).
+    sort(studentai.begin(), studentai.end(), palyginti_pavardes);
+    // Funkcija, kuri rusiuoja studentus pagal ju vardus didejimo tvarka. (Tvarka galima pakeisti palyginti_vardus funkcijos viduje).
+    sort(studentai.begin(), studentai.end(), palyginti_vardus);
+    
     cout << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (med.)" << endl;
     cout << "---------------------------------------------" << endl;
     for (const auto& student: studentai) {
@@ -149,10 +158,10 @@ void isvedimas_su_mediana(vector<Studentas> studentai){
 }
 
 
-
 vector<Studentas> skaitymas_is_failo(){
     
     ifstream failas("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/kursiokai.txt");
+    
     string eilute;
     int nr;
     Studentas temp;
@@ -198,12 +207,8 @@ vector<Studentas> skaitymas_is_failo(){
 
 int main(int argc, const char * argv[]) {
     
-    
-    
-    // Jei duomenis norime nuskaityti is failu:
+    // Jei duomenis norime nuskaityti is failo:
     skaitymas_is_failo();
-//    isvedimas(studentai);
-    
     
     // Jei duomenis norime ivesti rankiniu budu:
 //    int studSk;
