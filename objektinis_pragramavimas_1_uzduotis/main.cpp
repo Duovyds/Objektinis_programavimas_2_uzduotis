@@ -2,28 +2,28 @@
 #include "Studentas.h"
 
 
-// Sukuriame studentu objekto vektoriu
-vector<Studentas> studentai;
-
 int main(int argc, const char * argv[]) {
     
-    // Jei duomenis norime nuskaityti is failo:
-//    skaitymas_is_failo(studentai);
+    vector<Studentas> studentai;
     
-    // Jei duomenis norime ivesti rankiniu budu:
-    int studSk;
-    cout << "Iveskite studentu skaiciu\n";
-    cin >> studSk;
-    Studentas temp;
-    for (int i = 0; i < studSk; i++) {
-        ivedimas(temp);
-        studentai.push_back(temp);
-        valymas(temp);
+    cout << "Pasirinkite:" << endl;
+    cout << "Duomenu nuskaitymas is failo (1), duomenu ivedimas ar generavimas (2)" << endl;
+    int ats_1 = 0;
+    cin >> ats_1;
+    if (ats_1 == 1) {
+        skaitymas_is_failo(studentai);
+    } else {
+        int studSk;
+        cout << "Iveskite studentu skaiciu\n";
+        cin >> studSk;
+        Studentas temp;
+        for (int i = 0; i < studSk; i++) {
+            ivedimas(temp);
+            studentai.push_back(temp);
+            valymas(temp);
+        }
+        isvedimas(studentai);
     }
-    
-    isvedimas(studentai);
-//    isvedimas_su_vidurkiu(studentai);
-//    isvedimas_su_mediana(studentai);
-    
+
     return 0;
 }

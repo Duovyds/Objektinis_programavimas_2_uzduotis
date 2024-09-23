@@ -20,72 +20,45 @@ vector<int> random_pazymiai(int pazymiu_sk) {
 }
 
 
+
 // Funkcija, kuri iveda studentu pazymius
 void ivedimas(Studentas & Lok){
+    
     int ndSk = 0;
     
-    
-    // to be continued!!!!!!!!!!!!!!!
-    
-//    cout << "Duomenis norite ivesti rankiniu budu (1), ar nuskaityti is failo (2)?" << endl;
-//    int ats_1 = 0;
-//    if (ats_1 == 1) {
-//        cout << "Pasirinktas ivedimas rankiniu budu"
-//        cout << "Iveskite studento varda" << endl;
-//        cin >> Lok.vardas;
-//        cout << "Iveskite studento pavarde" << endl;
-//        cin >> Lok.pavarde;
-//        cout << "Pazymius norite ivesti rankiniu budu (1), generuoti automatiskai (2)" << endl;
-//    } else if (ats_1 == 2){
-//        
-//    }
-    
-    
-
-    
-    
-    
-//    cout << "Ar zinote tikslu namu darbu pazymiu skaiciu? taip\ne" << endl;
-//    string ats_1;
-//    cin >> ats_1;
-//    if (ats_1 == "taip") {
-//        cout << "Iveskite namu darbu pazymiu skaiciu" << endl;
-//        cin >> ndSk;
-//        
-//        cout << "Ar duomenis ivesite rankiniu budu (1), generuosite atsitiktinai (2) ar skaitysite is failo(2)?" << endl;
-//        
-//    }
-    
-    
-    
-    // Norint ivesti namu darbus nezinant ju skaiciaus, uzkomentuoti sita vieta.
-
-    
-    
-    // Rankinis namu darbu ir egzamino pazymiu ivedimas:
-//    string input;
-//    int p;
-//    cout << "Iveskite pazymius. Norint sustabdyti pazymiu ivedima iveskite zodi stop" << endl;
-//    cin >> input;
-//    
-//    while (input != "stop") {
-//        p = stoi(input);
-//        Lok.namu_darbai.push_back(p);
-//        cin >> input;
-//    }
-//    
-//    cout << "Iveskite egzamino pazymi\n";
-//    cin >> Lok.egzaminas;
-    
-    
-    // Atsitiktiniu namu darbu ir egzamino pazymiu generavimas
-//    Lok.namu_darbai = random_pazymiai(ndSk);
-    
-    // Atsitiktinio egzamino pazymio generavimas
-//    random_device rd;
-//    mt19937 gen(rd());
-//    uniform_int_distribution<> dis(0, 10);
-//    Lok.egzaminas = dis(gen);
+    cout << "Iveskite studento varda" << endl;
+    cin >> Lok.vardas;
+    cout << "Iveskite studento pavarde" << endl;
+    cin >> Lok.pavarde;
+    cout << "Pazymius norite ivesti rankiniu budu (1), generuoti automatiskai (2)" << endl;
+    int ats_1 = 0;
+    cin >> ats_1;
+    if (ats_1 == 1) {
+        string input;
+        int p;
+        cout << "Iveskite pazymius. Norint sustabdyti pazymiu ivedima iveskite zodi stop." << endl;
+        cin >> input;
+        while (input != "stop") {
+            p = stoi(input);
+            Lok.namu_darbai.push_back(p);
+            cin >> input;
+    }
+        cout << "Iveskite egzamino pazymi\n";
+        cin >> Lok.egzaminas;
+    } else {
+        cout << "Iveskite namu darbu pazymiu skaiciu" << endl;
+        cin >> ndSk;
+        
+        // Sugeneruojami random namu darbu pazymiai
+        Lok.namu_darbai = random_pazymiai(ndSk);
+        
+        // Sugeneruojamas random egzamino pazymys
+        random_device rd;
+        mt19937 gen(rd());
+        uniform_int_distribution<> dis(0, 10);
+        Lok.egzaminas = dis(gen);
+        
+    }
     
     Lok.pazymiu_vidurkis = round((accumulate(Lok.namu_darbai.begin(), Lok.namu_darbai.end(), 0.0) / Lok.namu_darbai.size()) * 100) / 100;
     Lok.galutinis_vid = round((0.4 * Lok.pazymiu_vidurkis + 0.6 * Lok.egzaminas) * 100) / 100;
@@ -124,13 +97,13 @@ bool palyginti_vardus(const Studentas& a, const Studentas& b){
 
 
 
-// Funkcija, kuri atspausdina studentu duomenis
+// Funkcija, kuri atspausdina studentu duomenis (galutinis apskaiciuotas ir su vidurkiu ir su mediana)
 void isvedimas(vector<Studentas> studentai){
         
     // Funkcija, kuri rusiuoja studentus pagal ju pavardes didejimo tvarka. (Tvarka galima pakeisti palyginti_pavardes funkcijos viduje).
     sort(studentai.begin(), studentai.end(), palyginti_pavardes);
     // Funkcija, kuri rusiuoja studentus pagal ju vardus didejimo tvarka. (Tvarka galima pakeisti palyginti_vardus funkcijos viduje).
-    sort(studentai.begin(), studentai.end(), palyginti_vardus);
+//    sort(studentai.begin(), studentai.end(), palyginti_vardus);
     
     cout << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (vid.)" << setw(20) << "Galutinis (med.)" << endl;
         cout << "-----------------------------------------------------------------" << endl;
@@ -140,13 +113,13 @@ void isvedimas(vector<Studentas> studentai){
 }
 
 
-
+// Funkcija, kuri atspausdina studentu duomenis (galutinis apskaiciuotas tik su vidurkiu)
 void isvedimas_su_vidurkiu(vector<Studentas> studentai){
     
     // Funkcija, kuri rusiuoja studentus pagal ju pavardes didejimo tvarka. (Tvarka galima pakeisti palyginti_pavardes funkcijos viduje).
     sort(studentai.begin(), studentai.end(), palyginti_pavardes);
     // Funkcija, kuri rusiuoja studentus pagal ju vardus didejimo tvarka. (Tvarka galima pakeisti palyginti_vardus funkcijos viduje).
-    sort(studentai.begin(), studentai.end(), palyginti_vardus);
+//    sort(studentai.begin(), studentai.end(), palyginti_vardus);
     
     cout << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (vid.)" << endl;
     cout << "---------------------------------------------" << endl;
@@ -156,13 +129,13 @@ void isvedimas_su_vidurkiu(vector<Studentas> studentai){
 }
 
 
-
+// Funkcija, kuri atspausdina studentu duomenis (galutinis apskaiciuotas tik su mediana)
 void isvedimas_su_mediana(vector<Studentas> studentai){
     
     // Funkcija, kuri rusiuoja studentus pagal ju pavardes didejimo tvarka. (Tvarka galima pakeisti palyginti_pavardes funkcijos viduje).
     sort(studentai.begin(), studentai.end(), palyginti_pavardes);
     // Funkcija, kuri rusiuoja studentus pagal ju vardus didejimo tvarka. (Tvarka galima pakeisti palyginti_vardus funkcijos viduje).
-    sort(studentai.begin(), studentai.end(), palyginti_vardus);
+//    sort(studentai.begin(), studentai.end(), palyginti_vardus);
     
     cout << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (med.)" << endl;
     cout << "---------------------------------------------" << endl;
@@ -172,7 +145,7 @@ void isvedimas_su_mediana(vector<Studentas> studentai){
 }
 
 
-
+// Funkcija, kuri nuskaito duomenis is failo.
 vector<Studentas> skaitymas_is_failo(vector<Studentas> studentai){
     
     ifstream failas("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/kursiokai.txt");
@@ -215,6 +188,8 @@ vector<Studentas> skaitymas_is_failo(vector<Studentas> studentai){
     }
     
     failas.close();
+    
+    isvedimas(studentai);
     
     return studentai;
 }

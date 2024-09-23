@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6FAE88762CA09717007E4332 /* Studentas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FAE88752CA09717007E4332 /* Studentas.cpp */; };
 		6FEFB5B02C9715800004E9AF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FEFB5AF2C9715800004E9AF /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		6F3F06072C9C302C00C1449D /* kursiokai.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = kursiokai.txt; sourceTree = "<group>"; };
 		6FAE88722CA08F9D007E4332 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		6FAE88742CA0962B007E4332 /* Studentas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Studentas.h; sourceTree = "<group>"; };
+		6FAE88752CA09717007E4332 /* Studentas.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Studentas.cpp; sourceTree = "<group>"; };
 		6FEFB5AC2C9715800004E9AF /* objektinis_pragramavimas_1_uzduotis */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = objektinis_pragramavimas_1_uzduotis; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FEFB5AF2C9715800004E9AF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +65,8 @@
 				6F3F06072C9C302C00C1449D /* kursiokai.txt */,
 				6FEFB5AF2C9715800004E9AF /* main.cpp */,
 				6FAE88722CA08F9D007E4332 /* Header.h */,
+				6FAE88742CA0962B007E4332 /* Studentas.h */,
+				6FAE88752CA09717007E4332 /* Studentas.cpp */,
 			);
 			path = objektinis_pragramavimas_1_uzduotis;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FEFB5B02C9715800004E9AF /* main.cpp in Sources */,
+				6FAE88762CA09717007E4332 /* Studentas.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
