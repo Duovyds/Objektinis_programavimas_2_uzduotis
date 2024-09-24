@@ -27,6 +27,7 @@ using std::setw;
 using std::left;
 using std::ifstream;
 using std::stringstream;
+using std::ofstream;
 
 
 #endif /* Header_h */

@@ -1,0 +1,4 @@
+Pavardė       Vardas         Galutinis (vid.)    Galutinis (med.)    
+-----------------------------------------------------------------
+antanaitis    jonas          4.64                4.8                 
+jonaitis      petras         6.96                6.8                 

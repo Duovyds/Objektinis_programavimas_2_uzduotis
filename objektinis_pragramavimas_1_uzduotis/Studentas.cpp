@@ -3,7 +3,6 @@
 #include "Header.h"
 
 
-
 // Funkcija, kuri generuoja atstiktinius skaicius, juos iraso i vektoriu, o ta vektoriu grazina
 vector<int> random_pazymiai(int pazymiu_sk) {
     
@@ -184,12 +183,30 @@ vector<Studentas> skaitymas_is_failo(vector<Studentas> studentai){
         
         studentai.push_back(temp);
         valymas(temp);
-        
+                
     }
     
     failas.close();
     
-    isvedimas(studentai);
-    
     return studentai;
+}
+
+
+
+void irasymas(vector<Studentas> studentai){
+    
+    ofstream rez("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/rez1.txt");
+    
+    // Funkcija, kuri rusiuoja studentus pagal ju pavardes didejimo tvarka. (Tvarka galima pakeisti palyginti_pavardes funkcijos viduje).
+    sort(studentai.begin(), studentai.end(), palyginti_pavardes);
+    // Funkcija, kuri rusiuoja studentus pagal ju vardus didejimo tvarka. (Tvarka galima pakeisti palyginti_vardus funkcijos viduje).
+//    sort(studentai.begin(), studentai.end(), palyginti_vardus);
+    
+    rez << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (vid.)" << setw(20) << "Galutinis (med.)" << endl;
+        rez << "-----------------------------------------------------------------" << endl;
+    for (const auto& student: studentai) {
+        rez << left << setw(14) << student.pavarde << setw(15) << student.vardas << setw(20) << student.galutinis_vid << setw(20) << student.galutinis_med << endl;
+    }
+    
+    rez.close();
 }

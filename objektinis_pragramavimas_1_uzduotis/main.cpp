@@ -11,7 +11,9 @@ int main(int argc, const char * argv[]) {
     int ats_1 = 0;
     cin >> ats_1;
     if (ats_1 == 1) {
-        skaitymas_is_failo(studentai);
+        studentai = skaitymas_is_failo(studentai);
+        isvedimas(studentai);
+        irasymas(studentai);
     } else {
         int studSk;
         cout << "Iveskite studentu skaiciu\n";
@@ -23,7 +25,9 @@ int main(int argc, const char * argv[]) {
             valymas(temp);
         }
         isvedimas(studentai);
+        irasymas(studentai);
     }
+    
 
     return 0;
 }
