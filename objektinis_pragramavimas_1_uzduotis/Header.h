@@ -3,9 +3,8 @@
 
 
 #include <iostream>
-#include <vector> // vektoriaus<> sukurimui
+#include <vector> // vector<> sukurimui
 #include <numeric> // accumulate() funkcijos naudojimui
-#include <cmath> // round() funkcijos naudojimui
 #include <algorithm> // sort() funkcijos naudojimui
 #include <iomanip> // setw() funkcijos naudojimui
 #include <random> // random_device(), mt19937(), uniform_int_distribution() funkciju naudojimui
@@ -28,6 +27,13 @@ using std::left;
 using std::ifstream;
 using std::stringstream;
 using std::ofstream;
+using std::runtime_error;
+using std::exception;
+using std::cerr;
+using std::invalid_argument;
+using std::out_of_range;
+using std::fixed;
+using std::setprecision;
 
 
 #endif /* Header_h */

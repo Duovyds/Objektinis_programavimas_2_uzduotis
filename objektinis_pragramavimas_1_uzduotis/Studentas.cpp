@@ -8,9 +8,9 @@ vector<int> random_pazymiai(int pazymiu_sk) {
     
     vector<int> random_pazymiai;
     
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_int_distribution<> dis(0, 10);
+    random_device rd; // Remiantis sistemos laiku sugeneruoja atsitiktini skaiciu (seed). Skaicius, paleidus programa, skiriasi kiekviena karta.
+    mt19937 gen(rd()); // Sugeneruoja atsitiktinius skaicius. Parametras rd() uztikrina, kad tie skaiciai kiekviena karta butu skirtingi.
+    uniform_int_distribution<> dis(0, 10); // Sugeneruotus skaicius paskirsto pagal duota intervala.
     
     for (int i = 0; i < pazymiu_sk ; i++) {
         random_pazymiai.push_back(dis(gen));
@@ -38,7 +38,7 @@ void ivedimas(Studentas & Lok){
         cout << "Iveskite pazymius. Norint sustabdyti pazymiu ivedima iveskite zodi stop." << endl;
         cin >> input;
         while (input != "stop") {
-            p = stoi(input);
+            p = stoi(input); // String -> integer
             Lok.namu_darbai.push_back(p);
             cin >> input;
     }
@@ -59,8 +59,8 @@ void ivedimas(Studentas & Lok){
         
     }
     
-    Lok.pazymiu_vidurkis = round((accumulate(Lok.namu_darbai.begin(), Lok.namu_darbai.end(), 0.0) / Lok.namu_darbai.size()) * 100) / 100;
-    Lok.galutinis_vid = round((0.4 * Lok.pazymiu_vidurkis + 0.6 * Lok.egzaminas) * 100) / 100;
+    Lok.pazymiu_vidurkis = accumulate(Lok.namu_darbai.begin(), Lok.namu_darbai.end(), 0.0) / Lok.namu_darbai.size();
+    Lok.galutinis_vid = (0.4 * Lok.pazymiu_vidurkis + 0.6 * Lok.egzaminas);
     
     sort(Lok.namu_darbai.begin(), Lok.namu_darbai.end());
     
@@ -70,7 +70,7 @@ void ivedimas(Studentas & Lok){
         Lok.mediana = (float)(Lok.namu_darbai[(ndSk - 1) / 2] + Lok.namu_darbai[ndSk / 2]) / 2.0;
     }
     
-    Lok.galutinis_med = round((0.4 * Lok.mediana + 0.6 * Lok.egzaminas) * 100) / 100;
+    Lok.galutinis_med = 0.4 * Lok.mediana + 0.6 * Lok.egzaminas;
 }
 
 
@@ -107,7 +107,9 @@ void isvedimas(vector<Studentas> studentai){
     cout << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (vid.)" << setw(20) << "Galutinis (med.)" << endl;
         cout << "-----------------------------------------------------------------" << endl;
     for (const auto& student: studentai) {
-        cout << left << setw(14) << student.pavarde << setw(15) << student.vardas << setw(20) << student.galutinis_vid << setw(20) << student.galutinis_med << endl;
+        cout << left << setw(14) << student.pavarde << setw(15) << student.vardas
+        << setw(20) << fixed << setprecision(2)<< student.galutinis_vid
+        << setw(20) << fixed << setprecision(2) << student.galutinis_med << endl;
     }
 }
 
@@ -123,7 +125,8 @@ void isvedimas_su_vidurkiu(vector<Studentas> studentai){
     cout << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (vid.)" << endl;
     cout << "---------------------------------------------" << endl;
     for (const auto& student: studentai) {
-        cout << left << setw(14) << student.pavarde << setw(15) << student.vardas << setw(20) << student.galutinis_vid << endl;
+        cout << left << setw(14) << student.pavarde << setw(15) << student.vardas
+        << setw(20) << fixed << setprecision(2) << student.galutinis_vid << endl;
     }
 }
 
@@ -139,7 +142,8 @@ void isvedimas_su_mediana(vector<Studentas> studentai){
     cout << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (med.)" << endl;
     cout << "---------------------------------------------" << endl;
     for (const auto& student: studentai) {
-        cout << left << setw(14) << student.pavarde << setw(15) << student.vardas << setw(20) << student.galutinis_med << endl;
+        cout << left << setw(14) << student.pavarde << setw(15) << student.vardas
+        << setw(20) << fixed << setprecision(2) << student.galutinis_med << endl;
     }
 }
 
@@ -168,8 +172,8 @@ vector<Studentas> skaitymas_is_failo(vector<Studentas> studentai){
         temp.egzaminas = temp.namu_darbai.back();
         temp.namu_darbai.pop_back();
         
-        temp.pazymiu_vidurkis = round((accumulate(temp.namu_darbai.begin(), temp.namu_darbai.end(), 0.0) / temp.namu_darbai.size()) * 100) / 100;
-        temp.galutinis_vid = round((0.4 * temp.pazymiu_vidurkis + 0.6 * temp.egzaminas) * 100) / 100;
+        temp.pazymiu_vidurkis = accumulate(temp.namu_darbai.begin(), temp.namu_darbai.end(), 0.0) / temp.namu_darbai.size();
+        temp.galutinis_vid = (0.4 * temp.pazymiu_vidurkis + 0.6 * temp.egzaminas);
         
         sort(temp.namu_darbai.begin(), temp.namu_darbai.end());
         
@@ -179,7 +183,7 @@ vector<Studentas> skaitymas_is_failo(vector<Studentas> studentai){
             temp.mediana = (float)(temp.namu_darbai[(temp.namu_darbai.size() - 1) / 2] + temp.namu_darbai[temp.namu_darbai.size() / 2]) / 2.0;
         }
         
-        temp.galutinis_med = round((0.4 * temp.mediana + 0.6 * temp.egzaminas) * 100) / 100;
+        temp.galutinis_med = 0.4 * temp.mediana + 0.6 * temp.egzaminas;
         
         studentai.push_back(temp);
         valymas(temp);
@@ -205,7 +209,9 @@ void irasymas(vector<Studentas> studentai){
     rez << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (vid.)" << setw(20) << "Galutinis (med.)" << endl;
         rez << "-----------------------------------------------------------------" << endl;
     for (const auto& student: studentai) {
-        rez << left << setw(14) << student.pavarde << setw(15) << student.vardas << setw(20) << student.galutinis_vid << setw(20) << student.galutinis_med << endl;
+        rez << left << setw(14) << student.pavarde << setw(15) << student.vardas
+        << setw(20) << fixed << setprecision(2) << student.galutinis_vid
+        << setw(20) << fixed << setprecision(2) << student.galutinis_med << endl;
     }
     
     rez.close();
