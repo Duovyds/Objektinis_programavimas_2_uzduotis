@@ -151,46 +151,57 @@ void isvedimas_su_mediana(vector<Studentas> studentai){
 // Funkcija, kuri nuskaito duomenis is failo.
 vector<Studentas> skaitymas_is_failo(vector<Studentas> studentai){
     
-    ifstream failas("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/kursiokai.txt");
     
-    string eilute;
-    int nr;
-    Studentas temp;
-    
-    getline(failas, eilute);
-    
-    while (getline(failas, eilute)) {
+    try {
         
-        stringstream stream(eilute);
+        ifstream failas("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/kursiokai.txt");
+        
+        if (!failas) {
+            throw runtime_error("Problemos su failo atidarymu");
+        }
+        
+        string eilute;
+        int nr;
+        Studentas temp;
+        
+        getline(failas, eilute);
+        
+        while (getline(failas, eilute)) {
+            
+            stringstream stream(eilute);
 
-        stream >> temp.vardas >> temp.pavarde;
-        
-        while (stream >> nr) {
-            temp.namu_darbai.push_back(nr);
+            stream >> temp.vardas >> temp.pavarde;
+            
+            while (stream >> nr) {
+                temp.namu_darbai.push_back(nr);
+            }
+            
+            temp.egzaminas = temp.namu_darbai.back();
+            temp.namu_darbai.pop_back();
+            
+            temp.pazymiu_vidurkis = accumulate(temp.namu_darbai.begin(), temp.namu_darbai.end(), 0.0) / temp.namu_darbai.size();
+            temp.galutinis_vid = (0.4 * temp.pazymiu_vidurkis + 0.6 * temp.egzaminas);
+            
+            sort(temp.namu_darbai.begin(), temp.namu_darbai.end());
+            
+            if (temp.namu_darbai.size() % 2 != 0) {
+                temp.mediana = (float)temp.namu_darbai[temp.namu_darbai.size() / 2];
+            }else {
+                temp.mediana = (float)(temp.namu_darbai[(temp.namu_darbai.size() - 1) / 2] + temp.namu_darbai[temp.namu_darbai.size() / 2]) / 2.0;
+            }
+            
+            temp.galutinis_med = 0.4 * temp.mediana + 0.6 * temp.egzaminas;
+            
+            studentai.push_back(temp);
+            valymas(temp);
+                    
         }
         
-        temp.egzaminas = temp.namu_darbai.back();
-        temp.namu_darbai.pop_back();
+        failas.close();
         
-        temp.pazymiu_vidurkis = accumulate(temp.namu_darbai.begin(), temp.namu_darbai.end(), 0.0) / temp.namu_darbai.size();
-        temp.galutinis_vid = (0.4 * temp.pazymiu_vidurkis + 0.6 * temp.egzaminas);
-        
-        sort(temp.namu_darbai.begin(), temp.namu_darbai.end());
-        
-        if (temp.namu_darbai.size() % 2 != 0) {
-            temp.mediana = (float)temp.namu_darbai[temp.namu_darbai.size() / 2];
-        }else {
-            temp.mediana = (float)(temp.namu_darbai[(temp.namu_darbai.size() - 1) / 2] + temp.namu_darbai[temp.namu_darbai.size() / 2]) / 2.0;
-        }
-        
-        temp.galutinis_med = 0.4 * temp.mediana + 0.6 * temp.egzaminas;
-        
-        studentai.push_back(temp);
-        valymas(temp);
-                
+    } catch (const runtime_error& e) {
+        cerr << e.what() << endl;
     }
-    
-    failas.close();
     
     return studentai;
 }
