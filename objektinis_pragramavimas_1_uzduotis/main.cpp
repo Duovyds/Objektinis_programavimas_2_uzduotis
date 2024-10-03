@@ -6,8 +6,14 @@
 int main(int argc, const char * argv[]) {
     
     
+    vector<Studentas> studentai2;
+    vector<Studentas> vargsiukai;
+    vector<Studentas> galvociai;
     
     failu_generavimas();
+    studentai2 = skaitymas_is_failo(studentai2, "studentai1000");
+    vargsiukai = vargsiuku_atrinkimas(studentai2);
+    galvociai = galvociu_atrinkimas(studentai2);
     
     
     

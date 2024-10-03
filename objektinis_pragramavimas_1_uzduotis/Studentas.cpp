@@ -161,12 +161,15 @@ void isvedimas_su_mediana(vector<Studentas> studentai){
 
 
 // Funkcija, kuri nuskaito duomenis is failo.
-vector<Studentas> skaitymas_is_failo(vector<Studentas> studentai){
+vector<Studentas> skaitymas_is_failo(vector<Studentas> studentai, string failo_pav){
     
+    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/") + failo_pav + ".txt";
     
     try {
         
-        ifstream failas("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/kursiokai.txt");
+//        ifstream failas("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/kursiokai.txt");
+        ifstream failas;
+        failas.open(failo_pavadinimas);
         
         if (!failas) {
             throw runtime_error("Problemos su failo atidarymu");

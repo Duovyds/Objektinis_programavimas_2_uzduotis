@@ -24,7 +24,7 @@ bool palyginti_vardus(const Studentas& a, const Studentas& b);
 void isvedimas(vector<Studentas> studentai);
 void isvedimas_su_vidurkiu(vector<Studentas> studentai);
 void isvedimas_su_mediana(vector<Studentas> studentai);
-vector<Studentas> skaitymas_is_failo(vector<Studentas> studentai);
+vector<Studentas> skaitymas_is_failo(vector<Studentas> studentai, string failo_pav);
 void irasymas(vector<Studentas> studentai);
 int random_egz();
 
