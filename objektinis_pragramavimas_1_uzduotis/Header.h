@@ -34,6 +34,7 @@ using std::invalid_argument;
 using std::out_of_range;
 using std::fixed;
 using std::setprecision;
+using std::to_string;
 
 
 #endif /* Header_h */

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F183CCD2CAEB9D8008BDA46 /* Failas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F183CCC2CAEB9D8008BDA46 /* Failas.cpp */; };
 		6FAE88762CA09717007E4332 /* Studentas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FAE88752CA09717007E4332 /* Studentas.cpp */; };
 		6FEFB5B02C9715800004E9AF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FEFB5AF2C9715800004E9AF /* main.cpp */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6F183CCC2CAEB9D8008BDA46 /* Failas.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Failas.cpp; sourceTree = "<group>"; };
+		6F183CCE2CAEBA43008BDA46 /* Failas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Failas.h; sourceTree = "<group>"; };
 		6F3F06072C9C302C00C1449D /* kursiokai.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = kursiokai.txt; sourceTree = "<group>"; };
 		6FAE88722CA08F9D007E4332 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		6FAE88742CA0962B007E4332 /* Studentas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Studentas.h; sourceTree = "<group>"; };
@@ -67,6 +70,8 @@
 				6FAE88722CA08F9D007E4332 /* Header.h */,
 				6FAE88742CA0962B007E4332 /* Studentas.h */,
 				6FAE88752CA09717007E4332 /* Studentas.cpp */,
+				6F183CCC2CAEB9D8008BDA46 /* Failas.cpp */,
+				6F183CCE2CAEBA43008BDA46 /* Failas.h */,
 			);
 			path = objektinis_pragramavimas_1_uzduotis;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 			files = (
 				6FEFB5B02C9715800004E9AF /* main.cpp in Sources */,
 				6FAE88762CA09717007E4332 /* Studentas.cpp in Sources */,
+				6F183CCD2CAEB9D8008BDA46 /* Failas.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

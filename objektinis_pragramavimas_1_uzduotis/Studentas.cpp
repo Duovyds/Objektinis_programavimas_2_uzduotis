@@ -18,6 +18,18 @@ vector<int> random_pazymiai(int pazymiu_sk) {
     return random_pazymiai;
 }
 
+int random_egz(){
+    
+    int pazymys;
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dis(0, 10);
+    
+    pazymys = dis(gen);
+    
+    return pazymys;
+}
+
 
 
 // Funkcija, kuri iveda studentu pazymius
@@ -227,3 +239,7 @@ void irasymas(vector<Studentas> studentai){
     
     rez.close();
 }
+
+
+
+
