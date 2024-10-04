@@ -247,7 +247,3 @@ void irasymas(vector<Studentas> studentai, string failo_pav){
     
     rez.close();
 }
-
-
-
-

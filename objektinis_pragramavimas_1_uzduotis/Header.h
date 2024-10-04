@@ -12,6 +12,7 @@
 #include <sstream> // stringstream() funkcijos naudojimui
 #include <string> // string manipuliavimui
 #include <cstdlib> // stoi() funkcijos naudojimui
+#include <thread>
 
 
 using std::cout;

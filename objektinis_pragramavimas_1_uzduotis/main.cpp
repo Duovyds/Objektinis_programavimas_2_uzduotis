@@ -5,19 +5,19 @@
 
 int main(int argc, const char * argv[]) {
     
-    
     vector<Studentas> studentai2;
     vector<Studentas> vargsiukai;
     vector<Studentas> galvociai;
     
-    failu_generavimas();
+    double answer1 = laiko_nustatymas_failu_generavimas(failu_generavimas);
+    cout << "Failas sukuriamas per " << answer1 << " sec." << endl;
+    
+    
     studentai2 = skaitymas_is_failo(studentai2, "studentai1000");
     vargsiukai = vargsiuku_atrinkimas(studentai2);
     galvociai = galvociu_atrinkimas(studentai2);
     irasymas(vargsiukai, "vargsiukai");
     irasymas(galvociai, "galvociai");
-
-    
     
     
     
