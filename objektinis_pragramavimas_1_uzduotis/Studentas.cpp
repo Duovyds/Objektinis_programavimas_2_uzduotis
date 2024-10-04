@@ -223,9 +223,14 @@ vector<Studentas> skaitymas_is_failo(vector<Studentas> studentai, string failo_p
 
 
 
-void irasymas(vector<Studentas> studentai){
+void irasymas(vector<Studentas> studentai, string failo_pav){
     
-    ofstream rez("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/rez1.txt");
+    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/") + failo_pav + ".txt";
+    
+    ofstream rez;
+    rez.open(failo_pavadinimas);
+    
+//    ofstream rez("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/rez1.txt");
     
     // Funkcija, kuri rusiuoja studentus pagal ju pavardes didejimo tvarka. (Tvarka galima pakeisti palyginti_pavardes funkcijos viduje).
     sort(studentai.begin(), studentai.end(), palyginti_pavardes);

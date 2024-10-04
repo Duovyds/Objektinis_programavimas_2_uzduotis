@@ -14,7 +14,9 @@ int main(int argc, const char * argv[]) {
     studentai2 = skaitymas_is_failo(studentai2, "studentai1000");
     vargsiukai = vargsiuku_atrinkimas(studentai2);
     galvociai = galvociu_atrinkimas(studentai2);
-    
+    irasymas(vargsiukai, "vargsiukai");
+    irasymas(galvociai, "galvociai");
+
     
     
     
