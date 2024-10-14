@@ -223,7 +223,7 @@ vector<Studentas> skaitymas_is_failo(vector<Studentas> studentai, string failo_p
 
 
 
-void irasymas(vector<Studentas> studentai, string failo_pav){
+void irasymas(vector<Studentas>& studentai, string failo_pav, int pasirinkimas){
     
     string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/") + failo_pav + ".txt";
     
@@ -233,16 +233,20 @@ void irasymas(vector<Studentas> studentai, string failo_pav){
 //    ofstream rez("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/rez1.txt");
     
     // Funkcija, kuri rusiuoja studentus pagal ju pavardes didejimo tvarka. (Tvarka galima pakeisti palyginti_pavardes funkcijos viduje).
-    sort(studentai.begin(), studentai.end(), palyginti_pavardes);
+    if (pasirinkimas == 1) {
+        sort(studentai.begin(), studentai.end(), palyginti_vardus);
+    } else if (pasirinkimas == 2){
+        sort(studentai.begin(), studentai.end(), palyginti_pavardes);
+    }
+    
     // Funkcija, kuri rusiuoja studentus pagal ju vardus didejimo tvarka. (Tvarka galima pakeisti palyginti_vardus funkcijos viduje).
 //    sort(studentai.begin(), studentai.end(), palyginti_vardus);
     
-    rez << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (vid.)" << setw(20) << "Galutinis (med.)" << endl;
+    rez << left << setw(20) << "Pavardė" << setw(20) << "Vardas" << setw(20) << "Galutinis (vid.)" << endl;
         rez << "-----------------------------------------------------------------" << endl;
     for (const auto& student: studentai) {
-        rez << left << setw(14) << student.pavarde << setw(15) << student.vardas
-        << setw(20) << fixed << setprecision(2) << student.galutinis_vid
-        << setw(20) << fixed << setprecision(2) << student.galutinis_med << endl;
+        rez << left << setw(20) << student.pavarde << setw(20) << student.vardas
+        << setw(20) << fixed << setprecision(2) << student.galutinis_vid << endl;
     }
     
     rez.close();

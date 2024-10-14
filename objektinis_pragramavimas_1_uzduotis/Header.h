@@ -13,6 +13,7 @@
 #include <string> // string manipuliavimui
 #include <cstdlib> // stoi() funkcijos naudojimui
 #include <thread>
+#include <cstdio>
 
 
 using std::cout;
@@ -36,6 +37,10 @@ using std::out_of_range;
 using std::fixed;
 using std::setprecision;
 using std::to_string;
+using std::chrono::high_resolution_clock;
+using std::chrono::duration_cast;
+using std::chrono::duration;
+using std::chrono::milliseconds;
 
 
 #endif /* Header_h */
