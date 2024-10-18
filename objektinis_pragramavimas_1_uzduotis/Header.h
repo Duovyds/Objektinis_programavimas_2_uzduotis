@@ -14,6 +14,7 @@
 #include <cstdlib> // stoi() funkcijos naudojimui
 #include <thread>
 #include <cstdio>
+#include <list>
 
 
 using std::cout;
@@ -41,6 +42,8 @@ using std::chrono::high_resolution_clock;
 using std::chrono::duration_cast;
 using std::chrono::duration;
 using std::chrono::milliseconds;
+using std::list;
+
 
 
 #endif /* Header_h */
