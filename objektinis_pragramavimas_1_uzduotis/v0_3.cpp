@@ -13,5 +13,6 @@ list<Studentas> vargsiuku_atrinkimas_naudojant_list(list<Studentas>& studentai){
             vargsiukai.push_back(studentas);
         }
     }
+    
     return vargsiukai;
 }
