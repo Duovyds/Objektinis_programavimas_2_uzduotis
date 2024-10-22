@@ -1,4 +1,4 @@
-#include "v0_3.hpp"
+#include "v0_3_header.h"
 #include "Studentas.h"
 #include "Header.h"
 #include "Failas.h"
@@ -40,9 +40,11 @@ void irasymas(list<Studentas>& studentai, string failo_pav, int pasirinkimas){
     
     // Funkcija, kuri rusiuoja studentus pagal ju pavardes didejimo tvarka. (Tvarka galima pakeisti palyginti_pavardes funkcijos viduje).
     if (pasirinkimas == 1) {
-        sort(studentai.begin(), studentai.end(), palyginti_vardus);
+        studentai.sort(palyginti_vardus);
+//        sort(studentai.begin(), studentai.end(), palyginti_vardus);
     } else if (pasirinkimas == 2){
-        sort(studentai.begin(), studentai.end(), palyginti_pavardes);
+        studentai.sort(palyginti_pavardes);
+//        sort(studentai.begin(), studentai.end(), palyginti_pavardes);
     }
     
     // Funkcija, kuri rusiuoja studentus pagal ju vardus didejimo tvarka. (Tvarka galima pakeisti palyginti_vardus funkcijos viduje).
