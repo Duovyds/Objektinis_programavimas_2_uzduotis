@@ -56,17 +56,48 @@ int main(int argc, const char * argv[]) {
             laiko_skaiciavimas_failo_generavimas(studentu_skaicius, namu_darbu_skaicius, pasirinkimas1);
             
         } else if (ats_1 == 4){
-            string pasirinkimas;
-            string directory = "/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis";
-            string command = "ls " + directory + "/*.txt | xargs -n 1 basename";
-            system(command.c_str());
-            cout << endl;
-            cout << "Pasirinkite kuri faila norite testuoti. Ivesti failo pavadinima be .txt dalies" << endl;
-            cin >> pasirinkimas;
-            cout << "Pagal kokius parametrus norite rusiuoti studentus? (1) varda, (2) pavarde" << endl;
-            cin >> pasirinkimas1;
-            cout << endl;
-            laiko_skaiciavimas(pasirinkimas, pasirinkimas1);
+            int konteinerio_pasirinkimas;
+            cout << "Pasirinkite konteinerio tipa. (1) vector, (2) list" << endl;
+            cin >> konteinerio_pasirinkimas;
+            if (konteinerio_pasirinkimas == 1) {
+                string pasirinkimas;
+                string directory = "/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis";
+                string command = "ls " + directory + "/*.txt | xargs -n 1 basename";
+                system(command.c_str());
+                cout << endl;
+                cout << "Pasirinkite kuri faila norite testuoti. Ivesti failo pavadinima be .txt dalies" << endl;
+                cin >> pasirinkimas;
+                cout << "Pagal kokius parametrus norite rusiuoti studentus? (1) varda, (2) pavarde" << endl;
+                cin >> pasirinkimas1;
+                cout << endl;
+                laiko_skaiciavimas(pasirinkimas, pasirinkimas1);
+            } else {
+                string pasirinkimas;
+                string directory = "/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis";
+                string command = "ls " + directory + "/*.txt | xargs -n 1 basename";
+                system(command.c_str());
+                cout << endl;
+                cout << "Pasirinkite kuri faila norite testuoti. Ivesti failo pavadinima be .txt dalies" << endl;
+                cin >> pasirinkimas;
+                cout << "Pagal kokius parametrus norite rusiuoti studentus? (1) varda, (2) pavarde" << endl;
+                cin >> pasirinkimas1;
+                cout << endl;
+                laiko_skaiciavimas_list_konteineris(pasirinkimas, pasirinkimas1);
+                
+            }
+            
+            
+//            string pasirinkimas;
+//            string directory = "/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis";
+//            string command = "ls " + directory + "/*.txt | xargs -n 1 basename";
+//            system(command.c_str());
+//            cout << endl;
+//            cout << "Pasirinkite kuri faila norite testuoti. Ivesti failo pavadinima be .txt dalies" << endl;
+//            cin >> pasirinkimas;
+//            cout << "Pagal kokius parametrus norite rusiuoti studentus? (1) varda, (2) pavarde" << endl;
+//            cin >> pasirinkimas1;
+//            cout << endl;
+//            laiko_skaiciavimas(pasirinkimas, pasirinkimas1);
         }
         else {
             throw out_of_range("Netinkamas ivestas skaicius. Pasirinktas skaicius turi buti tarp 1 ir 4 imtinai");
