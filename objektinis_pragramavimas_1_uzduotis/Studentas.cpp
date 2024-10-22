@@ -240,7 +240,6 @@ void irasymas(vector<Studentas>& studentai, string failo_pav, int pasirinkimas){
     }
     
     // Funkcija, kuri rusiuoja studentus pagal ju vardus didejimo tvarka. (Tvarka galima pakeisti palyginti_vardus funkcijos viduje).
-//    sort(studentai.begin(), studentai.end(), palyginti_vardus);
     
     rez << left << setw(20) << "Pavardė" << setw(20) << "Vardas" << setw(20) << "Galutinis (vid.)" << endl;
         rez << "-----------------------------------------------------------------" << endl;
@@ -250,4 +249,53 @@ void irasymas(vector<Studentas>& studentai, string failo_pav, int pasirinkimas){
     }
     
     rez.close();
+}
+
+
+
+void irasymas_list(list<Studentas>& studentai, string failo_pav, int pasirinkimas){
+    
+    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/") + failo_pav + ".txt";
+    
+    ofstream rez;
+    rez.open(failo_pavadinimas);
+    
+    
+    // Funkcija, kuri rusiuoja studentus pagal ju pavardes didejimo tvarka. (Tvarka galima pakeisti palyginti_pavardes funkcijos viduje).
+    if (pasirinkimas == 1) {
+//        sort(studentai.begin(), studentai.end(), palyginti_vardus);
+        studentai.sort(palyginti_vardus);
+    } else if (pasirinkimas == 2){
+//        sort(studentai.begin(), studentai.end(), palyginti_pavardes);
+        studentai.sort(palyginti_pavardes);
+    }
+    
+    // Funkcija, kuri rusiuoja studentus pagal ju vardus didejimo tvarka. (Tvarka galima pakeisti palyginti_vardus funkcijos viduje).
+    
+    rez << left << setw(20) << "Pavardė" << setw(20) << "Vardas" << setw(20) << "Galutinis (vid.)" << endl;
+        rez << "-----------------------------------------------------------------" << endl;
+    for (const auto& student: studentai) {
+        rez << left << setw(20) << student.pavarde << setw(20) << student.vardas
+        << setw(20) << fixed << setprecision(2) << student.galutinis_vid << endl;
+    }
+    
+    rez.close();
+}
+
+
+
+void isvedimas_list(list<Studentas> studentai){
+        
+    // Funkcija, kuri rusiuoja studentus pagal ju pavardes didejimo tvarka. (Tvarka galima pakeisti palyginti_pavardes funkcijos viduje).
+    studentai.sort(palyginti_pavardes);
+    // Funkcija, kuri rusiuoja studentus pagal ju vardus didejimo tvarka. (Tvarka galima pakeisti palyginti_vardus funkcijos viduje).
+//    studentai.sort(palyginti_vardus);
+    
+    cout << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (vid.)" << setw(20) << "Galutinis (med.)" << endl;
+        cout << "-----------------------------------------------------------------" << endl;
+    for (const auto& student: studentai) {
+        cout << left << setw(14) << student.pavarde << setw(15) << student.vardas
+        << setw(20) << fixed << setprecision(2)<< student.galutinis_vid
+        << setw(20) << fixed << setprecision(2) << student.galutinis_med << endl;
+    }
 }
