@@ -141,4 +141,16 @@ void laiko_skaiciavimas_list_konteineris(string failo_pavadinimas, int rikiavimo
     cout << "Failo is " << studentai2.size() << " irasu galvociu atrinkimo laikas naudojant list konteineri " << answer4 << endl;
     
     
+    vector<double> irasymas_vargsiukai_laikas;
+    for (int i = 0; i < 5; i++) {
+        auto t1 = high_resolution_clock::now();
+        irasymas_naudojant_list(vargsiukai, "vargsiukai", rikiavimo_pasirinkimas);
+        auto t2 = high_resolution_clock::now();
+        auto answer = duration_cast<milliseconds>(t2 - t1);
+        irasymas_vargsiukai_laikas.push_back(answer.count());
+    }
+    double answer5 = accumulate(irasymas_vargsiukai_laikas.begin(), irasymas_vargsiukai_laikas.end(), 0.0) / irasymas_vargsiukai_laikas.size() * 0.001;
+    cout << "Failo is " << studentai2.size() << " irasu vargsiuku irasymas i atskira faila laikas " << answer5 << endl;
+    
+    
 }
