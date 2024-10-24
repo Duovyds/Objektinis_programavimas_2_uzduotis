@@ -1,11 +1,13 @@
 #include "Header.h"
 #include "Studentas.h"
 #include "Failas.h"
+#include "v0_3_header.h"
 
 
 int main(int argc, const char * argv[]) {
     
     vector<Studentas> studentai;
+    list<Studentas> studentai_list;
     int pasirinkimas1 = 0;
     int studentu_skaicius = 0;
     int namu_darbu_skaicius =0;
@@ -26,23 +28,45 @@ int main(int argc, const char * argv[]) {
                 irasymas(studentai, "rez1", 2);
         } else if (ats_1 == 2){
             try {
-                int studSk;
-                cout << "Iveskite studentu skaiciu\n";
-                cin >> studSk;
-                Studentas temp;
+                int konteinerio_tipas;
+                cout << "Duomenis saugoti i vector konteineri (1), duomenis saugoti i list konteineri (2)" << endl;
+                cin >> konteinerio_tipas;
                 
-                if (cin.fail() or studSk <= 0) {
-                    throw invalid_argument("Ivestas simbolis nera skaicius arba skaicius yra mazesnis arba lygus 0");
-                }
-                
-                for (int i = 0; i < studSk; i++) {
-                    ivedimas(temp);
-                    studentai.push_back(temp);
-                    valymas(temp);
+                if (konteinerio_tipas == 1) {
+                    int studSk;
+                    cout << "Iveskite studentu skaiciu\n";
+                    cin >> studSk;
+                    Studentas temp;
+                                    
+                    if (cin.fail() or studSk <= 0) {
+                        throw invalid_argument("Ivestas simbolis nera skaicius arba skaicius yra mazesnis arba lygus 0");
                     }
-                isvedimas(studentai);
-                irasymas(studentai, "rez1", 2);
-                } catch (const invalid_argument& e) {
+                    for (int i = 0; i < studSk; i++) {
+                        ivedimas(temp);
+                        studentai.push_back(temp);
+                        valymas(temp);
+                    }
+                    isvedimas(studentai);
+                    irasymas(studentai, "rez1", 2);
+                } else if (konteinerio_tipas == 2){
+                    int studSk;
+                    cout << "Iveskite studentu skaiciu\n";
+                    cin >> studSk;
+                    Studentas temp;
+                                    
+                    if (cin.fail() or studSk <= 0) {
+                        throw invalid_argument("Ivestas simbolis nera skaicius arba skaicius yra mazesnis arba lygus 0");
+                    }
+                    
+                    for (int i = 0; i < studSk; i++) {
+                        ivedimas(temp);
+                        studentai_list.push_back(temp);
+                        valymas(temp);
+                    }
+                    isvedimas_list(studentai_list);
+                    irasymas_list(studentai_list, "rez1", 2);
+                }
+            } catch (const invalid_argument& e) {
                     cerr << e.what() << endl;
             }
         } else if (ats_1 == 3){
@@ -52,9 +76,9 @@ int main(int argc, const char * argv[]) {
             cin >> namu_darbu_skaicius;
             cout << "Pagal kokius parametrus norite rusiuoti studentus? (1) varda, (2) pavarde" << endl;
             cin >> pasirinkimas1;
+            cout << "Vykdomas failu generavimo algoritmas" << endl;
             generavimas_ir_isskirstymas(studentu_skaicius, namu_darbu_skaicius, pasirinkimas1);
-            laiko_skaiciavimas_failo_generavimas(studentu_skaicius, namu_darbu_skaicius, pasirinkimas1);
-            
+//            laiko_skaiciavimas_failo_generavimas(studentu_skaicius, namu_darbu_skaicius, pasirinkimas1);
         } else if (ats_1 == 4){
             int konteinerio_pasirinkimas;
             cout << "Pasirinkite konteinerio tipa. (1) vector, (2) list" << endl;
@@ -70,6 +94,8 @@ int main(int argc, const char * argv[]) {
                 cout << "Pagal kokius parametrus norite rusiuoti studentus? (1) varda, (2) pavarde" << endl;
                 cin >> pasirinkimas1;
                 cout << endl;
+                cout << "Paleidziamas algoritmas laiko skaiciavimui naudojant vector konteineri" << endl;
+                cout << endl;
                 laiko_skaiciavimas(pasirinkimas, pasirinkimas1);
             } else {
                 string pasirinkimas;
@@ -82,22 +108,11 @@ int main(int argc, const char * argv[]) {
                 cout << "Pagal kokius parametrus norite rusiuoti studentus? (1) varda, (2) pavarde" << endl;
                 cin >> pasirinkimas1;
                 cout << endl;
+                cout << "Paleidziamas algoritmas laiko skaiciavimui naudojant list konteineri" << endl;
+                cout << endl;
                 laiko_skaiciavimas_list_konteineris(pasirinkimas, pasirinkimas1);
                 
             }
-            
-            
-//            string pasirinkimas;
-//            string directory = "/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis";
-//            string command = "ls " + directory + "/*.txt | xargs -n 1 basename";
-//            system(command.c_str());
-//            cout << endl;
-//            cout << "Pasirinkite kuri faila norite testuoti. Ivesti failo pavadinima be .txt dalies" << endl;
-//            cin >> pasirinkimas;
-//            cout << "Pagal kokius parametrus norite rusiuoti studentus? (1) varda, (2) pavarde" << endl;
-//            cin >> pasirinkimas1;
-//            cout << endl;
-//            laiko_skaiciavimas(pasirinkimas, pasirinkimas1);
         }
         else {
             throw out_of_range("Netinkamas ivestas skaicius. Pasirinktas skaicius turi buti tarp 1 ir 4 imtinai");

@@ -27,6 +27,8 @@ void isvedimas_su_mediana(vector<Studentas> studentai);
 vector<Studentas> skaitymas_is_failo(vector<Studentas> studentai, string failo_pav);
 void irasymas(vector<Studentas>& studentai, string failo_pav, int pasirinkimas);
 int random_egz();
+void irasymas_list(list<Studentas>& studentai, string failo_pav, int pasirinkimas);
+void isvedimas_list(list<Studentas> studentai);
 
 
 

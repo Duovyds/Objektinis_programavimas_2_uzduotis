@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "Studentas.h"
 #include "Header.h"
+#include "v0_3_header.h"
+
 
 
 // Funkcija, kuri generuoja atstiktinius skaicius, juos iraso i vektoriu, o ta vektoriu grazina
@@ -232,7 +234,6 @@ void irasymas(vector<Studentas>& studentai, string failo_pav, int pasirinkimas){
     ofstream rez;
     rez.open(failo_pavadinimas);
     
-//    ofstream rez("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/rez1.txt");
     
     // Funkcija, kuri rusiuoja studentus pagal ju pavardes didejimo tvarka. (Tvarka galima pakeisti palyginti_pavardes funkcijos viduje).
     if (pasirinkimas == 1) {

@@ -164,5 +164,5 @@ void laiko_skaiciavimas_list_konteineris(string failo_pavadinimas, int rikiavimo
     double answer6 = accumulate(irasymas_galvociai_laikas.begin(), irasymas_galvociai_laikas.end(), 0.0) / irasymas_galvociai_laikas.size() * 0.001;
     cout << "Failo is " << studentai2.size() << " irasu galvociu irasymas i atskira faila laikas " << answer6 << endl;
     
-    
+    cout << "Visas programos veikimo laikas " << answer2 + temp1 + temp2 + answer3 + answer4 + answer5 + answer6 << endl;
 }

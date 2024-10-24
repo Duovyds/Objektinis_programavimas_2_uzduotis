@@ -2,6 +2,8 @@
 #include "Studentas.h"
 #include "Header.h"
 #include "Failas.h"
+#include "v0_3_header.h"
+
 
 
 // Funkcija, kuri priskiria duomenis studento strukturai ir prideda ja prie studentu vektoriaus.
