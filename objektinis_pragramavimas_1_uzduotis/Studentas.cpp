@@ -116,12 +116,14 @@ void isvedimas(vector<Studentas> studentai){
     // Funkcija, kuri rusiuoja studentus pagal ju vardus didejimo tvarka. (Tvarka galima pakeisti palyginti_vardus funkcijos viduje).
 //    sort(studentai.begin(), studentai.end(), palyginti_vardus);
     
-    cout << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (vid.)" << setw(20) << "Galutinis (med.)" << endl;
-        cout << "-----------------------------------------------------------------" << endl;
+    cout << left << setw(20) << "Pavardė" << setw(20) << "Vardas" << setw(20) << "Galutinis (vid.)" << setw(20) << "Galutinis (med.)" <<
+    "Objekto adresas" << endl;
+        cout << "----------------------------------------------------------------------------------------------" << endl;
     for (const auto& student: studentai) {
-        cout << left << setw(14) << student.pavarde << setw(15) << student.vardas
+        cout << left << setw(20) << student.pavarde << setw(20) << student.vardas
         << setw(20) << fixed << setprecision(2)<< student.galutinis_vid
-        << setw(20) << fixed << setprecision(2) << student.galutinis_med << endl;
+        << setw(20) << fixed << setprecision(2) << student.galutinis_med
+        << setw(20) << &student << endl;
     }
 }
 
@@ -291,11 +293,13 @@ void isvedimas_list(list<Studentas> studentai){
     // Funkcija, kuri rusiuoja studentus pagal ju vardus didejimo tvarka. (Tvarka galima pakeisti palyginti_vardus funkcijos viduje).
 //    studentai.sort(palyginti_vardus);
     
-    cout << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (vid.)" << setw(20) << "Galutinis (med.)" << endl;
-        cout << "-----------------------------------------------------------------" << endl;
+    cout << left << setw(20) << "Pavardė" << setw(20) << "Vardas" << setw(20) << "Galutinis (vid.)" << setw(20) << "Galutinis (med.)"
+    << "Objekto adresas" << endl;
+        cout << "----------------------------------------------------------------------------------------------" << endl;
     for (const auto& student: studentai) {
-        cout << left << setw(14) << student.pavarde << setw(15) << student.vardas
+        cout << left << setw(20) << student.pavarde << setw(20) << student.vardas
         << setw(20) << fixed << setprecision(2)<< student.galutinis_vid
-        << setw(20) << fixed << setprecision(2) << student.galutinis_med << endl;
+        << setw(20) << fixed << setprecision(2) << student.galutinis_med
+        << setw(20) << &student << endl;
     }
 }
