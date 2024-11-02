@@ -37,7 +37,30 @@ void skaidymas_2_strategija_vector(string failo_pavadinimas){
     
     irasymas_i_faila(studentai, "studentai1000");
     irasymas_i_faila(vargsiukai, "vargsiukai");
+}
+
+
+
+// list konteinerio atvejis
+void skaidymas_2_strategija_list(string failo_pavadinimas){
     
+    list<Studentas> studentai;
+    list<Studentas> vargsiukai;
+    
+    studentai = skaitymas_is_failo_list(studentai, failo_pavadinimas);
+    vargsiukai = vargsiuku_atrinkimas_naudojant_list(studentai);
+    
+    for (const auto& vargsiukas : vargsiukai){
+        studentai.erase(
+            remove(studentai.begin(), studentai.end(), vargsiukas),
+            studentai.end());
+    }
+    
+    studentai.sort(palyginti_pazymius);
+    vargsiukai.sort(palyginti_pazymius);
+    
+    irasymas_naudojant_list(studentai, failo_pavadinimas);
+    irasymas_naudojant_list(vargsiukai, "vargsiukai");
 }
 
 
