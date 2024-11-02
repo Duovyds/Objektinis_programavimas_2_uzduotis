@@ -80,13 +80,20 @@ int main(int argc, const char * argv[]) {
             cout << "Algoritmas baigtas." << endl;
         } else if (ats_1 == 4){
             string pasirinkimas;
+            int tipas = 0;
             string directory = "/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis";
             string command = "ls " + directory + "/*.txt | xargs -n 1 basename";
             system(command.c_str());
             cout << endl;
             cout << "Pasirinkite kuri faila norite isskirstyti. Ivesti failo pavadinima be .txt dalies" << endl;
             cin >> pasirinkimas;
-            studentu_isskirstymas(pasirinkimas);
+            cout << "Duomenis isskirstyti naudojant vector konteineri (1), list konteineri (2)" << endl;
+            cin >> tipas;
+            if (tipas == 1) {
+                studentu_isskirstymas(pasirinkimas);
+            } else {
+                studentu_isskirstymas_list(pasirinkimas);
+            }
             cout << "Algoritmas baigtas" << endl;
         } else if (ats_1 == 5){
             int konteinerio_pasirinkimas;
