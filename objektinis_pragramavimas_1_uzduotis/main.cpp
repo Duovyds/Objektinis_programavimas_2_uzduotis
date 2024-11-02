@@ -14,7 +14,7 @@ int main(int argc, const char * argv[]) {
     
     try {
         cout << "Pasirinkite:" << endl;
-        cout << "Duomenu nuskaitymas is failo (1), duomenu ivedimas ar generavimas (2), failo generavimas (3), operaciju laiko apskaiciavimas (4)" << endl;
+        cout << "Duomenu nuskaitymas is failo (1), duomenu ivedimas ar generavimas (2), failo generavimas (3), studentu isskirstymas (4), operaciju laiko apskaiciavimas (5)" << endl;
         int ats_1 = 0;
         cin >> ats_1;
         
@@ -74,12 +74,21 @@ int main(int argc, const char * argv[]) {
             cin >> studentu_skaicius;
             cout << "Iveskite namu darbu skaiciu" << endl;
             cin >> namu_darbu_skaicius;
-            cout << "Pagal kokius parametrus norite rusiuoti studentus? (1) varda, (2) pavarde" << endl;
-            cin >> pasirinkimas1;
-            cout << "Vykdomas failu generavimo algoritmas" << endl;
-            generavimas_ir_isskirstymas(studentu_skaicius, namu_darbu_skaicius, pasirinkimas1);
-//            laiko_skaiciavimas_failo_generavimas(studentu_skaicius, namu_darbu_skaicius, pasirinkimas1);
+            cout << "Vykdomas failo generavimo algoritmas" << endl;
+            pagrindinio_failo_generavimas(studentu_skaicius, namu_darbu_skaicius);
+            laiko_skaiciavimas_failo_generavimas(studentu_skaicius, namu_darbu_skaicius);
+            cout << "Algoritmas baigtas." << endl;
         } else if (ats_1 == 4){
+            string pasirinkimas;
+            string directory = "/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis";
+            string command = "ls " + directory + "/*.txt | xargs -n 1 basename";
+            system(command.c_str());
+            cout << endl;
+            cout << "Pasirinkite kuri faila norite isskirstyti. Ivesti failo pavadinima be .txt dalies" << endl;
+            cin >> pasirinkimas;
+            studentu_isskirstymas(pasirinkimas);
+            cout << "Algoritmas baigtas" << endl;
+        } else if (ats_1 == 5){
             int konteinerio_pasirinkimas;
             cout << "Pasirinkite konteinerio tipa. (1) vector, (2) list" << endl;
             cin >> konteinerio_pasirinkimas;
@@ -91,12 +100,13 @@ int main(int argc, const char * argv[]) {
                 cout << endl;
                 cout << "Pasirinkite kuri faila norite testuoti. Ivesti failo pavadinima be .txt dalies" << endl;
                 cin >> pasirinkimas;
-                cout << "Pagal kokius parametrus norite rusiuoti studentus? (1) varda, (2) pavarde" << endl;
+                cout << "Pagal kokius parametrus norite rusiuoti studentus? (1) varda, (2) pavarde, (3) pazymius" << endl;
                 cin >> pasirinkimas1;
                 cout << endl;
                 cout << "Paleidziamas algoritmas laiko skaiciavimui naudojant vector konteineri" << endl;
                 cout << endl;
                 laiko_skaiciavimas(pasirinkimas, pasirinkimas1);
+                cout << "Algoritmas baigtas" << endl;
             } else {
                 string pasirinkimas;
                 string directory = "/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis";
@@ -105,17 +115,18 @@ int main(int argc, const char * argv[]) {
                 cout << endl;
                 cout << "Pasirinkite kuri faila norite testuoti. Ivesti failo pavadinima be .txt dalies" << endl;
                 cin >> pasirinkimas;
-                cout << "Pagal kokius parametrus norite rusiuoti studentus? (1) varda, (2) pavarde" << endl;
+                cout << "Pagal kokius parametrus norite rusiuoti studentus? (1) varda, (2) pavarde, (3) pazymius" << endl;
                 cin >> pasirinkimas1;
                 cout << endl;
                 cout << "Paleidziamas algoritmas laiko skaiciavimui naudojant list konteineri" << endl;
                 cout << endl;
                 laiko_skaiciavimas_list_konteineris(pasirinkimas, pasirinkimas1);
+                cout << "Algoritmas baigtas" << endl;
                 
             }
         }
         else {
-            throw out_of_range("Netinkamas ivestas skaicius. Pasirinktas skaicius turi buti tarp 1 ir 4 imtinai");
+            throw out_of_range("Netinkamas ivestas skaicius. Pasirinktas skaicius turi buti tarp 1 ir 5 imtinai");
         }
     } catch (const invalid_argument& e) {
         cerr << e.what() << endl;

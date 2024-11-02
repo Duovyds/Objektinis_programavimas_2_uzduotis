@@ -30,6 +30,8 @@ int random_egz();
 void irasymas_list(list<Studentas>& studentai, string failo_pav, int pasirinkimas);
 void isvedimas_list(list<Studentas> studentai);
 
+bool palyginti_pazymius(const Studentas& a, const Studentas& b);
+
 
 
 #endif /* Studentas_h */

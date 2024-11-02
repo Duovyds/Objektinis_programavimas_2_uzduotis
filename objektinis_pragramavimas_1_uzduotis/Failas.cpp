@@ -6,23 +6,50 @@
 
 
 
-// Funkcija, kuri priskiria duomenis studento strukturai ir prideda ja prie studentu vektoriaus.
-vector<Studentas> studentu_generavimas(int studentu_skaicius, int namu_darbu_skaicius){
-    vector<Studentas> studentai;
-    Studentas temp;
+void pagrindinio_failo_generavimas(int studentu_skaicius, int nd_skaicius){
+    
+    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/") +
+    "studentai" + to_string(studentu_skaicius) + ".txt";
+    vector<int> nd_pazymiai;
+    ofstream rez;
+    rez.open(failo_pavadinimas);
+    
+    rez << left << setw(20) << "Vardas" << setw(20) << "Pavardė";
+    for (int i = 0; i < nd_skaicius; i++) {
+        rez << left << setw(8) << "ND" + to_string(i + 1);
+    }
+    rez << left << setw(8) << "EGZ" << endl;
     
     for (int i = 0; i < studentu_skaicius; i++) {
-        temp.vardas = "Vardas" + to_string(i + 1);
-        temp.pavarde = "Pavardė" + to_string(i + 1);
-        temp.namu_darbai = random_pazymiai(namu_darbu_skaicius);
-        temp.egzaminas = random_egz();
-        temp.pazymiu_vidurkis = accumulate(temp.namu_darbai.begin(), temp.namu_darbai.end(), 0.0) / temp.namu_darbai.size();
-        temp.galutinis_vid = (0.4 * temp.pazymiu_vidurkis + 0.6 * temp.egzaminas);
-        studentai.push_back(temp);
-
-        valymas(temp);
+        nd_pazymiai = random_pazymiai(nd_skaicius);
+        rez << left << setw(20) << "Vardas" + to_string(i + 1)
+        << setw(20) << "Pavardė" + to_string(i + 1);
+        for (int j = 0; j < nd_skaicius; j++) {
+            rez << left << setw(8) << nd_pazymiai.at(j);
+        }
+        rez << left << setw(8) << random_egz() << endl;
     }
-    return studentai;
+    rez.close();
+}
+
+
+
+// Funkcija, kuri duomenis is vektoriaus perraso i faila, pries tai surikiavus duomenis pagal pasirinkta parametra.
+void irasymas_i_faila(vector<Studentas>& studentai, string failo_pav){
+    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/") +
+    failo_pav + ".txt";
+    
+    ofstream failas;
+    failas.open(failo_pavadinimas);
+    
+    failas << left << setw(20) << "Pavardė" << setw(20) << "Vardas" << setw(20) << "Galutinis (vid.)" << endl;
+        failas << "-----------------------------------------------------------------" << endl;
+    for (const auto& student: studentai) {
+        failas << left << setw(20) << student.pavarde << setw(20) << student.vardas
+        << setw(20) << fixed << setprecision(2) << student.galutinis_vid << endl;
+    }
+    
+    failas.close();
 }
 
 
@@ -61,34 +88,19 @@ double rikiavimas_pagal_pavarde_laikas(vector<Studentas> studentai){
 
 
 
-// Funkcija, kuri duomenis is vektoriaus perraso i faila, pries tai surikiavus duomenis pagal pasirinkta parametra.
-void irasymas_i_faila(vector<Studentas>& studentai, int rikiavimo_pasirinkimas){
-    Studentas temp = studentai.at(0);
-    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/") + "studentai" + to_string(studentai.size()) + ".txt";
+// Funkcija, kuri paskaiciuoja laika per kuri yra surikiuojamas studentu vektorius pagal pavardes didejimo tvarka.
+double rikiavimas_pagal_pazymius_laikas(vector<Studentas> studentai){
+    vector<double> laikai;
     
-    if (rikiavimo_pasirinkimas == 1) {
-           sort(studentai.begin(), studentai.end(), palyginti_vardus);
-       } else {
-           sort(studentai.begin(), studentai.end(), palyginti_pavardes);
-       }
-
-    ofstream failas;
-    failas.open(failo_pavadinimas);
-    
-    failas << left << setw(20) << "Vardas" << setw(20) << "Pavardė";
-    for (int i = 1; i <= temp.namu_darbai.size(); i++) {
-        failas << left << setw(17) << "ND" + to_string(i);
+    for (int i = 0; i < 5; i++) {
+        auto t1 = high_resolution_clock::now();
+        sort(studentai.begin(), studentai.end(), palyginti_pazymius);
+        auto t2 = high_resolution_clock::now();
+        auto answer = duration_cast<milliseconds>(t2 - t1);
+        laikai.push_back(answer.count());
     }
-    failas << left << setw(17) << "EGZ" << endl;
-    
-    for (const auto& studentas : studentai){
-        failas << left << setw(20) << studentas.vardas << setw(20) << studentas.pavarde;
-        for (int i = 0; i < studentas.namu_darbai.size(); i++) {
-            failas << left << setw(17) << studentas.namu_darbai.at(i);
-        }
-        failas << left << setw(17) << studentas.egzaminas;
-        failas << endl;
-    }
+    double answer = accumulate(laikai.begin(), laikai.end(), 0.0) / laikai.size() * 0.001;
+    return answer;
 }
 
 
@@ -122,44 +134,43 @@ vector<Studentas> galvociu_atrinkimas(vector<Studentas>& studentai){
 
 
 
-// Funkcija, kuri sugeneruoja studentu vektoriu, iraso duomenis i pagrindini faila, tada duomenis surusiuoja ir isskaido i du atskirus failus
-void generavimas_ir_isskirstymas(int studentu_skaicius, int nd_skaicius, int rikiavimo_pasirinkimas){
-    vector<Studentas> stud = studentu_generavimas(studentu_skaicius, nd_skaicius);
+void studentu_isskirstymas(string failo_pavadinimas){
+    
+    vector<Studentas> studentai;
     vector<Studentas> vargsiukai;
     vector<Studentas> galvociai;
+    int rikiavimo_pasirinkimas;
     
-    irasymas_i_faila(stud, rikiavimo_pasirinkimas);
-    vargsiukai = vargsiuku_atrinkimas(stud);
-
-    galvociai = galvociu_atrinkimas(stud);
-    irasymas(vargsiukai, "vargsiukai", rikiavimo_pasirinkimas);
-    irasymas(galvociai, "galvociai", rikiavimo_pasirinkimas);
+    studentai = skaitymas_is_failo(studentai, failo_pavadinimas);
+    
+    cout << "Studentus rikiuoti pagal: varda (1), pavarde (2), galutini pazymi (3)" << endl;
+    cin >> rikiavimo_pasirinkimas;
+    cout << "Vykdoma programa..." << endl;
+    
+    if (rikiavimo_pasirinkimas == 1) {
+        sort(studentai.begin(), studentai.end(), palyginti_vardus);
+    } else if (rikiavimo_pasirinkimas == 2){
+        sort(studentai.begin(), studentai.end(), palyginti_pavardes);
+    } else {
+        sort(studentai.begin(), studentai.end(), palyginti_pazymius);
+    }
+    
+    vargsiukai = vargsiuku_atrinkimas(studentai);
+    galvociai = galvociu_atrinkimas(studentai);
+    
+    irasymas_i_faila(vargsiukai, "vargsiukai");
+    irasymas_i_faila(galvociai, "galvociai");
 }
 
 
 
 // Funkcija, kuri apskaiciuoja laika per kuri yra sugeneruojamas duomenu vektorius ir tie duomenys yra irasomi i faila
-void laiko_skaiciavimas_failo_generavimas(int studentu_skaicius, int nd_skaicius, int rikiavimo_pasirinkimas){
-    
-    vector<Studentas> stud;
-    
-    vector<double> studentu_generavimas_laikas;
-    for (int i = 0; i < 5; i++) {
-        auto t1 = high_resolution_clock::now();
-        stud = studentu_generavimas(studentu_skaicius, nd_skaicius);
-        auto t2 = high_resolution_clock::now();
-        auto answer = duration_cast<milliseconds>(t2 - t1);
-        studentu_generavimas_laikas.push_back(answer.count());
-    }
-    double answer2 = accumulate(studentu_generavimas_laikas.begin(), studentu_generavimas_laikas.end(), 0.0) / studentu_generavimas_laikas.size() * 0.001;
-    cout << "Failo is " << studentu_skaicius << " irasu studentu vektoriaus generavimo laikas " << answer2 << endl;
+void laiko_skaiciavimas_failo_generavimas(int studentu_skaicius, int nd_skaicius){
 
-    
-    
     vector<double> failu_generavimo_laikai;
     for (int i = 0; i < 5; i++) {
         auto t1 = high_resolution_clock::now();
-        irasymas_i_faila(stud, rikiavimo_pasirinkimas);
+        pagrindinio_failo_generavimas(studentu_skaicius, nd_skaicius);
         auto t2 = high_resolution_clock::now();
         auto answer1 = duration_cast<milliseconds>(t2 - t1);
         failu_generavimo_laikai.push_back(answer1.count());
@@ -193,13 +204,19 @@ void laiko_skaiciavimas(string failo_pavadinimas, int rikiavimo_pasirinkimas){
     
     
     
-    double temp1 = 0, temp2 = 0;
+    double temp1 = 0, temp2 = 0, temp3 = 0;
     if (rikiavimo_pasirinkimas == 1) {
         temp1 = rikiavimas_pagal_varda_laikas(studentai2);
+//        sort(studentai2.begin(), studentai2.end(), palyginti_vardus);
         cout << studentai2.size() << " irasu rikiavimo laikas pagal varda didejimo tvarka " << temp1 << endl;
-    } else {
+    } else if(rikiavimo_pasirinkimas == 2){
         temp2 = rikiavimas_pagal_pavarde_laikas(studentai2);
+//        sort(studentai2.begin(), studentai2.end(), palyginti_pavardes);
         cout << studentai2.size() << " irasu rikiavimo laikas pagal pavarde didejimo tvarka " << temp2 << endl;
+    } else {
+        temp3 = rikiavimas_pagal_pazymius_laikas(studentai2);
+//        sort(studentai2.begin(), studentai2.end(), palyginti_pazymius);
+        cout << studentai2.size() << " irasu rikiavimo laikas pagal pazymius didejimo tvarka " << temp3 << endl;
     }
     
     
@@ -233,7 +250,7 @@ void laiko_skaiciavimas(string failo_pavadinimas, int rikiavimo_pasirinkimas){
     vector<double> irasymas_vargsiukai_laikas;
     for (int i = 0; i < 5; i++) {
         auto t1 = high_resolution_clock::now();
-        irasymas(vargsiukai, "vargsiukai", rikiavimo_pasirinkimas);
+        irasymas_i_faila(vargsiukai, "vargsiukai");
         auto t2 = high_resolution_clock::now();
         auto answer = duration_cast<milliseconds>(t2 - t1);
         irasymas_vargsiukai_laikas.push_back(answer.count());
@@ -246,7 +263,7 @@ void laiko_skaiciavimas(string failo_pavadinimas, int rikiavimo_pasirinkimas){
     vector<double> irasymas_galvociai_laikas;
     for (int i = 0; i < 5; i++) {
         auto t1 = high_resolution_clock::now();
-        irasymas(galvociai, "galvociai", rikiavimo_pasirinkimas);
+        irasymas_i_faila(galvociai, "galvociai");
         auto t2 = high_resolution_clock::now();
         auto answer = duration_cast<milliseconds>(t2 - t1);
         irasymas_galvociai_laikas.push_back(answer.count());
@@ -254,5 +271,5 @@ void laiko_skaiciavimas(string failo_pavadinimas, int rikiavimo_pasirinkimas){
     double answer6 = accumulate(irasymas_galvociai_laikas.begin(), irasymas_galvociai_laikas.end(), 0.0) / irasymas_galvociai_laikas.size() * 0.001;
     cout << "Failo is " << studentai2.size() << " irasu galvociu irasymas i atskira faila laikas " << answer6 << endl;
     
-    cout << "Visas programos veikimo laikas " << answer2 + temp1 + temp2 + answer3 + answer4 + answer5 + answer6 << endl;
+    cout << "Visas programos veikimo laikas " << answer2 + temp1 + temp2 + temp3 + answer3 + answer4 + answer5 + answer6 << endl;
 }

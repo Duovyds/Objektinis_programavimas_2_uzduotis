@@ -109,6 +109,11 @@ bool palyginti_vardus(const Studentas& a, const Studentas& b){
 }
 
 
+bool palyginti_pazymius(const Studentas& a, const Studentas& b){
+    return a.galutinis_vid < b.galutinis_vid;
+}
+
+
 
 // Funkcija, kuri atspausdina studentu duomenis (galutinis apskaiciuotas ir su vidurkiu ir su mediana)
 void isvedimas(vector<Studentas> studentai){
