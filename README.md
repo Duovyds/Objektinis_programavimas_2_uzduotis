@@ -58,3 +58,12 @@ Veikimo spartos analizė
 <img width="630" alt="Screenshot 2024-11-03 at 14 03 19" src="https://github.com/user-attachments/assets/420c59e4-d8cb-47dd-adad-23f87e14fe26">
 
 <img width="630" alt="Screenshot 2024-11-03 at 14 08 52" src="https://github.com/user-attachments/assets/0fa6a9d3-a9d4-43ef-a882-c72951250079">
+
+
+## Spartos analizės rezultatai
+
+Žemiau pateikta lentelė vaizduoja programos spartą, priklausomai nuo pasirinkto konteinerio tipo (vector arba list) ir studentų skaičiaus.
+
+
+<img width="1367" alt="Screenshot 2024-11-03 at 15 22 03" src="https://github.com/user-attachments/assets/e70b68cc-203c-469a-9295-29e2b3c0c3fa">
+
