@@ -37,3 +37,24 @@ Veikimo spartos analizė:
 <img width="577" alt="Screenshot 2024-11-03 at 00 18 41" src="https://github.com/user-attachments/assets/ded15c7e-0311-41aa-831f-835cb8de06c1">
 
 <img width="577" alt="Screenshot 2024-11-03 at 00 30 34" src="https://github.com/user-attachments/assets/658d45f8-6949-4063-bcec-65c7f1fc7278">
+
+
+## v0.3
+Funkcijos:
+- Visos v0.2 funkcijos;
+- Rankinio duomenų įvedimo metu, į ekraną papildomai išvedamas ir objekto adresas;
+- Programos spartos analizė su pasirinktu konteineriu darbui su duomenimis (vector arba list).
+
+Ši programos versija suteikia galimybę platesnei spartos analizei. T.y., galimybę įvertinti programos spartą priklausomai nuo pasirinkto konteinerio darbui su duomenimis.
+
+Veikimo spartos analizė
+
+<img width="577" alt="Screenshot 2024-11-03 at 14 00 33" src="https://github.com/user-attachments/assets/6e19801e-406c-4621-9feb-9814a28aca24">
+
+<img width="577" alt="Screenshot 2024-11-03 at 14 00 53" src="https://github.com/user-attachments/assets/754ae28e-0c4f-440c-8ba8-35e8b1459feb">
+
+<img width="630" alt="Screenshot 2024-11-03 at 14 15 42" src="https://github.com/user-attachments/assets/1ad9f7ff-cbb7-4463-a61b-7a9c499236c0">
+
+<img width="630" alt="Screenshot 2024-11-03 at 14 03 19" src="https://github.com/user-attachments/assets/420c59e4-d8cb-47dd-adad-23f87e14fe26">
+
+<img width="630" alt="Screenshot 2024-11-03 at 14 08 52" src="https://github.com/user-attachments/assets/0fa6a9d3-a9d4-43ef-a882-c72951250079">
