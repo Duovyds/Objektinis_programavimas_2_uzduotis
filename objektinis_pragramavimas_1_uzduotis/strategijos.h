@@ -1,0 +1,18 @@
+#ifndef strategijos_h
+#define strategijos_h
+#include "Header.h"
+#include <stdio.h>
+#include "Studentas.h"
+#include "Failas.h"
+#include "v0_3_header.h"
+
+
+
+void skaidymas_2_strategija_vector(string failo_pavadinimas, int rikiavimo_pasirinkimas);
+
+
+
+
+
+
+#endif /* strategijos_h */
