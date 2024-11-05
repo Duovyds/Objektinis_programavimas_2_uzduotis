@@ -7,17 +7,17 @@ Programa suteikia naudotojui galimybę duomenis nuskaityti iš failo, juos įves
 
 
 ## v0.1
-Funkcijos:
+### Funkcijos:
 - Duomenų skaitymas iš failo;
 - Rankinis duomenų įvedimas;
 - Duomenų rūšiavimas;
 - Išimčių tvarkymas.
 
-Ši programos versija suteikia naudotojui keletą primityvių įrankių darbui su studentų duomenimis.
+ Ši programos versija suteikia naudotojui keletą primityvių įrankių darbui su studentų duomenimis.
 
 
 ## v0.2
-Funkcijos:
+### Funkcijos:
 - Visos v0.1 funkcijos;
 - Duomenų failo generavimas;
 - Didesnis kriterijų pasirinkimas duomenų rūšiavimui;
@@ -26,7 +26,7 @@ Funkcijos:
 
 Ši programos versija suteikia naudotojui platesnį diapozoną įrankių darbui su duomenimis.
 
-Veikimo spartos analizė:
+### Veikimo spartos analizė:
 
 <img width="577" alt="Screenshot 2024-11-03 at 00 10 59" src="https://github.com/user-attachments/assets/f810c8cb-1e4d-45c5-9085-d26620a9c207">
 
@@ -40,14 +40,14 @@ Veikimo spartos analizė:
 
 
 ## v0.3
-Funkcijos:
+### Funkcijos:
 - Visos v0.2 funkcijos;
 - Rankinio duomenų įvedimo metu, į ekraną papildomai išvedamas ir objekto adresas;
 - Programos spartos analizė su pasirinktu konteineriu darbui su duomenimis (vector arba list).
 
 Ši programos versija suteikia galimybę platesnei spartos analizei. T.y., galimybę įvertinti programos spartą priklausomai nuo pasirinkto konteinerio darbui su duomenimis.
 
-Veikimo spartos analizė
+### Veikimo spartos analizė:
 
 <img width="577" alt="Screenshot 2024-11-03 at 14 00 33" src="https://github.com/user-attachments/assets/6e19801e-406c-4621-9feb-9814a28aca24">
 
@@ -61,6 +61,7 @@ Veikimo spartos analizė
 
 
 ## Spartos analizės rezultatai
+### Strategija nr. 1
 
 Žemiau pateikta lentelė vaizduoja programos spartą, priklausomai nuo pasirinkto konteinerio tipo (vector arba list) ir studentų skaičiaus.
 
