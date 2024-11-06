@@ -2,6 +2,8 @@
 #include "Studentas.h"
 #include "Failas.h"
 #include "v0_3_header.h"
+//#include "v1_0.h"
+#include "strategijos.h"
 
 
 int main(int argc, const char * argv[]) {
@@ -76,7 +78,7 @@ int main(int argc, const char * argv[]) {
             cin >> namu_darbu_skaicius;
             cout << "Vykdomas failo generavimo algoritmas" << endl;
             pagrindinio_failo_generavimas(studentu_skaicius, namu_darbu_skaicius);
-            laiko_skaiciavimas_failo_generavimas(studentu_skaicius, namu_darbu_skaicius);
+//            laiko_skaiciavimas_failo_generavimas(studentu_skaicius, namu_darbu_skaicius);
             cout << "Algoritmas baigtas." << endl;
         } else if (ats_1 == 4){
             string pasirinkimas;
@@ -109,11 +111,24 @@ int main(int argc, const char * argv[]) {
                 cin >> pasirinkimas;
                 cout << "Pagal kokius parametrus norite rusiuoti studentus? (1) varda, (2) pavarde, (3) pazymius" << endl;
                 cin >> pasirinkimas1;
-                cout << endl;
-                cout << "Paleidziamas algoritmas laiko skaiciavimui naudojant vector konteineri" << endl;
-                cout << endl;
-                laiko_skaiciavimas(pasirinkimas, pasirinkimas1);
-                cout << "Algoritmas baigtas" << endl;
+                
+                int strategija;
+                cout << "Pagal kokia strategija isskaidyti studentus? pirma (1), antra (2), trecia (3)" << endl;
+                cin >> strategija;
+                
+                if (strategija == 1) {
+                    cout << "Paleidziamas algoritmas laiko skaiciavimui naudojant vector konteineri pagal 1 strategija" << endl;
+                    laiko_skaiciavimas(pasirinkimas, pasirinkimas1);
+                    cout << "Algoritmas baigtas" << endl;
+                } else if (strategija == 2){
+                    cout << "Paleidziamas algoritmas laiko skaiciavimui naudojant vector konteineri pagal 2 strategija" << endl;
+                    skaidymas_2_strategija_vector(pasirinkimas, pasirinkimas1);
+                    cout << "Algoritmas baigtas" << endl;
+                } else if (strategija == 3) {
+                    cout << "Paleidziamas algoritmas laiko skaiciavimui naudojant vector konteineri pagal 2 strategija" << endl;
+                    skaidymas_3_strategija_vector(pasirinkimas, pasirinkimas1);
+                    cout << "Algoritmas baigtas" << endl;
+                }
             } else {
                 string pasirinkimas;
                 string directory = "/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis";
@@ -124,11 +139,21 @@ int main(int argc, const char * argv[]) {
                 cin >> pasirinkimas;
                 cout << "Pagal kokius parametrus norite rusiuoti studentus? (1) varda, (2) pavarde, (3) pazymius" << endl;
                 cin >> pasirinkimas1;
-                cout << endl;
-                cout << "Paleidziamas algoritmas laiko skaiciavimui naudojant list konteineri" << endl;
-                cout << endl;
-                laiko_skaiciavimas_list_konteineris(pasirinkimas, pasirinkimas1);
-                cout << "Algoritmas baigtas" << endl;
+                int strategija;
+                cout << "Pagal kokia strategija isskaidyti studentus? pirma (1), antra (2), trecia (3)" << endl;
+                cin >> strategija;
+                if (strategija == 1) {
+                    cout << "Paleidziamas algoritmas laiko skaiciavimui naudojant list konteineri pagal 1 strategija" << endl;
+                    laiko_skaiciavimas_list_konteineris(pasirinkimas, pasirinkimas1);
+                    cout << "Algoritmas baigtas" << endl;
+                } else if (strategija == 2){
+                    cout << "Paleidziamas algoritmas laiko skaiciavimui naudojant list konteineri pagal 2 strategija" << endl;
+                    skaidymas_2_strategija_list(pasirinkimas, pasirinkimas1);
+                    cout << "Algoritmas baigtas" << endl;
+                } else if (strategija == 3) {
+                    
+                }
+                
                 
             }
         }
