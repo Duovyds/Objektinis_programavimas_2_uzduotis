@@ -96,6 +96,8 @@ Išvados: vector konteinerio atveju, programa veikia labai ilgai, todėl lentel�
 
 ### Strategijų nr.1 ir nr.2 apibendrinimas
 
-Strategiją nr.1 yra naudingiau naudoti, kai yra dirbama su vector konteineriu, o strategiją nr.2 yra naudingiau naudoti, kai yra dirbama su list konteineriu. Tuo galime įsitikinti pažvelgę į prieš tai buvusias lenteles.
+<img width="351" alt="Screenshot 2024-11-06 at 13 31 49" src="https://github.com/user-attachments/assets/f00c2bd8-d2f8-4c9c-847d-fcba00569222">
+
+Strategiją nr.1 yra naudingiau naudoti, kai yra dirbama su vector konteineriu, o strategiją nr.2 yra naudingiau naudoti, kai yra dirbama su list konteineriu. Tačiau bendru atveju, pirmoji strategija yra efektyvesnė.
 
 
