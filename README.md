@@ -126,4 +126,17 @@ Išvados: vector konteinerio atveju, 3 strategija yra efektyvesnė, list kontein
 Išvados: tiek vector, tiek list konteinerių atveju, trečioji strategija veikia efektyviausiai.
 
 
+## Naudojimosi instrukcija:
+
+1. Pasirinkite: Duomenų nuskaitymas iš failo (1), duomenų įvedimas ar generavimas (2), failo generavimas (3), studentų išskirstymas (4), operacijų laiko apskaičiavimas (5):
+
+Duomenų nuskaitymas iš failo: duomenų nuskaitymas iš pasirinkto failo.
+Duomenų įvedimas ar generavimas: galimybė įvesti duomenis rankiniu būdu, bei pasirinkti ar pažymius įvesti rankiniu būdu, ar generuoti automatiškai.
+Failo generavimas: galimybė įvesti studentų skaičių, pažymių skaičių ir tada sugeneruoti failą pagal pasirinktus parametrus.
+Studentų išskirstymas: duomenų nuskaitymas iš failo, jų surūšiavimas, atrinkimas pagal kategoriją, bei įrašymas į failą.
+Operacijų laiko apskaičiavimas: studentų išskirstymo algoritmo efektyvumo apskaičiavimas.
+
+
+
+
 
