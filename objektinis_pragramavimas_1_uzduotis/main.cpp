@@ -2,7 +2,6 @@
 #include "Studentas.h"
 #include "Failas.h"
 #include "v0_3_header.h"
-//#include "v1_0.h"
 #include "strategijos.h"
 
 
@@ -125,7 +124,7 @@ int main(int argc, const char * argv[]) {
                     skaidymas_2_strategija_vector(pasirinkimas, pasirinkimas1);
                     cout << "Algoritmas baigtas" << endl;
                 } else if (strategija == 3) {
-                    cout << "Paleidziamas algoritmas laiko skaiciavimui naudojant vector konteineri pagal 2 strategija" << endl;
+                    cout << "Paleidziamas algoritmas laiko skaiciavimui naudojant vector konteineri pagal 3 strategija" << endl;
                     skaidymas_3_strategija_vector(pasirinkimas, pasirinkimas1);
                     cout << "Algoritmas baigtas" << endl;
                 }
@@ -151,10 +150,10 @@ int main(int argc, const char * argv[]) {
                     skaidymas_2_strategija_list(pasirinkimas, pasirinkimas1);
                     cout << "Algoritmas baigtas" << endl;
                 } else if (strategija == 3) {
-                    
+                    cout << "Paleidziamas algoritmas laiko skaiciavimui naudojant list konteineri pagal 3 strategija" << endl;
+                    skaidymas_3_strategija_list(pasirinkimas, pasirinkimas1);
+                    cout << "Algoritmas baigtas" << endl;
                 }
-                
-                
             }
         }
         else {

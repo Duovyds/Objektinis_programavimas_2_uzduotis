@@ -11,6 +11,8 @@
 void skaidymas_2_strategija_vector(string failo_pavadinimas, int rikiavimo_pasirinkimas);
 void skaidymas_2_strategija_list(string failo_pavadinimas, int rikiavimo_pasirinkimas);
 void skaidymas_3_strategija_vector(string failo_pavadinimas, int rikiavimo_pasirinkimas);
+void skaidymas_3_strategija_list(string failo_pavadinimas, int rikiavimo_pasirinkimas);
+bool operator==(const Studentas& a, const Studentas& b);
 
 
 
