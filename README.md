@@ -98,6 +98,17 @@ Išvados: vector konteinerio atveju, programa veikia labai ilgai, todėl lentel�
 
 <img width="351" alt="Screenshot 2024-11-06 at 13 31 49" src="https://github.com/user-attachments/assets/f00c2bd8-d2f8-4c9c-847d-fcba00569222">
 
-Strategiją nr.1 yra naudingiau naudoti, kai yra dirbama su vector konteineriu, o strategiją nr.2 yra naudingiau naudoti, kai yra dirbama su list konteineriu. Tačiau bendru atveju, pirmoji strategija yra efektyvesnė.
+Išvados: strategiją nr.1 yra naudingiau naudoti, kai yra dirbama su vector konteineriu, o strategiją nr.2 yra naudingiau naudoti, kai yra dirbama su list konteineriu. Tačiau bendru atveju, pirmoji strategija yra efektyvesnė.
+
+
+### Strategija nr.3
+
+Strategijos idėja: bendro studentų konteinerio skaidymas panaudojant greičiausiai veikiančią strategiją (nr.1 arba nr.2). Kadangi strategija nr.1 buvo efektyvesnė su vector konteineriu, o strategija nr.2 su list konteineriu, strategija nr.3 realizuota remiantis tiek pirma tiek antra strategija.
+
+Žemiau pateikta lentelė vaizduoja programos spartą, priklausomai nuo pasirinkto konteinerio tipo (vector arba list) ir studentų skaičiaus.
+
+<img width="703" alt="Screenshot 2024-11-07 at 21 22 21" src="https://github.com/user-attachments/assets/1c857698-1026-42dd-8782-9634696afa21">
+
+Išvados: strategija nr.3 veikia efektyviau, kai yra naudojamas vector konteineris.
 
 
