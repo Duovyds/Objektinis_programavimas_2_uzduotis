@@ -67,7 +67,7 @@ list<Studentas> skaitymas_is_failo_list(list<Studentas>& studentai, string failo
 list<Studentas> vargsiuku_atrinkimas_naudojant_list(list<Studentas>& studentai){
     list<Studentas> vargsiukai;
     for (const auto& studentas : studentai){
-        if (studentas.galutinis_vid < 5) {
+        if (studentas.getGalutinisVid() < 5) {
             vargsiukai.push_back(studentas);
         }
     }
@@ -79,7 +79,7 @@ list<Studentas> vargsiuku_atrinkimas_naudojant_list(list<Studentas>& studentai){
 list<Studentas> galvociu_atrinkimas_naudojant_list(list<Studentas>& studentai){
     list<Studentas> galvociai;
     for (const auto& studentas : studentai){
-        if(studentas.galutinis_vid >= 5){
+        if(studentas.getGalutinisVid() >= 5){
             galvociai.push_back(studentas);
         }
     }
@@ -167,8 +167,8 @@ void irasymas_naudojant_list(list<Studentas>& studentai, string failo_pav){
     rez << left << setw(20) << "Pavardė" << setw(20) << "Vardas" << setw(20) << "Galutinis (vid.)" << endl;
         rez << "-----------------------------------------------------------------" << endl;
     for (const auto& student: studentai) {
-        rez << left << setw(20) << student.pavarde << setw(20) << student.vardas
-        << setw(20) << fixed << setprecision(2) << student.galutinis_vid << endl;
+        rez << left << setw(20) << student.getPavarde() << setw(20) << student.getVardas()
+        << setw(20) << fixed << setprecision(2) << student.getGalutinisVid() << endl;
     }
     
     rez.close();
