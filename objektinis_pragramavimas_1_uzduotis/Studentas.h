@@ -12,6 +12,30 @@ struct Studentas {
     float mediana;
     float galutinis_vid;
     float galutinis_med;
+
+    
+    
+    // Konstruktorius
+    Studentas(string vardas, string pavarde, vector<int> namu_darbai, int egzaminas);
+    
+    // Destruktorius
+    ~Studentas();
+    
+    // Seteriai
+    void setVardas(const string& v);
+    void setPavarde(const std::string& p);
+    void setNamuDarbai(const std::vector<int>& nd);
+    void setEgzaminas(int egz);
+    
+    // Geteriai
+    const std::string& getVardas() const;
+    const std::string& getPavarde() const;
+    const std::vector<int>& getNamuDarbai() const;
+    int getEgzaminas() const;
+    double getGalutinisVid() const;
+    double getGalutinisMed() const;
+    
+    
 };
 
 

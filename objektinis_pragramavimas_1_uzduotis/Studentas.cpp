@@ -5,6 +5,71 @@
 
 
 
+// Konstructorius
+Studentas::Studentas(string vardas, string pavarde, vector<int> namu_darbai, int egzaminas){
+    this->vardas = vardas;
+    this->pavarde = pavarde;
+    this->namu_darbai = namu_darbai;
+    this->egzaminas = egzaminas;
+}
+
+
+// Destruktorius
+Studentas::~Studentas() {
+    cout << "Istrintas " << vardas << " " << pavarde << " objektas." << endl;
+}
+
+
+// Seteriai
+void Studentas::setVardas(const string& v) {
+    vardas = v;
+}
+
+void Studentas::setPavarde(const std::string& p) {
+    pavarde = p;
+}
+
+void Studentas::setNamuDarbai(const std::vector<int>& nd) {
+    namu_darbai = nd;
+}
+
+void Studentas::setEgzaminas(int egz) {
+    egzaminas = egz;
+}
+
+
+// Geteriai
+const std::string& Studentas::getVardas() const {
+    return vardas;
+}
+
+const std::string& Studentas::getPavarde() const {
+    return pavarde;
+}
+
+const std::vector<int>& Studentas::getNamuDarbai() const {
+    return namu_darbai;
+}
+
+int Studentas::getEgzaminas() const {
+    return egzaminas;
+}
+
+double Studentas::getGalutinisVid() const {
+    return galutinis_vid;
+}
+
+double Studentas::getGalutinisMed() const {
+    return galutinis_med;
+}
+
+
+
+
+
+
+
+
 // Funkcija, kuri generuoja atstiktinius skaicius, juos iraso i vektoriu, o ta vektoriu grazina
 vector<int> random_pazymiai(int pazymiu_sk) {
     
