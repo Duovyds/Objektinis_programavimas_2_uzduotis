@@ -13,41 +13,42 @@ list<Studentas> skaitymas_is_failo_list(list<Studentas>& studentai, string failo
     try {
         ifstream failas;
         failas.open(failo_pavadinimas);
-        string eilute;
-        int nr;
-        Studentas temp;
         
         if (!failas) {
             throw runtime_error("Problemos su failo atidarymu");
         }
         
+        string eilute;
         getline(failas, eilute);
         
         while (getline(failas, eilute)) {
             stringstream stream(eilute);
-            stream >> temp.vardas >> temp.pavarde;
+            Studentas temp;
+            string vardas, pavarde;
+            int nr;
             
+            stream >> vardas >> pavarde;
+            temp.setVardas(vardas);
+            temp.setPavarde(pavarde);
+            
+            vector<int> nd;
             while (stream >> nr) {
-                temp.namu_darbai.push_back(nr);
+                nd.push_back(nr);
             }
             
-            temp.egzaminas = temp.namu_darbai.back();
-            temp.namu_darbai.pop_back();
-            temp.pazymiu_vidurkis = accumulate(temp.namu_darbai.begin(), temp.namu_darbai.end(), 0.0) / temp.namu_darbai.size();
-            temp.galutinis_vid = (0.4 * temp.pazymiu_vidurkis + 0.6 * temp.egzaminas);
-            
-            sort(temp.namu_darbai.begin(), temp.namu_darbai.end());
-            
-            if (temp.namu_darbai.size() % 2 != 0) {
-                temp.mediana = (float)temp.namu_darbai[temp.namu_darbai.size() / 2];
-            }else {
-                temp.mediana = (float)(temp.namu_darbai[(temp.namu_darbai.size() - 1) / 2] + temp.namu_darbai[temp.namu_darbai.size() / 2]) / 2.0;
+            if (!nd.empty()){
+                int egz = nd.back();
+                nd.pop_back();
+                
+                temp.setNamuDarbai(nd);
+                temp.setEgzaminas(egz);
+                
+                temp.vidurkioSkaiciavimas();
+                temp.medianosSkaiciavimas();
             }
-            
-            temp.galutinis_med = 0.4 * temp.mediana + 0.6 * temp.egzaminas;
             
             studentai.push_back(temp);
-            valymas(temp);
+//            valymas(temp);
                     
         }
         
