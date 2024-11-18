@@ -250,8 +250,8 @@ void isvedimas_su_vidurkiu(vector<Studentas> studentai){
     cout << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (vid.)" << endl;
     cout << "---------------------------------------------" << endl;
     for (const auto& student: studentai) {
-        cout << left << setw(14) << student.pavarde << setw(15) << student.vardas
-        << setw(20) << fixed << setprecision(2) << student.galutinis_vid << endl;
+        cout << left << setw(14) << student.getPavarde() << setw(15) << student.getVardas()
+        << setw(20) << fixed << setprecision(2) << student.getGalutinisVid() << endl;
     }
 }
 
@@ -267,8 +267,8 @@ void isvedimas_su_mediana(vector<Studentas> studentai){
     cout << left << setw(15) << "Pavardė" << setw(15) << "Vardas" << setw(20) << "Galutinis (med.)" << endl;
     cout << "---------------------------------------------" << endl;
     for (const auto& student: studentai) {
-        cout << left << setw(14) << student.pavarde << setw(15) << student.vardas
-        << setw(20) << fixed << setprecision(2) << student.galutinis_med << endl;
+        cout << left << setw(14) << student.getPavarde() << setw(15) << student.getVardas()
+        << setw(20) << fixed << setprecision(2) << student.getGalutinisMed() << endl;
     }
 }
 
