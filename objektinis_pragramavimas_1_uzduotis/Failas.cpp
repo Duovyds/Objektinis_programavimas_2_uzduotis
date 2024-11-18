@@ -45,8 +45,8 @@ void irasymas_i_faila(vector<Studentas>& studentai, string failo_pav){
     failas << left << setw(20) << "Pavardė" << setw(20) << "Vardas" << setw(20) << "Galutinis (vid.)" << endl;
         failas << "-----------------------------------------------------------------" << endl;
     for (const auto& student: studentai) {
-        failas << left << setw(20) << student.pavarde << setw(20) << student.vardas
-        << setw(20) << fixed << setprecision(2) << student.galutinis_vid << endl;
+        failas << left << setw(20) << student.getPavarde() << setw(20) << student.getVardas()
+        << setw(20) << fixed << setprecision(2) << student.getGalutinisVid() << endl;
     }
     
     failas.close();
@@ -110,7 +110,7 @@ vector<Studentas> vargsiuku_atrinkimas(vector<Studentas>& studentai){
     vector<Studentas> vargsiukai;
     
     for (const auto& studentas : studentai){
-        if (studentas.galutinis_vid < 5) {
+        if (studentas.getGalutinisVid() < 5) {
             vargsiukai.push_back(studentas);
         }
     }
@@ -125,7 +125,7 @@ vector<Studentas> galvociu_atrinkimas(vector<Studentas>& studentai){
     vector<Studentas> galvociai;
     
     for (const auto& studentas : studentai){
-        if (studentas.galutinis_vid >= 5) {
+        if (studentas.getGalutinisVid() >= 5) {
             galvociai.push_back(studentas);
         }
     }
