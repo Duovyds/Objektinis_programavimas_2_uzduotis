@@ -320,3 +320,4 @@ void skaidymas_3_strategija_list(string failo_pavadinimas, int rikiavimo_pasirin
     cout << "Failo is " << studentai.size() + vargsiukai.size() << " irasu visas programos veikimo laikas " << answer2 + answer4 + answer5 + answer6 << endl;
     
 }
+

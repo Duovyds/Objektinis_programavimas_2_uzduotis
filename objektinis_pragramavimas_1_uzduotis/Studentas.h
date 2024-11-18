@@ -34,4 +34,28 @@ bool palyginti_pazymius(const Studentas& a, const Studentas& b);
 
 
 
+
+class Studentas {
+public:
+    string vardas;
+    string pavarde;
+    vector<int> namu_darbai;
+    int egzaminas;
+    float pazymiu_vidurkis;
+    float mediana;
+    float galutinis_vid;
+    float galutinis_med;
+
+    
+    
+    // Constructor
+    Studentas(string vardas, string pavarde, vector<int> namu_darbai, int egzaminas);
+    
+    // Destructor
+    ~Studentas();
+    
+};
+
+
+
 #endif /* Studentas_h */

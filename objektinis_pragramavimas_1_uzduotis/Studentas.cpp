@@ -309,3 +309,19 @@ void isvedimas_list(list<Studentas> studentai){
         << setw(20) << &student << endl;
     }
 }
+
+
+
+// Konstructorius
+Studentas::Studentas(string vardas, string pavarde, vector<int> namu_darbai, int egzaminas){
+    this->vardas = vardas;
+    this->pavarde = pavarde;
+    this->namu_darbai = namu_darbai;
+    this->egzaminas = egzaminas;
+}
+
+
+// Destruktorius
+Studentas::~Studentas() {
+    cout << "Istrintas " << vardas << " " << pavarde << " objektas." << endl;
+}
