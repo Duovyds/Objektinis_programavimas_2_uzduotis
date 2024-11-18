@@ -8,7 +8,7 @@
 
 // Si funkcija reikalinga, kad erase funkcija zinotu pagal ka lyginti studentus bandant juos istrinti.
 bool operator==(const Studentas& a, const Studentas& b) {
-    return a.vardas == b.vardas && a.pavarde == b.pavarde;
+    return a.getVardas() == b.getVardas() && a.getPavarde() == b.getPavarde();
 }
 
 
@@ -36,7 +36,8 @@ void skaidymas_2_strategija_vector(string failo_pavadinimas, int rikiavimo_pasir
     
     auto t1 = high_resolution_clock::now();
     for (auto it = studentai.begin(); it != studentai.end(); ) {
-        if (it->galutinis_vid < 5) {
+        if (it->getGalutinisVid() < 5) {
+            // *it reiskia, kad i vektoriu yra pridedamas pats objektas, o ne tik reference.
             vargsiukai.push_back(*it);
             it = studentai.erase(it);
         } else {
@@ -116,7 +117,8 @@ void skaidymas_2_strategija_list(string failo_pavadinimas, int rikiavimo_pasirin
     
     auto t1 = high_resolution_clock::now();
     for (auto it = studentai.begin(); it != studentai.end(); ) {
-        if (it->galutinis_vid < 5) {
+        if (it->getGalutinisVid() < 5) {
+            // *it reiskia, kad i vektoriu yra pridedamas pats objektas, o ne tik reference.
             vargsiukai.push_back(*it);
             it = studentai.erase(it);
         } else {
@@ -194,12 +196,14 @@ void skaidymas_3_strategija_vector(string failo_pavadinimas, int rikiavimo_pasir
     
     auto t1 = high_resolution_clock::now();
     vargsiukai.reserve(studentai.size() / 2);
+    // std::back_inserter(vargsiukai) iterpia studento objekta i vargsiuku konteineri, jeigu yra tenkinama salyga.
     std::copy_if(studentai.begin(), studentai.end(), std::back_inserter(vargsiukai),
-        [](const Studentas& studentas) { return studentas.galutinis_vid < 5;} );
+                 [](const Studentas& studentas) { return studentas.getGalutinisVid() < 5;} );
     
     galvociai.reserve(studentai.size() / 2);
+    // std::back_inserter(galvociai) iterpia studento objekta i galvociai konteineri, jeigu yra tenkinama salyga.
     std::copy_if(studentai.begin(), studentai.end(), std::back_inserter(galvociai),
-        [](const Studentas& studentas) { return studentas.galutinis_vid >= 5;} );
+                 [](const Studentas& studentas) { return studentas.getGalutinisVid()>= 5;} );
     auto t2 = high_resolution_clock::now();
     auto answer4 = (duration_cast<milliseconds>(t2 - t1)).count() * 0.001;
     cout << "Failo is " << studentai.size() << " irasu studentu skaidymo laikas " << answer4 << endl;
@@ -269,10 +273,12 @@ void skaidymas_3_strategija_list(string failo_pavadinimas, int rikiavimo_pasirin
     
     
     auto t1 = high_resolution_clock::now();
+    // Studentus, kurie tenkina salyga, perkeliame  vargsiukai konteineri.
     std::remove_copy_if(studentai.begin(), studentai.end(), std::back_inserter(vargsiukai),
-                            [](const Studentas& student) { return student.galutinis_vid >= 5; });
+                        [](const Studentas& student) { return student.getGalutinisVid() >= 5; });
     
-    studentai.remove_if([](const Studentas& student) { return student.galutinis_vid < 5; });
+    // Is studentu konteinerio istriname vargsiukus
+    studentai.remove_if([](const Studentas& student) { return student.getGalutinisVid() < 5; });
     auto t2 = high_resolution_clock::now();
     auto answer4 = (duration_cast<milliseconds>(t2 - t1)).count() * 0.001;
     cout << "Failo is " << studentai.size() + vargsiukai.size() << " irasu studentu skaidymo laikas " << answer4 << endl;
