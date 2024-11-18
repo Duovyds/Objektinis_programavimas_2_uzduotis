@@ -1,4 +1,5 @@
-# Objektinis programavimas, 1 užduotis.
+# Objektinis programavimas
+# 1 užduotis.
 
 
 ## Programos aprašymas:
@@ -137,6 +138,13 @@ Studentų išskirstymas: duomenų nuskaitymas iš failo, jų surūšiavimas, atr
 Operacijų laiko apskaičiavimas: studentų išskirstymo algoritmo efektyvumo apskaičiavimas.
 
 
+# 2 Užduotis
+## v1.1
 
+### Struct ir class tipų palyginimas
+
+<img width="851" alt="Screenshot 2024-11-18 at 20 17 10" src="https://github.com/user-attachments/assets/b6accb84-8e3b-427b-b8b1-896fb4ecd092">
+
+Išvados: struct tipas veikia šiek tiek greičiau, nei class tipas.
 
 
