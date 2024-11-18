@@ -64,6 +64,30 @@ double Studentas::getGalutinisMed() const {
 }
 
 
+// Skaiciavimai
+void Studentas::vidurkioSkaiciavimas(){
+    if(!namu_darbai.empty()){
+        pazymiu_vidurkis = accumulate(namu_darbai.begin(), namu_darbai.end(), 0.0) / namu_darbai.size();
+    } else {
+        pazymiu_vidurkis = 0;
+    }
+    galutinis_vid = 0.4 * pazymiu_vidurkis + 0.6 * egzaminas;
+}
+
+void Studentas::medianosSkaiciavimas() {
+    if (!namu_darbai.empty()) {
+        std::sort(namu_darbai.begin(), namu_darbai.end());
+        if (namu_darbai.size() % 2 != 0) {
+            mediana = (float)namu_darbai[namu_darbai.size() / 2];
+        } else {
+            mediana = (float)(namu_darbai[(namu_darbai.size() - 1) / 2] + namu_darbai[namu_darbai.size() / 2]) / 2.0;
+        }
+    } else {
+        mediana = 0.0;
+    }
+    galutinis_med = 0.4 * mediana + 0.6 * egzaminas;
+}
+
 
 
 

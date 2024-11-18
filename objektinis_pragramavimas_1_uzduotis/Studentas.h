@@ -35,6 +35,10 @@ struct Studentas {
     double getGalutinisVid() const;
     double getGalutinisMed() const;
     
+    // Skaiciavimai
+    void vidurkioSkaiciavimas();
+    void medianosSkaiciavimas();
+    
     
 };
 
