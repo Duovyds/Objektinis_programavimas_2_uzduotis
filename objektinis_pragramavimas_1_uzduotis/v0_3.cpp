@@ -8,7 +8,7 @@
 // Funkcija, kuri nuskaito duomenis is failo.
 list<Studentas> skaitymas_is_failo_list(list<Studentas>& studentai, string failo_pav){
     
-    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/") + failo_pav + ".txt";
+    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_pragramavimas_1_uzduotis/") + failo_pav + ".txt";
     
     try {
         ifstream failas;
@@ -159,7 +159,7 @@ double rikiavimas_pagal_pazymius_laikas_list(list<Studentas> studentai){
 
 void irasymas_naudojant_list(list<Studentas>& studentai, string failo_pav){
     
-    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/") + failo_pav + ".txt";
+    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_pragramavimas_1_uzduotis/") + failo_pav + ".txt";
     
     ofstream rez;
     rez.open(failo_pavadinimas);

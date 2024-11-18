@@ -8,7 +8,7 @@
 
 void pagrindinio_failo_generavimas(int studentu_skaicius, int nd_skaicius){
     
-    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/") +
+    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_pragramavimas_1_uzduotis/") +
     "studentai" + to_string(studentu_skaicius) + ".txt";
     vector<int> nd_pazymiai;
     ofstream rez;
@@ -36,7 +36,7 @@ void pagrindinio_failo_generavimas(int studentu_skaicius, int nd_skaicius){
 
 // Funkcija, kuri duomenis is vektoriaus perraso i faila, pries tai surikiavus duomenis pagal pasirinkta parametra.
 void irasymas_i_faila(vector<Studentas>& studentai, string failo_pav){
-    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis/") +
+    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_pragramavimas_1_uzduotis/") +
     failo_pav + ".txt";
     
     ofstream failas;

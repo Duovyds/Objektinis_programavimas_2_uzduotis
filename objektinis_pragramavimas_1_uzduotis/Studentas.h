@@ -2,8 +2,9 @@
 #define Studentas_h
 #include "Header.h"
 
-// Sukuriame studento objekta
-struct Studentas {
+
+class Studentas {
+private:
     string vardas;
     string pavarde;
     vector<int> namu_darbai;
@@ -14,7 +15,7 @@ struct Studentas {
     float galutinis_med;
 
     
-    
+public:
     // Konstruktorius
     Studentas();
     Studentas(string vardas, string pavarde, vector<int> namu_darbai, int egzaminas);
@@ -60,31 +61,6 @@ void irasymas_list(list<Studentas>& studentai, string failo_pav, int pasirinkima
 void isvedimas_list(list<Studentas> studentai);
 
 bool palyginti_pazymius(const Studentas& a, const Studentas& b);
-
-
-
-
-class Studentas {
-public:
-    string vardas;
-    string pavarde;
-    vector<int> namu_darbai;
-    int egzaminas;
-    float pazymiu_vidurkis;
-    float mediana;
-    float galutinis_vid;
-    float galutinis_med;
-
-    
-    
-    // Constructor
-    Studentas(string vardas, string pavarde, vector<int> namu_darbai, int egzaminas);
-    
-    // Destructor
-    ~Studentas();
-    
-};
-
 
 
 #endif /* Studentas_h */
