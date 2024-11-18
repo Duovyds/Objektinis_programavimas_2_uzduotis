@@ -204,17 +204,17 @@ void valymas(Studentas & Lok){
 
 // Funkcija, kuri palygina studentus pagal ju pavardes
 bool palyginti_pavardes(const Studentas& a, const Studentas& b){
-    return a.pavarde < b.pavarde;
+    return a.getPavarde() < b.getPavarde();
 }
 
 // Funkcija, kuri palygina studentus pagal ju vardus
 bool palyginti_vardus(const Studentas& a, const Studentas& b){
-    return a.vardas < b.vardas;
+    return a.getVardas() < b.getVardas();
 }
 
 
 bool palyginti_pazymius(const Studentas& a, const Studentas& b){
-    return a.galutinis_vid < b.galutinis_vid;
+    return a.getGalutinisVid() < b.getGalutinisVid();
 }
 
 
@@ -231,9 +231,9 @@ void isvedimas(vector<Studentas> studentai){
     "Objekto adresas" << endl;
         cout << "----------------------------------------------------------------------------------------------" << endl;
     for (const auto& student: studentai) {
-        cout << left << setw(20) << student.pavarde << setw(20) << student.vardas
-        << setw(20) << fixed << setprecision(2)<< student.galutinis_vid
-        << setw(20) << fixed << setprecision(2) << student.galutinis_med
+        cout << left << setw(20) << student.getPavarde() << setw(20) << student.getVardas()
+        << setw(20) << fixed << setprecision(2)<< student.getGalutinisVid()
+        << setw(20) << fixed << setprecision(2) << student.getGalutinisMed()
         << setw(20) << &student << endl;
     }
 }
