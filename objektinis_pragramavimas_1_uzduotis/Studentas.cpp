@@ -138,14 +138,22 @@ int random_egz(){
 void ivedimas(Studentas & Lok){
     
     int ndSk = 0;
+    string vardas, pavarde;
     
     cout << "Iveskite studento varda" << endl;
-    cin >> Lok.vardas;
+    cin >> vardas;
+    Lok.setVardas(vardas);
+    
     cout << "Iveskite studento pavarde" << endl;
-    cin >> Lok.pavarde;
+    cin >> pavarde;
+    Lok.setPavarde(pavarde);
+    
     cout << "Pazymius norite ivesti rankiniu budu (1), generuoti automatiskai (2)" << endl;
     int ats_1 = 0;
     cin >> ats_1;
+    
+    vector<int> nd;
+    
     if (ats_1 == 1) {
         string input;
         int p;
@@ -153,38 +161,34 @@ void ivedimas(Studentas & Lok){
         cin >> input;
         while (input != "stop") {
             p = stoi(input); // String -> integer
-            Lok.namu_darbai.push_back(p);
+            nd.push_back(p);
             cin >> input;
     }
+        Lok.setNamuDarbai(nd);
+        int egzaminas;
+        
         cout << "Iveskite egzamino pazymi\n";
-        cin >> Lok.egzaminas;
+        cin >> egzaminas;
+        Lok.setEgzaminas(egzaminas);
     } else {
         cout << "Iveskite namu darbu pazymiu skaiciu" << endl;
         cin >> ndSk;
         
         // Sugeneruojami random namu darbu pazymiai
-        Lok.namu_darbai = random_pazymiai(ndSk);
+        nd = random_pazymiai(ndSk);
+        Lok.setNamuDarbai(nd);
         
         // Sugeneruojamas random egzamino pazymys
         random_device rd;
         mt19937 gen(rd());
         uniform_int_distribution<> dis(0, 10);
-        Lok.egzaminas = dis(gen);
+        Lok.setEgzaminas(dis(gen));
         
     }
     
-    Lok.pazymiu_vidurkis = accumulate(Lok.namu_darbai.begin(), Lok.namu_darbai.end(), 0.0) / Lok.namu_darbai.size();
-    Lok.galutinis_vid = (0.4 * Lok.pazymiu_vidurkis + 0.6 * Lok.egzaminas);
+    Lok.vidurkioSkaiciavimas();
+    Lok.medianosSkaiciavimas();
     
-    sort(Lok.namu_darbai.begin(), Lok.namu_darbai.end());
-    
-    if (ndSk % 2 != 0) {
-        Lok.mediana = (float)Lok.namu_darbai[ndSk / 2];
-    }else {
-        Lok.mediana = (float)(Lok.namu_darbai[(ndSk - 1) / 2] + Lok.namu_darbai[ndSk / 2]) / 2.0;
-    }
-    
-    Lok.galutinis_med = 0.4 * Lok.mediana + 0.6 * Lok.egzaminas;
 }
 
 
