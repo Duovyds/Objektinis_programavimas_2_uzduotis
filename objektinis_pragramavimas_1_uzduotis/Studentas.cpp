@@ -6,6 +6,17 @@
 
 
 // Konstructorius
+Studentas::Studentas(){
+    this->vardas = "";
+    this->pavarde = "";
+    this->egzaminas = 0;
+    this->pazymiu_vidurkis = 0;
+    this->mediana = 0;
+    this->galutinis_vid = 0;
+    this->galutinis_med = 0;
+}
+
+
 Studentas::Studentas(string vardas, string pavarde, vector<int> namu_darbai, int egzaminas){
     this->vardas = vardas;
     this->pavarde = pavarde;
