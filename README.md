@@ -150,9 +150,10 @@ Išvados: struct tipas veikia šiek tiek greičiau, nei class tipas.
 
 ### Eksperimentinės analizės rezultatai, priklausomai nuo optimizavimo lygio:
 
-<img width="850" alt="Screenshot 2024-11-18 at 23 14 03" src="https://github.com/user-attachments/assets/65eb48a6-dd47-4df8-86e1-ed9d30224956">
+<img width="852" alt="Screenshot 2024-11-21 at 00 01 58" src="https://github.com/user-attachments/assets/fd3924a8-0a1e-438c-9088-f88ff5e3f2d5">
 
-Išvados: kai studentų sk. siekia 1 mil., efektyviausiai veikia flag 1, kai studentų sk. siekia 10 mil., efektyviausiai veikia flag flag 2. Tačiau vertinant bendru atveju, rezultatai skiriasi minimaliai.
+
+Išvados: kai studentų sk. siekia 1 mil., efektyviausiai veikia flag 1, kai studentų sk. siekia 10 mil., efektyviausiai veikia flag flag 2. Tačiau vertinant bendrai, rezultatai skiriasi minimaliai.
 
 
 
