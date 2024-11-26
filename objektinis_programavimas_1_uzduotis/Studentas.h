@@ -20,6 +20,7 @@ public:
     Studentas();
     Studentas(string vardas, string pavarde, vector<int> namu_darbai, int egzaminas);
     Studentas(const Studentas& other);
+    Studentas& operator=(const Studentas& other);
     
     // Destruktorius
     ~Studentas();

@@ -42,6 +42,23 @@ Studentas::Studentas(const Studentas& other)
  }
 
 
+// Copy operatorius
+Studentas& Studentas::operator=(const Studentas& other) {
+    if (this == &other) {
+        return *this;
+    }
+    vardas = other.vardas;
+    pavarde = other.pavarde;
+    namu_darbai = other.namu_darbai;
+    egzaminas = other.egzaminas;
+    pazymiu_vidurkis = other.pazymiu_vidurkis;
+    mediana = other.mediana;
+    galutinis_vid = other.galutinis_vid;
+    galutinis_med = other.galutinis_med;
+    return *this;
+}
+
+
 // Destruktorius
 Studentas::~Studentas() {
     namu_darbai.clear();
