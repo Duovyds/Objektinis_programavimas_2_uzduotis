@@ -1,4 +1,5 @@
-# Objektinis programavimas, 1 užduotis.
+# Objektinis programavimas
+# 1 užduotis.
 
 
 ## Programos aprašymas:
@@ -135,6 +136,37 @@ Duomenų įvedimas ar generavimas: galimybė įvesti duomenis rankiniu būdu, be
 Failo generavimas: galimybė įvesti studentų skaičių, pažymių skaičių ir tada sugeneruoti failą pagal pasirinktus parametrus.
 Studentų išskirstymas: duomenų nuskaitymas iš failo, jų surūšiavimas, atrinkimas pagal kategoriją, bei įrašymas į failą.
 Operacijų laiko apskaičiavimas: studentų išskirstymo algoritmo efektyvumo apskaičiavimas.
+
+
+# 2 Užduotis
+## v1.1
+
+### Struct ir class tipų palyginimas:
+
+<img width="851" alt="Screenshot 2024-11-18 at 20 17 10" src="https://github.com/user-attachments/assets/b6accb84-8e3b-427b-b8b1-896fb4ecd092">
+
+Išvados: struct tipas veikia šiek tiek greičiau, nei class tipas.
+
+
+### Eksperimentinės analizės rezultatai, priklausomai nuo optimizavimo lygio (class tipas):
+
+<img width="852" alt="Screenshot 2024-11-21 at 00 01 58" src="https://github.com/user-attachments/assets/fd3924a8-0a1e-438c-9088-f88ff5e3f2d5">
+
+
+Išvados: kai studentų sk. siekia 1 mil., efektyviausiai veikia flag 1, kai studentų sk. siekia 10 mil., efektyviausiai veikia flag flag 2. Tačiau vertinant bendrai, rezultatai skiriasi minimaliai.
+
+
+### Eksperimentinės analizės rezultatai, priklausomai nuo optimizavimo lygio (struct tipas):
+
+<img width="851" alt="Screenshot 2024-11-21 at 23 51 59" src="https://github.com/user-attachments/assets/183167f2-59f4-42f7-9cf6-af301b94586e">
+
+Išvados: kai studentų sk. siekia 1 mil., efektyviausiai programa veikia su flag 1, tačiau, kai studentų sk. siekia 10 mil., efektyviausiai programa veikia su flag 3. Vertinant bendrai, rezultatai skiriasi minimaliai.
+
+
+### Struct ir Class rezultatų palyginimas:
+
+Išvados: Nepriklausomai nuo pasirinkto programos optimizavimo lygio, struct tipo programa veikia sparčiau. 
+
 
 
 
