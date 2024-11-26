@@ -44,7 +44,7 @@ Studentas::Studentas(const Studentas& other)
 
 // Destruktorius
 Studentas::~Studentas() {
-    cout << "Istrintas " << vardas << " " << pavarde << " objektas." << endl;
+    namu_darbai.clear();
 }
 
 
