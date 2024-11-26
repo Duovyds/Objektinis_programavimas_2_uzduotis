@@ -25,6 +25,23 @@ Studentas::Studentas(string vardas, string pavarde, vector<int> namu_darbai, int
 }
 
 
+// Copy konstruktorius
+Studentas::Studentas(const Studentas& other)
+    :  vardas(other.vardas),
+       pavarde(other.pavarde),
+       namu_darbai(other.namu_darbai),
+       egzaminas(other.egzaminas),
+       pazymiu_vidurkis(other.pazymiu_vidurkis),
+       mediana(other.mediana),
+       galutinis_vid(other.galutinis_vid),
+       galutinis_med(other.galutinis_med) {
+        // Tarkime, kad sukuriu 1 studentu objekta: stud1 su reiksmemis ir tada padarom stud2 = stud1 (sukuriu nauja studento objekta ir ji prilyginu stud1)
+        // Be copy konstruktoriaus stud2 objekto reiksmes dalintusi reiksmiu adresais su stud1 reiksmemis. Tai gali sukelti dideliu problemu.
+        // Copy konstruktorius padeda isvengti siu problemu. Jis padaro deep copy tarp objektu.
+     
+ }
+
+
 // Destruktorius
 Studentas::~Studentas() {
     cout << "Istrintas " << vardas << " " << pavarde << " objektas." << endl;
@@ -194,10 +211,10 @@ void ivedimas(Studentas & Lok){
 
 
 // Funkcija, kuri isvalo tam tikrus objekto elementus, kad nebutu rasoma salia
-void valymas(Studentas & Lok){
-    Lok.vardas.clear();
-    Lok.pavarde.clear();
-    Lok.namu_darbai.clear();
+void valymas(Studentas& Lok) {
+    Lok.setVardas("");
+    Lok.setPavarde("");
+    Lok.setNamuDarbai({});
 }
 
 
