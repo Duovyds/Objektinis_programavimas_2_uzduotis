@@ -7,8 +7,9 @@
 #include "v0_3_header.h"
 
 
-void skaidymas_2_strategija_vector(string failo_pavadinimas);
+void skaidymas_2_strategija_vector(string failo_pavadinimas, int rikiavimo_pasirinkimas);
 
+void skaidymas_2_strategija_list(string failo_pavadinimas);
 
 
 

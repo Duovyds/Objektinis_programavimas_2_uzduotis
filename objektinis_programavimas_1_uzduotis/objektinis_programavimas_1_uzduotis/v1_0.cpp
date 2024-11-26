@@ -5,10 +5,7 @@
 #include "Failas.h"
 
 
-// Si funkcija reikalinga, kad erase funkcija zinotu pagal ka lyginti studentus bandant juos istrinti.
-bool operator==(const Studentas& a, const Studentas& b) {
-    return a.vardas == b.vardas && a.pavarde == b.pavarde;
-}
+
 
 
 
@@ -35,7 +32,7 @@ void skaidymas_2_strategija_vector(string failo_pavadinimas, int rikiavimo_pasir
     
     auto t1 = high_resolution_clock::now();
     for (auto it = studentai.begin(); it != studentai.end(); ) {
-        if (it->galutinis_vid < 5) {
+        if (it->getGalutinisVid() < 5) {
             vargsiukai.push_back(*it);
             it = studentai.erase(it);
         } else {
