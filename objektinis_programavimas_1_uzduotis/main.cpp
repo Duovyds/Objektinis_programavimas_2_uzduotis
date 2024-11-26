@@ -82,7 +82,7 @@ int main(int argc, const char * argv[]) {
         } else if (ats_1 == 4){
             string pasirinkimas;
             int tipas = 0;
-            string directory = "/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis";
+            string directory = "/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_programavimas_1_uzduotis";
             string command = "ls " + directory + "/*.txt | xargs -n 1 basename";
             system(command.c_str());
             cout << endl;
@@ -102,7 +102,7 @@ int main(int argc, const char * argv[]) {
             cin >> konteinerio_pasirinkimas;
             if (konteinerio_pasirinkimas == 1) {
                 string pasirinkimas;
-                string directory = "/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis";
+                string directory = "/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_programavimas_1_uzduotis";
                 string command = "ls " + directory + "/*.txt | xargs -n 1 basename";
                 system(command.c_str());
                 cout << endl;
@@ -130,7 +130,7 @@ int main(int argc, const char * argv[]) {
                 }
             } else {
                 string pasirinkimas;
-                string directory = "/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_1_uzduotis/objektinis_pragramavimas_1_uzduotis";
+                string directory = "/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_programavimas_1_uzduotis";
                 string command = "ls " + directory + "/*.txt | xargs -n 1 basename";
                 system(command.c_str());
                 cout << endl;

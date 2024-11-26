@@ -293,7 +293,7 @@ void isvedimas_su_mediana(vector<Studentas> studentai){
 // Funkcija, kuri nuskaito duomenis is failo.
 vector<Studentas> skaitymas_is_failo(vector<Studentas> studentai, string failo_pav){
     
-    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_pragramavimas_1_uzduotis/") + failo_pav + ".txt";
+    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_programavimas_1_uzduotis/") + failo_pav + ".txt";
     
     try {
         
@@ -352,7 +352,7 @@ vector<Studentas> skaitymas_is_failo(vector<Studentas> studentai, string failo_p
 
 void irasymas(vector<Studentas>& studentai, string failo_pav, int pasirinkimas){
     
-    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_pragramavimas_1_uzduotis/") + failo_pav + ".txt";
+    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_programavimas_1_uzduotis/") + failo_pav + ".txt";
     
     ofstream rez;
     rez.open(failo_pavadinimas);
@@ -380,7 +380,7 @@ void irasymas(vector<Studentas>& studentai, string failo_pav, int pasirinkimas){
 
 void irasymas_list(list<Studentas>& studentai, string failo_pav, int pasirinkimas){
     
-    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_pragramavimas_1_uzduotis/") + failo_pav + ".txt";
+    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_programavimas_1_uzduotis/") + failo_pav + ".txt";
     
     ofstream rez;
     rez.open(failo_pavadinimas);
