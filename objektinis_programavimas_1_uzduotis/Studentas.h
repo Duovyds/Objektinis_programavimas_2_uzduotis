@@ -43,6 +43,12 @@ public:
     void vidurkioSkaiciavimas();
     void medianosSkaiciavimas();
     
+    // Isvesties operatorius
+    friend std::ostream& operator<<(std::ostream& os, const Studentas& s) {
+        os << "Vardas: " << s.vardas << ", pavarde: " << s.pavarde << ", galutinis pazymys: " << s.galutinis_vid << endl;;
+            return os;
+        }
+    
     
 };
 
