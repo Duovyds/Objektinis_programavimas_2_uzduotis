@@ -65,6 +65,47 @@ Studentas::~Studentas() {
 }
 
 
+// Isvesties operatorius
+std::ostream& operator<<(std::ostream& os, const Studentas& s) {
+    os << left << setw(19) << s.pavarde << setw(20) << s.vardas <<
+    setw(20)  << fixed << setprecision(2) << s.galutinis_vid;
+        return os;
+    }
+
+
+// Ivesties operatorius
+std::istream& operator>>(std::istream& is, Studentas& s) {
+    cout << "Iveskite studento varda" << endl;
+    is >> s.vardas;
+    cout << "Iveskite studento pavarde" << endl;
+    is >> s.pavarde;
+    cout << "Iveskite namu darbu skaiciu" << endl;
+    int x;
+    is >> x;
+    
+    cout << "Pazmymius ivesti rankiniu budu (1), ar generuoti automatiskai (2)?" << endl;
+    int pasirinkimas;
+    is >> pasirinkimas;
+    
+    if (pasirinkimas == 1) {
+        cout << "Iveskite pazymius" << endl;
+        for (int i = 0; i < x; i++){
+            int p;
+            is >> p;
+            s.namu_darbai.push_back(p);
+        }
+        cout << "Iveskite egzamino pazymi" << endl;
+        is >> s.egzaminas;
+    } else {
+        vector<int> nd;
+        nd = random_pazymiai(x);
+        s.setNamuDarbai(random_pazymiai(x));
+        s.setEgzaminas(random_egz());
+    }
+    return is;
+}
+
+
 // Seteriai
 void Studentas::setVardas(const string& v) {
     vardas = v;

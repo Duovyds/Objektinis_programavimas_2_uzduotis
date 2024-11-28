@@ -44,11 +44,10 @@ public:
     void medianosSkaiciavimas();
     
     // Isvesties operatorius
-    friend std::ostream& operator<<(std::ostream& os, const Studentas& s) {
-        os << left << setw(19) << s.pavarde << setw(20) << s.vardas <<
-        setw(20)  << fixed << setprecision(2) << s.galutinis_vid;
-            return os;
-        }
+    friend std::ostream& operator<<(std::ostream& os, const Studentas& s);
+    
+    // Ivesties operatorius
+    friend std::istream& operator>>(std::istream& is, Studentas& s);
     
     
 };
