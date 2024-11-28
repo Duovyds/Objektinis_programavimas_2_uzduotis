@@ -45,8 +45,7 @@ void irasymas_i_faila(vector<Studentas>& studentai, string failo_pav){
     failas << left << setw(20) << "Pavardė" << setw(20) << "Vardas" << setw(20) << "Galutinis (vid.)" << endl;
         failas << "-----------------------------------------------------------------" << endl;
     for (const auto& student: studentai) {
-        failas << left << setw(20) << student.getPavarde() << setw(20) << student.getVardas()
-        << setw(20) << fixed << setprecision(2) << student.getGalutinisVid() << endl;
+        failas << student << endl;
     }
     
     failas.close();

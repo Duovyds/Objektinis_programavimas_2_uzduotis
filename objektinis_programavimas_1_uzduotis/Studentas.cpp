@@ -380,10 +380,9 @@ void irasymas(vector<Studentas>& studentai, string failo_pav, int pasirinkimas){
     
     
     rez << left << setw(20) << "Pavardė" << setw(20) << "Vardas" << setw(20) << "Galutinis (vid.)" << endl;
-        rez << "-----------------------------------------------------------------" << endl;
+        rez << "-------------------------------------------------------" << endl;
     for (const auto& student: studentai) {
-        rez << left << setw(20) << student.getPavarde() << setw(20) << student.getVardas()
-        << setw(20) << fixed << setprecision(2) << student.getGalutinisVid() << endl;
+        rez << student << endl;
     }
     
     rez.close();
