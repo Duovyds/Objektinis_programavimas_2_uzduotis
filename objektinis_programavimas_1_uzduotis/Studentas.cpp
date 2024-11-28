@@ -212,58 +212,9 @@ int random_egz(){
 // Funkcija, kuri iveda studentu pazymius
 void ivedimas(Studentas & Lok){
     
-    int ndSk = 0;
-    string vardas, pavarde;
-    
-    cout << "Iveskite studento varda" << endl;
-    cin >> vardas;
-    Lok.setVardas(vardas);
-    
-    cout << "Iveskite studento pavarde" << endl;
-    cin >> pavarde;
-    Lok.setPavarde(pavarde);
-    
-    cout << "Pazymius norite ivesti rankiniu budu (1), generuoti automatiskai (2)" << endl;
-    int ats_1 = 0;
-    cin >> ats_1;
-    
-    vector<int> nd;
-    
-    if (ats_1 == 1) {
-        string input;
-        int p;
-        cout << "Iveskite pazymius. Norint sustabdyti pazymiu ivedima iveskite zodi stop." << endl;
-        cin >> input;
-        while (input != "stop") {
-            p = stoi(input); // String -> integer
-            nd.push_back(p);
-            cin >> input;
-    }
-        Lok.setNamuDarbai(nd);
-        int egzaminas;
-        
-        cout << "Iveskite egzamino pazymi\n";
-        cin >> egzaminas;
-        Lok.setEgzaminas(egzaminas);
-    } else {
-        cout << "Iveskite namu darbu pazymiu skaiciu" << endl;
-        cin >> ndSk;
-        
-        // Sugeneruojami random namu darbu pazymiai
-        nd = random_pazymiai(ndSk);
-        Lok.setNamuDarbai(nd);
-        
-        // Sugeneruojamas random egzamino pazymys
-        random_device rd;
-        mt19937 gen(rd());
-        uniform_int_distribution<> dis(0, 10);
-        Lok.setEgzaminas(dis(gen));
-        
-    }
-    
+    cin >> Lok;
     Lok.vidurkioSkaiciavimas();
     Lok.medianosSkaiciavimas();
-    
 }
 
 
