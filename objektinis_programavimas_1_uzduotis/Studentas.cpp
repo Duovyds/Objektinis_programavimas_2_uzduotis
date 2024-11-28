@@ -176,7 +176,50 @@ void Studentas::medianosSkaiciavimas() {
 
 
 
-
+void rule_of_three_metodu_demonstracija(){
+    
+    // Sukuriame objekta
+    Studentas stud1("Jonas", "Jonaitis", {9, 5, 10}, 9);
+    stud1.vidurkioSkaiciavimas();
+    stud1.medianosSkaiciavimas();
+    cout << "Stud1 objektas: " << endl;
+    cout << stud1 << endl;
+    cout << "-------------------------------------------" << endl;
+    
+    // Copy konstruktoriaus demonstracija
+    Studentas stud2 = stud1;
+    cout << "Stud2 objektas: " << endl;
+    cout << stud2 << endl;
+    cout << "-------------------------------------------" << endl;
+    
+    // Copy operatoriaus demonstracija
+    Studentas stud3;
+    stud3 = stud1;
+    cout << "Stud3 objektas: " << endl;
+    cout << stud3 << endl;
+    cout << "-------------------------------------------" << endl;
+    cout << endl;
+    
+    // Pakeiciam stud1 reiksmes, kad patikrinti ar veikia
+    stud1 = Studentas("Petras", "Petryla", {4, 4, 6}, 7);
+    stud1.vidurkioSkaiciavimas();
+    stud1.medianosSkaiciavimas();
+    cout << "Objektu reiksmes, kai pakeiciame stud1 reiksmes: " << endl;
+    cout << endl;
+    
+    cout << "Stud1 objektas: " << endl;
+    cout << stud1 << endl;
+    cout << "-------------------------------------------" << endl;
+    
+    cout << "Stud2 objektas: " << endl;
+    cout << stud2 << endl;
+    cout << "-------------------------------------------" << endl;
+    
+    cout << "Stud3 objektas: " << endl;
+    cout << stud3 << endl;
+    cout << "-------------------------------------------" << endl;
+    
+};
 
 
 

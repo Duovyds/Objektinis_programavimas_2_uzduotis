@@ -67,8 +67,8 @@ void irasymas(vector<Studentas>& studentai, string failo_pav, int pasirinkimas);
 int random_egz();
 void irasymas_list(list<Studentas>& studentai, string failo_pav, int pasirinkimas);
 void isvedimas_list(list<Studentas> studentai);
-
 bool palyginti_pazymius(const Studentas& a, const Studentas& b);
+void rule_of_three_metodu_demonstracija();
 
 
 #endif /* Studentas_h */
