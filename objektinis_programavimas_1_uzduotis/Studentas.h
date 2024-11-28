@@ -45,7 +45,8 @@ public:
     
     // Isvesties operatorius
     friend std::ostream& operator<<(std::ostream& os, const Studentas& s) {
-        os << "Vardas: " << s.vardas << ", pavarde: " << s.pavarde << ", galutinis pazymys: " << s.galutinis_vid << endl;;
+        os << left << setw(19) << s.pavarde << setw(20) << s.vardas <<
+        setw(20) << s.galutinis_vid;
             return os;
         }
     

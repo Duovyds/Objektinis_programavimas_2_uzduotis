@@ -261,14 +261,10 @@ void isvedimas(vector<Studentas> studentai){
     // Funkcija, kuri rusiuoja studentus pagal ju vardus didejimo tvarka. (Tvarka galima pakeisti palyginti_vardus funkcijos viduje).
 //    sort(studentai.begin(), studentai.end(), palyginti_vardus);
     
-    cout << left << setw(20) << "Pavardė" << setw(20) << "Vardas" << setw(20) << "Galutinis (vid.)" << setw(20) << "Galutinis (med.)" <<
-    "Objekto adresas" << endl;
-        cout << "----------------------------------------------------------------------------------------------" << endl;
+    cout << left << setw(20) << "Pavardė" << setw(20) << "Vardas" << setw(20) << "Galutinis (vid.)" << setw(20) << "Objekto adresas" << endl;
+        cout << "--------------------------------------------------------------------------" << endl;
     for (const auto& student: studentai) {
-        cout << left << setw(20) << student.getPavarde() << setw(20) << student.getVardas()
-        << setw(20) << fixed << setprecision(2)<< student.getGalutinisVid()
-        << setw(20) << fixed << setprecision(2) << student.getGalutinisMed()
-        << setw(20) << &student << endl;
+        cout << student << setw(20) << &student << endl;
     }
 }
 
