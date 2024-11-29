@@ -168,6 +168,74 @@ Išvados: kai studentų sk. siekia 1 mil., efektyviausiai programa veikia su fla
 Išvados: Nepriklausomai nuo pasirinkto programos optimizavimo lygio, struct tipo programa veikia sparčiau. 
 
 
+## v1.2
+
+### Pridėtos funkcijos:
+1. Realizuoti "Rule of three" metodai (destruktorius, copy konstruktorius ir copy operatorius);
+2. Realizuoti įvesties ir išvesties operatoriai Studento klasei.
+
+
+### Rule of three:
+
+Ši taisyklė sako, kad, jeigu klasėje yra realizuotas vienas ar keli iš šių metodų: destruktorius, copy konstruktorius, copy operatorius, tai yra rekomenduotina realizuoti ir likusius.<br/>
+<br/>
+
+### Destruktorius: <br/>
+
+Šis metodas užtikrina, kad, kai objektas yra ištrinamas arba programa baigia darbą, atmintis būtų atlaisvinta tinkamai.<br/>
+Kodo pavyzdys:<br/>
+
+<img width="208" alt="Screenshot 2024-11-29 at 11 13 27" src="https://github.com/user-attachments/assets/5ad46f46-d14f-421e-ba32-9e2b566ae424">
+<br/>
+<br/>
+
+### Copy konstruktorius:
+
+Šis metodas leidžia sukurti objektą, kaip kito objekto kopiją. Be to, tai užtikrina reikšmių nepriklausomumą, dėl atskiro adreso atmintyje (deep copy).<br/>
+Kodo pavyzdys:<br/>
+
+<img width="376" alt="Screenshot 2024-11-29 at 11 23 19" src="https://github.com/user-attachments/assets/1827eb4a-fb01-4fa0-be03-e98f2a60d3f7">
+<br/>
+<br/>
+
+### Copy operatorius:
+
+Šis metodas yra atsakingas už vieno objekto reikšmių nukopijavimą ir priskirimą kitam, jau inicializuotam, objektui.<br/>
+Kodo pavyzdys:<br/>
+
+<img width="434" alt="Screenshot 2024-11-29 at 11 42 48" src="https://github.com/user-attachments/assets/fd7c0348-8583-4683-b987-d1a85444e5d6">
+
+### Išvados:
+
+"Rule of three" taisyklė yra reikalinga norint užtikrinti sklandų darbą su objektais (jų kopijavimą ir trynimą), su dinamine atmintimi ir resursais, kuriems yra reikalingas rankinis valdymas.<br/>
+<br/>
+<br/>
+
+
+### Įvesties ir išvesties operatoriai:
+
+### Išvesties operatorius:
+
+Tai metodas, kuris leidžia aprašyti kaip klasės objektai yra išvedami į ekrana ar failą. Tai padeda supaprastinti naudojimąsi programa.<br/>
+Kodo pavyzdys:<br/>
+
+<img width="511" alt="Screenshot 2024-11-29 at 12 10 00" src="https://github.com/user-attachments/assets/07c8d5a5-87ac-45b2-8b39-30e3400595d6">
+<br/>
+
+Šioje programoje išvesties operatorius į ekraną arba failą išveda studento pavardę, vardą bei galutinį įvertinimą.
+
+### Įvesties operatorius:
+
+Tai metodas, kuris leidžia aprašyti kaip klasės objektai priima duomenis iš vartotojo įvesties arba failo.<br/>
+Kodo pavyzdys:<br/>
+
+
+<img width="680" alt="Screenshot 2024-11-29 at 15 12 02" src="https://github.com/user-attachments/assets/a414c1c4-b852-4f96-ae15-e966dfa17c42">
+<br/>
+
+Šioje programoje įvesties operatorius leidžia vartotojams įvesti duomenis apie studentą: vardą, pavardę, pažymius. Taip pat yra galimybė pasirinkti ar duomenis generuoti automatiškai, ar įvesti rankiniu būdu. Be to, metodo pabaigoje programa automatiškai suskaičiuoja studento galutinį įvertinimą pagal vidurkį, bei medianą.
+
+
 
 
 
