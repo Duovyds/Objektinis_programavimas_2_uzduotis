@@ -69,6 +69,7 @@ void irasymas_list(list<Studentas>& studentai, string failo_pav, int pasirinkima
 void isvedimas_list(list<Studentas> studentai);
 bool palyginti_pazymius(const Studentas& a, const Studentas& b);
 void rule_of_three_metodu_demonstracija();
+void ivesties_isvesties_metodu_demonstracija();
 
 
 #endif /* Studentas_h */

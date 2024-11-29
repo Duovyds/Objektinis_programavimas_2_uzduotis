@@ -8,11 +8,8 @@
 int main(int argc, const char * argv[]) {
     
     
-    //    rule_of_three_metodu_demonstracija();
-        
-        Studentas temp;
-        cin >> temp;
-        cout << temp;
+//    rule_of_three_metodu_demonstracija();
+//    ivesties_isvesties_metodu_demonstracija();
     
 //    vector<Studentas> studentai;
 //    list<Studentas> studentai_list;

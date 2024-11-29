@@ -226,6 +226,14 @@ void rule_of_three_metodu_demonstracija(){
 };
 
 
+void ivesties_isvesties_metodu_demonstracija(){
+    Studentas temp;
+    cin >> temp;
+    cout << temp;
+    cout << endl;
+}
+
+
 
 // Funkcija, kuri generuoja atstiktinius skaicius, juos iraso i vektoriu, o ta vektoriu grazina
 vector<int> random_pazymiai(int pazymiu_sk) {
