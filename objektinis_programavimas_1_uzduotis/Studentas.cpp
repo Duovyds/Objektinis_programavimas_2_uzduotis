@@ -102,6 +102,10 @@ std::istream& operator>>(std::istream& is, Studentas& s) {
         s.setNamuDarbai(random_pazymiai(x));
         s.setEgzaminas(random_egz());
     }
+    
+    s.vidurkioSkaiciavimas();
+    s.medianosSkaiciavimas();
+    
     return is;
 }
 
