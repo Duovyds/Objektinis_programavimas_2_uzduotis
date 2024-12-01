@@ -2,33 +2,21 @@
 #include "Studentas.h"
 #include "Header.h"
 #include "v0_3_header.h"
+#include "Zmogus.h"
 
 
+// Default konstructorius
+Studentas::Studentas() :
+Zmogus("", ""), egzaminas(0), namu_darbai() {}
 
-// Konstructorius
-Studentas::Studentas(){
-    this->vardas = "";
-    this->pavarde = "";
-    this->egzaminas = 0;
-    this->pazymiu_vidurkis = 0;
-    this->mediana = 0;
-    this->galutinis_vid = 0;
-    this->galutinis_med = 0;
-}
-
-
-Studentas::Studentas(string vardas, string pavarde, vector<int> namu_darbai, int egzaminas){
-    this->vardas = vardas;
-    this->pavarde = pavarde;
-    this->namu_darbai = namu_darbai;
-    this->egzaminas = egzaminas;
-}
+// Konstruktorius
+Studentas::Studentas(const string vardas, const string pavarde, vector<int> namu_darbai, int egzaminas)
+: Zmogus(vardas, pavarde), namu_darbai(namu_darbai), egzaminas(egzaminas) {}
 
 
 // Copy konstruktorius
 Studentas::Studentas(const Studentas& other)
-    :  vardas(other.vardas),
-       pavarde(other.pavarde),
+    :  Zmogus(other),
        namu_darbai(other.namu_darbai),
        egzaminas(other.egzaminas),
        pazymiu_vidurkis(other.pazymiu_vidurkis),
@@ -67,7 +55,7 @@ Studentas::~Studentas() {
 
 // Isvesties operatorius
 std::ostream& operator<<(std::ostream& os, const Studentas& s) {
-    os << left << setw(19) << s.pavarde << setw(20) << s.vardas <<
+    os << left << setw(19) << s.getPavarde() << setw(20) << s.getVardas() <<
     setw(20)  << fixed << setprecision(2) << s.galutinis_vid;
         return os;
     }
@@ -97,8 +85,6 @@ std::istream& operator>>(std::istream& is, Studentas& s) {
         cout << "Iveskite egzamino pazymi" << endl;
         is >> s.egzaminas;
     } else {
-        vector<int> nd;
-        nd = random_pazymiai(x);
         s.setNamuDarbai(random_pazymiai(x));
         s.setEgzaminas(random_egz());
     }
