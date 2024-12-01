@@ -1,10 +1,3 @@
-//
-//  Zmogus.h
-//  objektinis_programavimas_1_uzduotis
-//
-//  Created by Dovydas Krištupas on 30/11/2024.
-//
-
 #ifndef Zmogus_h
 #define Zmogus_h
 #include "Header.h"
@@ -22,8 +15,8 @@ public:
     
     
     // Geteriai
-    const std::string& getVardas() const;
-    const std::string& getPavarde() const;
+    virtual const std::string& getVardas() const = 0;
+    virtual const std::string& getPavarde() const = 0;
     
     
     
