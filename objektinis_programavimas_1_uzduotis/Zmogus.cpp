@@ -3,21 +3,24 @@
 #include "Header.h"
 
 
-class Zmogus {
-protected:
-    string vardas;
-    string pavarde;
+// Default konstruktorius
+Zmogus::Zmogus() : vardas(""), pavarde("") {}
 
-public:
-    Zmogus(string vardas, string pavarde){
-        this->vardas = vardas;
-        this->pavarde = pavarde;
-    }
-    
-    virtual ~Zmogus() = default;
+// Konstruktorius
+Zmogus::Zmogus(string vardas, string pavarde): vardas(vardas), pavarde(pavarde) {}
+
     
     
+// Geteriai
+const std::string& Zmogus::getVardas() const {
+    return vardas;
+}
+const std::string& Zmogus::getPavarde() const {
+    return pavarde;
+}
     
     
-};
+    
+    
+
 
