@@ -1,12 +1,11 @@
 #ifndef Studentas_h
 #define Studentas_h
 #include "Header.h"
+#include "Zmogus.h"
 
 
-class Studentas {
+class Studentas : public Zmogus {
 private:
-    string vardas;
-    string pavarde;
     vector<int> namu_darbai;
     int egzaminas;
     float pazymiu_vidurkis;
@@ -32,8 +31,8 @@ public:
     void setEgzaminas(int egz);
     
     // Geteriai
-    const std::string& getVardas() const;
-    const std::string& getPavarde() const;
+    const std::string& getVardas() const override;
+    const std::string& getPavarde() const override;
     const std::vector<int>& getNamuDarbai() const;
     int getEgzaminas() const;
     double getGalutinisVid() const;
