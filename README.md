@@ -236,6 +236,23 @@ Kodo pavyzdys:<br/>
 Šioje programoje įvesties operatorius leidžia vartotojams įvesti duomenis apie studentą: vardą, pavardę, pažymius. Taip pat yra galimybė pasirinkti ar duomenis generuoti automatiškai, ar įvesti rankiniu būdu. Be to, metodo pabaigoje programa automatiškai suskaičiuoja studento galutinį įvertinimą pagal vidurkį, bei medianą.
 
 
+## v1.5
+
+### Pridėtos funkcijos:
+1. Sukurta bazinė "Žmogus" klasė ir iš jos išvesta išvestinė klasė "Studentas";
+2. Padaryta, kad bazinė klasė būtų abstrakčioji.
+
+
+### Bazinė klasė:<br/>
+
+<img width="435" alt="Screenshot 2024-12-08 at 22 39 06" src="https://github.com/user-attachments/assets/1dedfd66-192e-4819-bd97-88fb4ff7f9a1">
+<br/>
+
+### Išvestinė klasė:<br/>
+
+<img width="643" alt="Screenshot 2024-12-08 at 22 42 25" src="https://github.com/user-attachments/assets/2a7fb6e6-b26b-4538-a626-48f8bd5829e1">
+<br/>
+
 
 
 
