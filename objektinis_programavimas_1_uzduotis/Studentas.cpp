@@ -1,3 +1,7 @@
+/**
+ * @file Studentas.cpp
+ * @brief Implementation of the Studentas class and related functions.
+ */
 #include <stdio.h>
 #include "Studentas.h"
 #include "Header.h"
@@ -5,16 +9,27 @@
 #include "Zmogus.h"
 
 
-// Default konstructorius
+/**
+ * @brief Default constructor for Studentas.
+ */
 Studentas::Studentas() :
 Zmogus("", ""), egzaminas(0), namu_darbai() {}
 
-// Konstruktorius
+/**
+ * @brief Constructor with parameters for initializing a Studentas object.
+ * @param vardas Student's first name.
+ * @param pavarde Student's last name.
+ * @param namu_darbai Vector of homework grades.
+ * @param egzaminas Exam grade.
+ */
 Studentas::Studentas(const string vardas, const string pavarde, vector<int> namu_darbai, int egzaminas)
 : Zmogus(vardas, pavarde), namu_darbai(namu_darbai), egzaminas(egzaminas) {}
 
 
-// Copy konstruktorius
+/**
+ * @brief Copy constructor for Studentas.
+ * @param other The Studentas object to copy from.
+ */
 Studentas::Studentas(const Studentas& other)
     :  Zmogus(other),
        namu_darbai(other.namu_darbai),
@@ -30,7 +45,11 @@ Studentas::Studentas(const Studentas& other)
  }
 
 
-// Copy operatorius
+/**
+ * @brief Copy assignment operator for Studentas.
+ * @param other The Studentas object to copy from.
+ * @return A reference to the modified Studentas object.
+ */
 Studentas& Studentas::operator=(const Studentas& other) {
     if (this == &other) {
         return *this;
@@ -47,13 +66,20 @@ Studentas& Studentas::operator=(const Studentas& other) {
 }
 
 
-// Destruktorius
+/**
+ * @brief Destructor for Studentas.
+ */
 Studentas::~Studentas() {
     namu_darbai.clear();
 }
 
 
-// Isvesties operatorius
+/**
+ * @brief Overloaded output stream operator for Studentas.
+ * @param os The output stream.
+ * @param s The Studentas object to output.
+ * @return A reference to the output stream.
+ */
 std::ostream& operator<<(std::ostream& os, const Studentas& s) {
     os << left << setw(19) << s.getPavarde() << setw(20) << s.getVardas() <<
     setw(20)  << fixed << setprecision(2) << s.galutinis_vid;
@@ -61,7 +87,12 @@ std::ostream& operator<<(std::ostream& os, const Studentas& s) {
     }
 
 
-// Ivesties operatorius
+/**
+ * @brief Overloaded input stream operator for Studentas.
+ * @param is The input stream.
+ * @param s The Studentas object to populate.
+ * @return A reference to the input stream.
+ */
 std::istream& operator>>(std::istream& is, Studentas& s) {
     cout << "Iveskite studento varda" << endl;
     is >> s.vardas;
@@ -96,51 +127,91 @@ std::istream& operator>>(std::istream& is, Studentas& s) {
 }
 
 
-// Seteriai
+/**
+ * @brief Sets the student's first name.
+ * @param v The first name.
+ */
 void Studentas::setVardas(const string& v) {
     vardas = v;
 }
 
+/**
+ * @brief Sets the student's last name.
+ * @param p The last name.
+ */
 void Studentas::setPavarde(const std::string& p) {
     pavarde = p;
 }
 
+/**
+ * @brief Sets the student's homework grades.
+ * @param nd A vector of homework grades.
+ */
 void Studentas::setNamuDarbai(const std::vector<int>& nd) {
     namu_darbai = nd;
 }
 
+/**
+ * @brief Sets the student's exam grade.
+ * @param egz The exam grade.
+ */
 void Studentas::setEgzaminas(int egz) {
     egzaminas = egz;
 }
 
 
-// Geteriai
+/**
+ * @brief Gets the student's first name.
+ * @return The first name.
+ */
 const std::string& Studentas::getVardas() const {
     return vardas;
 }
 
+/**
+ * @brief Gets the student's last name.
+ * @return The last name.
+ */
 const std::string& Studentas::getPavarde() const {
     return pavarde;
 }
 
+/**
+ * @brief Gets the student's homework grades.
+ * @return A vector of homework grades.
+ */
 const std::vector<int>& Studentas::getNamuDarbai() const {
     return namu_darbai;
 }
 
+/**
+ * @brief Gets the student's exam grade.
+ * @return The exam grade.
+ */
 int Studentas::getEgzaminas() const {
     return egzaminas;
 }
 
+/**
+ * @brief Gets the student's final grade (average-based).
+ * @return The final grade.
+ */
 double Studentas::getGalutinisVid() const {
     return galutinis_vid;
 }
 
+/**
+ * @brief Gets the student's final grade (median-based).
+ * @return The final grade.
+ */
 double Studentas::getGalutinisMed() const {
     return galutinis_med;
 }
 
 
-// Skaiciavimai
+/**
+ * @brief Calculates the student's average grade.
+ */
 void Studentas::vidurkioSkaiciavimas(){
     if(!namu_darbai.empty()){
         pazymiu_vidurkis = accumulate(namu_darbai.begin(), namu_darbai.end(), 0.0) / namu_darbai.size();
@@ -150,6 +221,9 @@ void Studentas::vidurkioSkaiciavimas(){
     galutinis_vid = 0.4 * pazymiu_vidurkis + 0.6 * egzaminas;
 }
 
+/**
+ * @brief Calculates the student's median grade.
+ */
 void Studentas::medianosSkaiciavimas() {
     if (!namu_darbai.empty()) {
         std::sort(namu_darbai.begin(), namu_darbai.end());
@@ -165,7 +239,9 @@ void Studentas::medianosSkaiciavimas() {
 }
 
 
-
+/**
+ * @brief Demonstrates the use of rule-of-three methods (constructor, copy, and assignment).
+ */
 void rule_of_three_metodu_demonstracija(){
     
     // Sukuriame objekta
@@ -212,6 +288,9 @@ void rule_of_three_metodu_demonstracija(){
 };
 
 
+/**
+ * @brief Demonstrates input and output operators for the Studentas class.
+ */
 void ivesties_isvesties_metodu_demonstracija(){
     Studentas temp;
     cin >> temp;
@@ -221,7 +300,11 @@ void ivesties_isvesties_metodu_demonstracija(){
 
 
 
-// Funkcija, kuri generuoja atstiktinius skaicius, juos iraso i vektoriu, o ta vektoriu grazina
+/**
+ * @brief Generates a vector of random grades.
+ * @param pazymiu_sk Number of grades to generate.
+ * @return A vector containing random grades.
+ */
 vector<int> random_pazymiai(int pazymiu_sk) {
     
     vector<int> random_pazymiai;
@@ -236,6 +319,10 @@ vector<int> random_pazymiai(int pazymiu_sk) {
     return random_pazymiai;
 }
 
+/**
+ * @brief Generates a random exam grade.
+ * @return A random grade between 1 and 10.
+ */
 int random_egz(){
     
     int pazymys;
@@ -250,9 +337,11 @@ int random_egz(){
 
 
 
-// Funkcija, kuri iveda studentu pazymius
+/**
+ * @brief Function to input new students;
+ * @param Lok Reference to a Studentas object.
+ */
 void ivedimas(Studentas & Lok){
-    
     cin >> Lok;
     Lok.vidurkioSkaiciavimas();
     Lok.medianosSkaiciavimas();
@@ -260,7 +349,11 @@ void ivedimas(Studentas & Lok){
 
 
 
-// Funkcija, kuri isvalo tam tikrus objekto elementus, kad nebutu rasoma salia
+/**
+ * @brief Function to clear certain elements of a Studentas object.
+ * Ensures no residual data is printed alongside.
+ * @param Lok Reference to a Studentas object.
+ */
 void valymas(Studentas& Lok) {
     Lok.setVardas("");
     Lok.setPavarde("");
@@ -269,24 +362,42 @@ void valymas(Studentas& Lok) {
 
 
 
-// Funkcija, kuri palygina studentus pagal ju pavardes
+/**
+ * @brief Comparator function to compare students by last names.
+ * @param a First Studentas object to compare.
+ * @param b Second Studentas object to compare.
+ * @return True if the last name of a comes before b lexicographically.
+ */
 bool palyginti_pavardes(const Studentas& a, const Studentas& b){
     return a.getPavarde() < b.getPavarde();
 }
 
-// Funkcija, kuri palygina studentus pagal ju vardus
+/**
+ * @brief Comparator function to compare students by first names.
+ * @param a First Studentas object to compare.
+ * @param b Second Studentas object to compare.
+ * @return True if the first name of a comes before b lexicographically.
+ */
 bool palyginti_vardus(const Studentas& a, const Studentas& b){
     return a.getVardas() < b.getVardas();
 }
 
-
+/**
+ * @brief Comparator function to compare students by their final grade.
+ * @param a First Studentas object to compare.
+ * @param b Second Studentas object to compare.
+ * @return True if the final average grade of a is less than b.
+ */
 bool palyginti_pazymius(const Studentas& a, const Studentas& b){
     return a.getGalutinisVid() < b.getGalutinisVid();
 }
 
 
 
-// Funkcija, kuri atspausdina studentu duomenis (galutinis apskaiciuotas ir su vidurkiu ir su mediana)
+/**
+ * @brief Function to print student data (final grade calculated with average).
+ * @param studentai Vector of Studentas objects.
+ */
 void isvedimas(vector<Studentas> studentai){
         
     // Funkcija, kuri rusiuoja studentus pagal ju pavardes didejimo tvarka. (Tvarka galima pakeisti palyginti_pavardes funkcijos viduje).
@@ -302,7 +413,10 @@ void isvedimas(vector<Studentas> studentai){
 }
 
 
-// Funkcija, kuri atspausdina studentu duomenis (galutinis apskaiciuotas tik su vidurkiu)
+/**
+ * @brief Function to print student data (final grade calculated with average).
+ * @param studentai Vector of Studentas objects.
+ */
 void isvedimas_su_vidurkiu(vector<Studentas> studentai){
     
     // Funkcija, kuri rusiuoja studentus pagal ju pavardes didejimo tvarka. (Tvarka galima pakeisti palyginti_pavardes funkcijos viduje).
@@ -319,7 +433,10 @@ void isvedimas_su_vidurkiu(vector<Studentas> studentai){
 }
 
 
-// Funkcija, kuri atspausdina studentu duomenis (galutinis apskaiciuotas tik su mediana)
+/**
+ * @brief Function to print student data (final grade calculated with median).
+ * @param studentai Vector of Studentas objects.
+ */
 void isvedimas_su_mediana(vector<Studentas> studentai){
     
     // Funkcija, kuri rusiuoja studentus pagal ju pavardes didejimo tvarka. (Tvarka galima pakeisti palyginti_pavardes funkcijos viduje).
@@ -336,7 +453,12 @@ void isvedimas_su_mediana(vector<Studentas> studentai){
 }
 
 
-// Funkcija, kuri nuskaito duomenis is failo.
+/**
+ * @brief Reads students' data from a file.
+ * @param studentai Vector of Studentas objects.
+ * @param failo_pav File name to read data from.
+ * @return Updated vector of Studentas objects.
+ */
 vector<Studentas> skaitymas_is_failo(vector<Studentas> studentai, string failo_pav){
     
     string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_programavimas_1_uzduotis/") + failo_pav + ".txt";
@@ -395,7 +517,12 @@ vector<Studentas> skaitymas_is_failo(vector<Studentas> studentai, string failo_p
 }
 
 
-
+/**
+ * @brief Sorts and writes student data to a file.
+ * @param studentai Vector of Studentas objects.
+ * @param failo_pav File name to write data to.
+ * @param pasirinkimas Sorting option.
+ */
 void irasymas(vector<Studentas>& studentai, string failo_pav, int pasirinkimas){
     
     string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_programavimas_1_uzduotis/") + failo_pav + ".txt";
@@ -422,7 +549,12 @@ void irasymas(vector<Studentas>& studentai, string failo_pav, int pasirinkimas){
 }
 
 
-
+/**
+ * @brief Sorts and writes student data to a file.
+ * @param studentai Vector of Studentas objects.
+ * @param failo_pav File name to write data to.
+ * @param pasirinkimas Sorting option.
+ */
 void irasymas_list(list<Studentas>& studentai, string failo_pav, int pasirinkimas){
     
     string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_programavimas_1_uzduotis/") + failo_pav + ".txt";
@@ -451,7 +583,10 @@ void irasymas_list(list<Studentas>& studentai, string failo_pav, int pasirinkima
 }
 
 
-
+/**
+ * @brief Function to print student data (final grade calculated with average).
+ * @param studentai Vector of Studentas objects.
+ */
 void isvedimas_list(list<Studentas> studentai){
         
     // Funkcija, kuri rusiuoja studentus pagal ju pavardes didejimo tvarka. (Tvarka galima pakeisti palyginti_pavardes funkcijos viduje).
