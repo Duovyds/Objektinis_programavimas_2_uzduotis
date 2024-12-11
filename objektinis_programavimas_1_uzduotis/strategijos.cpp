@@ -1,3 +1,8 @@
+/**
+ * @file strategijos.cpp
+ * @brief This file contains functions for processing student data with different strategies
+ *        for reading, sorting, filtering, and writing to files.
+ */
 #include <stdio.h>
 #include <stdio.h>
 #include "v0_3_header.h"
@@ -6,15 +11,32 @@
 #include "Failas.h"
 #include "strategijos.h"
 
-// Si funkcija reikalinga, kad erase funkcija zinotu pagal ka lyginti studentus bandant juos istrinti.
+/**
+ * @brief Compares two Studentas objects for equality.
+ *
+ * This function is used to compare two Studentas objects to determine if they are equal based on
+ * their names and surnames. It is mainly used in the context of erasing students in the container.
+ *
+ * @param a The first Studentas object.
+ * @param b The second Studentas object.
+ * @return true if both students have the same name and surname, otherwise false.
+ */
 bool operator==(const Studentas& a, const Studentas& b) {
     return a.getVardas() == b.getVardas() && a.getPavarde() == b.getPavarde();
 }
 
 
 
-// 2 strategija
-// vector konteinerio atvejis
+/**
+ * @brief Splits students into two categories using strategy 2 with vector container.
+ *
+ * This function reads students from a file, divides them into two groups (vargsiukai and others),
+ * sorts them based on a chosen criterion (name, surname, or grade), and writes them back to separate files.
+ * It also measures and reports the time taken for reading, splitting, sorting, and writing the data.
+ *
+ * @param failo_pavadinimas The name of the input file.
+ * @param rikiavimo_pasirinkimas The sorting criterion (1 for name, 2 for surname, 3 for grades).
+ */
 void skaidymas_2_strategija_vector(string failo_pavadinimas, int rikiavimo_pasirinkimas){
     
     vector<Studentas> studentai;
@@ -93,7 +115,17 @@ void skaidymas_2_strategija_vector(string failo_pavadinimas, int rikiavimo_pasir
 
 
 
-// list konteinerio atvejis
+/**
+ * @brief Splits students into two categories using strategy 2 with list container.
+ *
+ * This function is similar to `skaidymas_2_strategija_vector` but works with the list container.
+ * It reads students from a file, splits them into two groups (vargsiukai and others), sorts the groups
+ * based on a selected criterion (name, surname, or grades), and writes them to separate files.
+ * The function also measures and reports the time taken for reading, splitting, sorting, and writing the data.
+ *
+ * @param failo_pavadinimas The name of the input file.
+ * @param rikiavimo_pasirinkimas The sorting criterion (1 for name, 2 for surname, 3 for grades).
+ */
 void skaidymas_2_strategija_list(string failo_pavadinimas, int rikiavimo_pasirinkimas){
     
     list<Studentas> studentai;
@@ -173,7 +205,16 @@ void skaidymas_2_strategija_list(string failo_pavadinimas, int rikiavimo_pasirin
 }
 
 
-// Veikia pirmos strategijos principu
+/**
+ * @brief Splits students into two categories using strategy 3 with vector container.
+ *
+ * This function is based on the principles of strategy 1 but works with the vector container.
+ * It reads students from a file, compares and separetes them, then sorts the them based on a selected criterion (name, surname, or grades), and writes the groups to separate files.
+ * The function also measures and reports the time taken for reading, splitting, sorting, and writing the data.
+ *
+ * @param failo_pavadinimas The name of the input file.
+ * @param rikiavimo_pasirinkimas The sorting criterion (1 for name, 2 for surname, 3 for grades).
+ */
 void skaidymas_3_strategija_vector(string failo_pavadinimas, int rikiavimo_pasirinkimas){
     
     vector<Studentas> studentai;
@@ -252,7 +293,11 @@ void skaidymas_3_strategija_vector(string failo_pavadinimas, int rikiavimo_pasir
 }
 
 
-// Veikia antros strategijos principu
+/**
+ * @brief Splits students into two categories using strategy 3 with list container.
+ * @param failo_pavadinimas The name of the input file.
+ * @param rikiavimo_pasirinkimas The sorting criterion (1 for name, 2 for surname, 3 for grades).
+ */
 void skaidymas_3_strategija_list(string failo_pavadinimas, int rikiavimo_pasirinkimas){
     
     list<Studentas> studentai;
