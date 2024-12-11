@@ -1,3 +1,7 @@
+/**
+ * @file Failas.cpp
+ * @brief This file contains the implementation of a program for managing and processing student data.
+ */
 #include <stdio.h>
 #include "Studentas.h"
 #include "Header.h"
@@ -6,6 +10,16 @@
 
 
 
+/**
+ * @brief Generates the main file with student data including names, grades, and exam scores.
+ *
+ * This function generates a file that contains a list of students with their respective names,
+ * grades for multiple assignments (ND), and final exam grades (EGZ). The file is saved with a
+ * name based on the number of students.
+ *
+ * @param studentu_skaicius The number of students to generate.
+ * @param nd_skaicius The number of assignments (ND) each student has.
+ */
 void pagrindinio_failo_generavimas(int studentu_skaicius, int nd_skaicius){
     
     string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_programavimas_1_uzduotis/") +
@@ -34,7 +48,14 @@ void pagrindinio_failo_generavimas(int studentu_skaicius, int nd_skaicius){
 
 
 
-// Funkcija, kuri duomenis is vektoriaus perraso i faila, pries tai surikiavus duomenis pagal pasirinkta parametra.
+/**
+ * @brief Writes student data to a file.
+ *
+ * This function writes the data to a specified file.
+ *
+ * @param studentai A vector of student objects to write to the file.
+ * @param failo_pav The name of the file to save the student data.
+ */
 void irasymas_i_faila(vector<Studentas>& studentai, string failo_pav){
     string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_programavimas_1_uzduotis/") +
     failo_pav + ".txt";
@@ -53,7 +74,15 @@ void irasymas_i_faila(vector<Studentas>& studentai, string failo_pav){
 
 
 
-// Funkcija, kuri paskaiciuoja laika per kuri yra surikiuojamas studentu vektorius pagal vardus didejimo tvarka.
+/**
+ * @brief Measures the time taken to sort a vector of students by first name in ascending order.
+ *
+ * This function calculates the average time taken to sort the students vector by their first names
+ * in ascending order over multiple iterations.
+ *
+ * @param studentai A vector of student objects to sort.
+ * @return The average time in seconds taken to sort the vector.
+ */
 double rikiavimas_pagal_varda_laikas(vector<Studentas> studentai){
     vector<double> laikai;
     
@@ -70,7 +99,15 @@ double rikiavimas_pagal_varda_laikas(vector<Studentas> studentai){
 
 
 
-// Funkcija, kuri paskaiciuoja laika per kuri yra surikiuojamas studentu vektorius pagal pavardes didejimo tvarka.
+/**
+ * @brief Measures the time taken to sort a vector of students by last name in ascending order.
+ *
+ * This function calculates the average time taken to sort the students vector by their last names
+ * in ascending order over multiple iterations.
+ *
+ * @param studentai A vector of student objects to sort.
+ * @return The average time in seconds taken to sort the vector.
+ */
 double rikiavimas_pagal_pavarde_laikas(vector<Studentas> studentai){
     vector<double> laikai;
     
@@ -87,7 +124,15 @@ double rikiavimas_pagal_pavarde_laikas(vector<Studentas> studentai){
 
 
 
-// Funkcija, kuri paskaiciuoja laika per kuri yra surikiuojamas studentu vektorius pagal pavardes didejimo tvarka.
+/**
+ * @brief Measures the time taken to sort a vector of students by their grades in ascending order.
+ *
+ * This function calculates the average time taken to sort the students vector by their grades
+ * in ascending order over multiple iterations.
+ *
+ * @param studentai A vector of student objects to sort.
+ * @return The average time in seconds taken to sort the vector.
+ */
 double rikiavimas_pagal_pazymius_laikas(vector<Studentas> studentai){
     vector<double> laikai;
     
@@ -104,7 +149,14 @@ double rikiavimas_pagal_pazymius_laikas(vector<Studentas> studentai){
 
 
 
-// Funkcija, kuri is pagrindinio studentu vektoriaus atrenka studentus, kuriu galutinis pazymys yra mazesnis nei 5 ir iraso i atskira vektoriu.
+/**
+ * @brief Selects students whose final grade is less than 5 and returns them in a new vector.
+ *
+ * This function filters out the students whose final grade is below 5 and returns them in a new vector.
+ *
+ * @param studentai A vector of student objects to filter.
+ * @return A vector of students with final grades less than 5.
+ */
 vector<Studentas> vargsiuku_atrinkimas(vector<Studentas>& studentai){
     vector<Studentas> vargsiukai;
     
@@ -118,7 +170,14 @@ vector<Studentas> vargsiuku_atrinkimas(vector<Studentas>& studentai){
 
 
 
-// Funkcija, kuri is pagrindinio studentu vektoriaus atrenka studentus, kuriu galutinis pazymys yra didesnis arba lygus 5 ir iraso juos i atskira vektoriu.
+/**
+ * @brief Selects students whose final grade is greater than or equal to 5 and returns them in a new vector.
+ *
+ * This function filters out the students whose final grade is greater than or equal to 5 and returns them in a new vector.
+ *
+ * @param studentai A vector of student objects to filter.
+ * @return A vector of students with final grades greater than or equal to 5.
+ */
 vector<Studentas> galvociu_atrinkimas(vector<Studentas>& studentai){
     
     vector<Studentas> galvociai;
@@ -132,7 +191,16 @@ vector<Studentas> galvociu_atrinkimas(vector<Studentas>& studentai){
 }
 
 
-
+/**
+ * @brief Sorts students by a selected criterion and splits them into two groups based on their final grades.
+ *
+ * This function allows the user to select a sorting criterion (name, last name, or grade),
+ * sorts the students accordingly, then separates them into two groups based on their final grades.
+ * The two groups are saved to separate files: "vargsiukai" for students with final grades below 5,
+ * and "galvociai" for students with final grades 5 or higher.
+ *
+ * @param failo_pavadinimas The name of the file to read the students from.
+ */
 void studentu_isskirstymas(string failo_pavadinimas){
     
     vector<Studentas> studentai;
@@ -163,7 +231,14 @@ void studentu_isskirstymas(string failo_pavadinimas){
 
 
 
-// Funkcija, kuri apskaiciuoja laika per kuri yra sugeneruojamas duomenu vektorius ir tie duomenys yra irasomi i faila
+/**
+ * @brief Measures the time required to generate the student data file.
+ *
+ * This function calculates the average time taken to generate the student data file over multiple iterations.
+ *
+ * @param studentu_skaicius The number of students to generate.
+ * @param nd_skaicius The number of assignments (ND) each student has.
+ */
 void laiko_skaiciavimas_failo_generavimas(int studentu_skaicius, int nd_skaicius){
 
     vector<double> failu_generavimo_laikai;
@@ -180,7 +255,16 @@ void laiko_skaiciavimas_failo_generavimas(int studentu_skaicius, int nd_skaicius
 
 
 
-// Funkcija, kuri apskaiciuoja vidutini laika per kuri duomenys yra nuskaitomi, surusiuojami ir isskaidomi i atskirus failus pagal parinktus kriterijus
+/**
+ * @brief Measures the total time taken to read, sort, and separate student data into different files.
+ *
+ * This function calculates the time taken to read the student data from a file, sort the students
+ * by the selected criterion, separate them into two groups based on their final grades, and then
+ * write the groups to separate files. It provides a detailed breakdown of each step.
+ *
+ * @param failo_pavadinimas The name of the file to read the students from.
+ * @param rikiavimo_pasirinkimas The sorting criterion (1: by name, 2: by last name, 3: by grade).
+ */
 void laiko_skaiciavimas(string failo_pavadinimas, int rikiavimo_pasirinkimas){
     
     vector<Studentas> studentai2;
