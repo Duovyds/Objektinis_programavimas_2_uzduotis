@@ -1,3 +1,8 @@
+/**
+ * @file filename.cpp
+ * @brief This file contains functions for handling student data, including reading from files,
+ *        sorting, filtering, and calculating execution times for operations using `std::list`.
+ */
 #include "v0_3_header.h"
 #include "Studentas.h"
 #include "Header.h"
@@ -5,7 +10,17 @@
 
 
 
-// Funkcija, kuri nuskaito duomenis is failo.
+/**
+ * @brief Reads student data from a file into a list of Studentas objects.
+ *
+ * This function opens a file, reads student data (name, surname, and grades), and
+ * stores them in a `list<Studentas>`. It also calculates the average and median grades
+ * for each student. If the file cannot be opened, it throws an exception.
+ *
+ * @param studentai The list of Studentas objects to store the read data.
+ * @param failo_pav The name of the file to read.
+ * @return The updated list of Studentas objects.
+ */
 list<Studentas> skaitymas_is_failo_list(list<Studentas>& studentai, string failo_pav){
     
     string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_programavimas_1_uzduotis/") + failo_pav + ".txt";
@@ -63,7 +78,14 @@ list<Studentas> skaitymas_is_failo_list(list<Studentas>& studentai, string failo
 
 
 
-
+/**
+ * @brief Filters students with a final grade below 5.
+ *
+ * This function creates a list of students who have a final grade lower than 5.
+ *
+ * @param studentai The list of Studentas objects to filter.
+ * @return A new list of students with a final grade less than 5.
+ */
 list<Studentas> vargsiuku_atrinkimas_naudojant_list(list<Studentas>& studentai){
     list<Studentas> vargsiukai;
     for (const auto& studentas : studentai){
@@ -76,6 +98,14 @@ list<Studentas> vargsiuku_atrinkimas_naudojant_list(list<Studentas>& studentai){
 
 
 
+/**
+ * @brief Filters students with a final grade of 5 or higher.
+ *
+ * This function creates a list of students who have a final grade of 5 or higher.
+ *
+ * @param studentai The list of Studentas objects to filter.
+ * @return A new list of students with a final grade of 5 or higher.
+ */
 list<Studentas> galvociu_atrinkimas_naudojant_list(list<Studentas>& studentai){
     list<Studentas> galvociai;
     for (const auto& studentas : studentai){
@@ -88,7 +118,16 @@ list<Studentas> galvociu_atrinkimas_naudojant_list(list<Studentas>& studentai){
 
 
 
-// Funkcija, kuri paskaiciuoja laika per kuri yra surikiuojamas studentu vektorius pagal vardus didejimo tvarka.
+/**
+ * @brief Measures the time to sort students by name in ascending order.
+ *
+ * This function measures the time it takes to sort the list of students by their names
+ * in ascending order. It performs the sort 5 times and returns the average time taken
+ * in seconds.
+ *
+ * @param studentai The list of Studentas objects to sort.
+ * @return The average time in seconds to sort the students by name.
+ */
 double rikiavimas_pagal_varda_laikas_list(list<Studentas> studentai){
     vector<double> laikai;
     
@@ -105,7 +144,16 @@ double rikiavimas_pagal_varda_laikas_list(list<Studentas> studentai){
 
 
 
-// Funkcija, kuri paskaiciuoja laika per kuri yra surikiuojamas studentu vektorius pagal pavardes didejimo tvarka.
+/**
+ * @brief Measures the time to sort students by surname in ascending order.
+ *
+ * This function measures the time it takes to sort the list of students by their surnames
+ * in ascending order. It performs the sort 5 times and returns the average time taken
+ * in seconds.
+ *
+ * @param studentai The list of Studentas objects to sort.
+ * @return The average time in seconds to sort the students by surname.
+ */
 double rikiavimas_pagal_pavarde_laikas_list(list<Studentas> studentai){
     vector<double> laikai;
     
@@ -122,7 +170,17 @@ double rikiavimas_pagal_pavarde_laikas_list(list<Studentas> studentai){
 
 
 
-// Funkcija, kuri paskaiciuoja laika per kuri yra surikiuojamas studentu vektorius pagal pazymius didejimo tvarka.
+
+/**
+ * @brief Measures the time to sort students by grade in ascending order.
+ *
+ * This function measures the time it takes to sort the list of students by their grades
+ * in ascending order. It performs the sort 5 times and returns the average time taken
+ * in seconds.
+ *
+ * @param studentai The list of Studentas objects to sort.
+ * @return The average time in seconds to sort the students by grade.
+ */
 double rikiavimas_pagal_pazymius_laikas_list(list<Studentas> studentai){
     vector<double> laikai;
     
@@ -157,6 +215,15 @@ double rikiavimas_pagal_pazymius_laikas_list(list<Studentas> studentai){
 
 
 
+/**
+ * @brief Writes the filtered students (vargsiukai) and (galvociai) to separate files.
+ *
+ * This function saves the filtered lists of students (those with final grades below 5
+ * and those with final grades of 5 or higher) to files.
+ *
+ * @param studentai The list of Studentas objects to write.
+ * @param failo_pav The name of the file to write the data to.
+ */
 void irasymas_naudojant_list(list<Studentas>& studentai, string failo_pav){
     
     string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/objektinis_pragramavimas_2_uzduotis/objektinis_programavimas_1_uzduotis/") + failo_pav + ".txt";
@@ -175,6 +242,15 @@ void irasymas_naudojant_list(list<Studentas>& studentai, string failo_pav){
 
 
 
+/**
+ * @brief Manages the entire student data processing workflow.
+ *
+ * This function reads student data from a file, sorts the students by a chosen criterion,
+ * filters them into "vargsiukai" (students with low grades) and "galvociai" (students with
+ * good grades), and writes the results into separate files.
+ *
+ * @param failo_pavadinimas The name of the input file to read the data from.
+ */
 void studentu_isskirstymas_list(string failo_pavadinimas){
     
     list<Studentas> studentai;
@@ -205,6 +281,15 @@ void studentu_isskirstymas_list(string failo_pavadinimas){
 
 
 
+/**
+ * @brief Measures and outputs the execution time for the entire student data processing.
+ *
+ * This function calculates and displays the time taken to read the student data from a file,
+ * sort them, filter them, and write the results into separate files.
+ *
+ * @param failo_pavadinimas The name of the input file.
+ * @param rikiavimo_pasirinkimas The sorting criterion (1 for name, 2 for surname, 3 for grade).
+ */
 void laiko_skaiciavimas_list_konteineris(string failo_pavadinimas, int rikiavimo_pasirinkimas){
     
     list<Studentas> studentai2;
