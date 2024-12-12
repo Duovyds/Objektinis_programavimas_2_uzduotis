@@ -1,3 +1,7 @@
+/**
+ * @file Studentas.h
+ * @brief Declaration of the `Studentas` class.
+ */
 #ifndef Studentas_h
 #define Studentas_h
 
