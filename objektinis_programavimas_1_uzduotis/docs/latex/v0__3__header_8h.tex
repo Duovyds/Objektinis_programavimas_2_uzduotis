@@ -1,0 +1,323 @@
+\doxysection{v0\+\_\+3\+\_\+header.\+h File Reference}
+\hypertarget{v0__3__header_8h}{}\label{v0__3__header_8h}\index{v0\_3\_header.h@{v0\_3\_header.h}}
+
+
+Function declarations for processing student data using {\ttfamily std\+::list}.  
+
+
+{\ttfamily \#include "{}Header.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}Studentas.\+h"{}}\newline
+{\ttfamily \#include "{}Failas.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \mbox{\hyperlink{v0__3__header_8h_a6cfad1b6cdbe9b8f45ea04a2f4d7f5dd}{vargsiuku\+\_\+atrinkimas\+\_\+naudojant\+\_\+list}} (list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai)
+\begin{DoxyCompactList}\small\item\em Filters students into a list of "{}vargsiukai"{} (students with low grades). \end{DoxyCompactList}\item 
+list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \mbox{\hyperlink{v0__3__header_8h_a5ab243d7f2c4ef8f03d942b0cdeaa618}{galvociu\+\_\+atrinkimas\+\_\+naudojant\+\_\+list}} (list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai)
+\begin{DoxyCompactList}\small\item\em Filters students into a list of "{}galvociai"{} (students with high grades). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{v0__3__header_8h_ad0ff878768536aa6ea40017efddd9c91}{irasymas}} (list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, string failo\+\_\+pav)
+\begin{DoxyCompactList}\small\item\em Writes student data to a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{v0__3__header_8h_a63c09f21c38a758f99272869da570fa8}{laiko\+\_\+skaiciavimas\+\_\+list\+\_\+konteineris}} (string failo\+\_\+pavadinimas, int rikiavimo\+\_\+pasirinkimas)
+\begin{DoxyCompactList}\small\item\em Measures execution times for list operations, including sorting and filtering. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{v0__3__header_8h_a60d764d9ff6d7778d498bf54355c8b51}{irasymas\+\_\+naudojant\+\_\+list}} (list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, string failo\+\_\+pav)
+\begin{DoxyCompactList}\small\item\em Writes student data to a file using a {\ttfamily std\+::list}. \end{DoxyCompactList}\item 
+list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \mbox{\hyperlink{v0__3__header_8h_ac5a23c81de7dca34a351ece094ce1b72}{skaitymas\+\_\+is\+\_\+failo\+\_\+list}} (list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, string failo\+\_\+pav)
+\begin{DoxyCompactList}\small\item\em Reads student data from a file into a {\ttfamily std\+::list}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{v0__3__header_8h_ade4f2583a93a516b1e2b2289c2c7f3fa}{rikiavimas\+\_\+pagal\+\_\+varda\+\_\+laikas\+\_\+list}} (list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ studentai)
+\begin{DoxyCompactList}\small\item\em Measures the time required to sort students by name in ascending order. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{v0__3__header_8h_afb3484c0469f0f42868be5e8fc859b28}{rikiavimas\+\_\+pagal\+\_\+pavarde\+\_\+laikas\+\_\+list}} (list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ studentai)
+\begin{DoxyCompactList}\small\item\em Measures the time required to sort students by surname in ascending order. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{v0__3__header_8h_aed1db01eff940249ead6dc673742c260}{rikiavimas\+\_\+pagal\+\_\+pazymius\+\_\+laikas\+\_\+list}} (list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ studentai)
+\begin{DoxyCompactList}\small\item\em Measures the time required to sort students by grades in ascending order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{v0__3__header_8h_af83d21f8dd4d0b4f164fdbec5caa5bbe}{studentu\+\_\+isskirstymas\+\_\+list}} (string failo\+\_\+pavadinimas)
+\begin{DoxyCompactList}\small\item\em Processes and segregates students into "{}vargsiukai"{} and "{}galvociai"{} categories, then writes the results to separate files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Function declarations for processing student data using {\ttfamily std\+::list}. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{v0__3__header_8h_a5ab243d7f2c4ef8f03d942b0cdeaa618}\index{v0\_3\_header.h@{v0\_3\_header.h}!galvociu\_atrinkimas\_naudojant\_list@{galvociu\_atrinkimas\_naudojant\_list}}
+\index{galvociu\_atrinkimas\_naudojant\_list@{galvociu\_atrinkimas\_naudojant\_list}!v0\_3\_header.h@{v0\_3\_header.h}}
+\doxysubsubsection{\texorpdfstring{galvociu\_atrinkimas\_naudojant\_list()}{galvociu\_atrinkimas\_naudojant\_list()}}
+{\footnotesize\ttfamily \label{v0__3__header_8h_a5ab243d7f2c4ef8f03d942b0cdeaa618} 
+list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ galvociu\+\_\+atrinkimas\+\_\+naudojant\+\_\+list (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{}\end{DoxyParamCaption})}
+
+
+
+Filters students into a list of "{}galvociai"{} (students with high grades). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & The list of students to filter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of "{}galvociai"{} students.
+\end{DoxyReturn}
+Filters students into a list of "{}galvociai"{} (students with high grades).
+
+This function creates a list of students who have a final grade of 5 or higher.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & The list of \doxylink{class_studentas}{Studentas} objects to filter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new list of students with a final grade of 5 or higher. 
+\end{DoxyReturn}
+\Hypertarget{v0__3__header_8h_ad0ff878768536aa6ea40017efddd9c91}\index{v0\_3\_header.h@{v0\_3\_header.h}!irasymas@{irasymas}}
+\index{irasymas@{irasymas}!v0\_3\_header.h@{v0\_3\_header.h}}
+\doxysubsubsection{\texorpdfstring{irasymas()}{irasymas()}}
+{\footnotesize\ttfamily \label{v0__3__header_8h_ad0ff878768536aa6ea40017efddd9c91} 
+void irasymas (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{string}]{failo\+\_\+pav}{}\end{DoxyParamCaption})}
+
+
+
+Writes student data to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & The list of students to write. \\
+\hline
+{\em failo\+\_\+pav} & The name of the file (excluding the extension). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{v0__3__header_8h_a60d764d9ff6d7778d498bf54355c8b51}\index{v0\_3\_header.h@{v0\_3\_header.h}!irasymas\_naudojant\_list@{irasymas\_naudojant\_list}}
+\index{irasymas\_naudojant\_list@{irasymas\_naudojant\_list}!v0\_3\_header.h@{v0\_3\_header.h}}
+\doxysubsubsection{\texorpdfstring{irasymas\_naudojant\_list()}{irasymas\_naudojant\_list()}}
+{\footnotesize\ttfamily \label{v0__3__header_8h_a60d764d9ff6d7778d498bf54355c8b51} 
+void irasymas\+\_\+naudojant\+\_\+list (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{string}]{failo\+\_\+pav}{}\end{DoxyParamCaption})}
+
+
+
+Writes student data to a file using a {\ttfamily std\+::list}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & The list of students to write. \\
+\hline
+{\em failo\+\_\+pav} & The name of the file (excluding the extension).\\
+\hline
+\end{DoxyParams}
+Writes student data to a file using a {\ttfamily std\+::list}.
+
+This function saves the filtered lists of students (those with final grades below 5 and those with final grades of 5 or higher) to files.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & The list of \doxylink{class_studentas}{Studentas} objects to write. \\
+\hline
+{\em failo\+\_\+pav} & The name of the file to write the data to. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{v0__3__header_8h_a63c09f21c38a758f99272869da570fa8}\index{v0\_3\_header.h@{v0\_3\_header.h}!laiko\_skaiciavimas\_list\_konteineris@{laiko\_skaiciavimas\_list\_konteineris}}
+\index{laiko\_skaiciavimas\_list\_konteineris@{laiko\_skaiciavimas\_list\_konteineris}!v0\_3\_header.h@{v0\_3\_header.h}}
+\doxysubsubsection{\texorpdfstring{laiko\_skaiciavimas\_list\_konteineris()}{laiko\_skaiciavimas\_list\_konteineris()}}
+{\footnotesize\ttfamily \label{v0__3__header_8h_a63c09f21c38a758f99272869da570fa8} 
+void laiko\+\_\+skaiciavimas\+\_\+list\+\_\+konteineris (\begin{DoxyParamCaption}\item[{string}]{failo\+\_\+pavadinimas}{, }\item[{int}]{rikiavimo\+\_\+pasirinkimas}{}\end{DoxyParamCaption})}
+
+
+
+Measures execution times for list operations, including sorting and filtering. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em failo\+\_\+pavadinimas} & The name of the file containing student data (excluding the extension). \\
+\hline
+{\em rikiavimo\+\_\+pasirinkimas} & The sorting criteria (1 for name, 2 for surname, 3 for grades).\\
+\hline
+\end{DoxyParams}
+Measures execution times for list operations, including sorting and filtering.
+
+This function calculates and displays the time taken to read the student data from a file, sort them, filter them, and write the results into separate files.
+
+
+\begin{DoxyParams}{Parameters}
+{\em failo\+\_\+pavadinimas} & The name of the input file. \\
+\hline
+{\em rikiavimo\+\_\+pasirinkimas} & The sorting criterion (1 for name, 2 for surname, 3 for grade). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{v0__3__header_8h_afb3484c0469f0f42868be5e8fc859b28}\index{v0\_3\_header.h@{v0\_3\_header.h}!rikiavimas\_pagal\_pavarde\_laikas\_list@{rikiavimas\_pagal\_pavarde\_laikas\_list}}
+\index{rikiavimas\_pagal\_pavarde\_laikas\_list@{rikiavimas\_pagal\_pavarde\_laikas\_list}!v0\_3\_header.h@{v0\_3\_header.h}}
+\doxysubsubsection{\texorpdfstring{rikiavimas\_pagal\_pavarde\_laikas\_list()}{rikiavimas\_pagal\_pavarde\_laikas\_list()}}
+{\footnotesize\ttfamily \label{v0__3__header_8h_afb3484c0469f0f42868be5e8fc859b28} 
+double rikiavimas\+\_\+pagal\+\_\+pavarde\+\_\+laikas\+\_\+list (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$}]{studentai}{}\end{DoxyParamCaption})}
+
+
+
+Measures the time required to sort students by surname in ascending order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & The list of students to sort. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The average sorting time in seconds.
+\end{DoxyReturn}
+Measures the time required to sort students by surname in ascending order.
+
+This function measures the time it takes to sort the list of students by their surnames in ascending order. It performs the sort 5 times and returns the average time taken in seconds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & The list of \doxylink{class_studentas}{Studentas} objects to sort. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The average time in seconds to sort the students by surname. 
+\end{DoxyReturn}
+\Hypertarget{v0__3__header_8h_aed1db01eff940249ead6dc673742c260}\index{v0\_3\_header.h@{v0\_3\_header.h}!rikiavimas\_pagal\_pazymius\_laikas\_list@{rikiavimas\_pagal\_pazymius\_laikas\_list}}
+\index{rikiavimas\_pagal\_pazymius\_laikas\_list@{rikiavimas\_pagal\_pazymius\_laikas\_list}!v0\_3\_header.h@{v0\_3\_header.h}}
+\doxysubsubsection{\texorpdfstring{rikiavimas\_pagal\_pazymius\_laikas\_list()}{rikiavimas\_pagal\_pazymius\_laikas\_list()}}
+{\footnotesize\ttfamily \label{v0__3__header_8h_aed1db01eff940249ead6dc673742c260} 
+double rikiavimas\+\_\+pagal\+\_\+pazymius\+\_\+laikas\+\_\+list (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$}]{studentai}{}\end{DoxyParamCaption})}
+
+
+
+Measures the time required to sort students by grades in ascending order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & The list of students to sort. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The average sorting time in seconds.
+\end{DoxyReturn}
+Measures the time required to sort students by grades in ascending order.
+
+This function measures the time it takes to sort the list of students by their grades in ascending order. It performs the sort 5 times and returns the average time taken in seconds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & The list of \doxylink{class_studentas}{Studentas} objects to sort. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The average time in seconds to sort the students by grade. 
+\end{DoxyReturn}
+\Hypertarget{v0__3__header_8h_ade4f2583a93a516b1e2b2289c2c7f3fa}\index{v0\_3\_header.h@{v0\_3\_header.h}!rikiavimas\_pagal\_varda\_laikas\_list@{rikiavimas\_pagal\_varda\_laikas\_list}}
+\index{rikiavimas\_pagal\_varda\_laikas\_list@{rikiavimas\_pagal\_varda\_laikas\_list}!v0\_3\_header.h@{v0\_3\_header.h}}
+\doxysubsubsection{\texorpdfstring{rikiavimas\_pagal\_varda\_laikas\_list()}{rikiavimas\_pagal\_varda\_laikas\_list()}}
+{\footnotesize\ttfamily \label{v0__3__header_8h_ade4f2583a93a516b1e2b2289c2c7f3fa} 
+double rikiavimas\+\_\+pagal\+\_\+varda\+\_\+laikas\+\_\+list (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$}]{studentai}{}\end{DoxyParamCaption})}
+
+
+
+Measures the time required to sort students by name in ascending order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & The list of students to sort. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The average sorting time in seconds.
+\end{DoxyReturn}
+Measures the time required to sort students by name in ascending order.
+
+This function measures the time it takes to sort the list of students by their names in ascending order. It performs the sort 5 times and returns the average time taken in seconds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & The list of \doxylink{class_studentas}{Studentas} objects to sort. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The average time in seconds to sort the students by name. 
+\end{DoxyReturn}
+\Hypertarget{v0__3__header_8h_ac5a23c81de7dca34a351ece094ce1b72}\index{v0\_3\_header.h@{v0\_3\_header.h}!skaitymas\_is\_failo\_list@{skaitymas\_is\_failo\_list}}
+\index{skaitymas\_is\_failo\_list@{skaitymas\_is\_failo\_list}!v0\_3\_header.h@{v0\_3\_header.h}}
+\doxysubsubsection{\texorpdfstring{skaitymas\_is\_failo\_list()}{skaitymas\_is\_failo\_list()}}
+{\footnotesize\ttfamily \label{v0__3__header_8h_ac5a23c81de7dca34a351ece094ce1b72} 
+list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ skaitymas\+\_\+is\+\_\+failo\+\_\+list (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{string}]{failo\+\_\+pav}{}\end{DoxyParamCaption})}
+
+
+
+Reads student data from a file into a {\ttfamily std\+::list}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & The list to populate with student data. \\
+\hline
+{\em failo\+\_\+pav} & The name of the file (excluding the extension). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The populated list of students.
+\end{DoxyReturn}
+Reads student data from a file into a {\ttfamily std\+::list}.
+
+This function opens a file, reads student data (name, surname, and grades), and stores them in a {\ttfamily list\texorpdfstring{$<$}{<}\doxylink{class_studentas}{Studentas}\texorpdfstring{$>$}{>}}. It also calculates the average and median grades for each student. If the file cannot be opened, it throws an exception.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & The list of \doxylink{class_studentas}{Studentas} objects to store the read data. \\
+\hline
+{\em failo\+\_\+pav} & The name of the file to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The updated list of \doxylink{class_studentas}{Studentas} objects. 
+\end{DoxyReturn}
+\Hypertarget{v0__3__header_8h_af83d21f8dd4d0b4f164fdbec5caa5bbe}\index{v0\_3\_header.h@{v0\_3\_header.h}!studentu\_isskirstymas\_list@{studentu\_isskirstymas\_list}}
+\index{studentu\_isskirstymas\_list@{studentu\_isskirstymas\_list}!v0\_3\_header.h@{v0\_3\_header.h}}
+\doxysubsubsection{\texorpdfstring{studentu\_isskirstymas\_list()}{studentu\_isskirstymas\_list()}}
+{\footnotesize\ttfamily \label{v0__3__header_8h_af83d21f8dd4d0b4f164fdbec5caa5bbe} 
+void studentu\+\_\+isskirstymas\+\_\+list (\begin{DoxyParamCaption}\item[{string}]{failo\+\_\+pavadinimas}{}\end{DoxyParamCaption})}
+
+
+
+Processes and segregates students into "{}vargsiukai"{} and "{}galvociai"{} categories, then writes the results to separate files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em failo\+\_\+pavadinimas} & The name of the file containing student data (excluding the extension).\\
+\hline
+\end{DoxyParams}
+Processes and segregates students into "{}vargsiukai"{} and "{}galvociai"{} categories, then writes the results to separate files.
+
+This function reads student data from a file, sorts the students by a chosen criterion, filters them into "{}vargsiukai"{} (students with low grades) and "{}galvociai"{} (students with good grades), and writes the results into separate files.
+
+
+\begin{DoxyParams}{Parameters}
+{\em failo\+\_\+pavadinimas} & The name of the input file to read the data from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{v0__3__header_8h_a6cfad1b6cdbe9b8f45ea04a2f4d7f5dd}\index{v0\_3\_header.h@{v0\_3\_header.h}!vargsiuku\_atrinkimas\_naudojant\_list@{vargsiuku\_atrinkimas\_naudojant\_list}}
+\index{vargsiuku\_atrinkimas\_naudojant\_list@{vargsiuku\_atrinkimas\_naudojant\_list}!v0\_3\_header.h@{v0\_3\_header.h}}
+\doxysubsubsection{\texorpdfstring{vargsiuku\_atrinkimas\_naudojant\_list()}{vargsiuku\_atrinkimas\_naudojant\_list()}}
+{\footnotesize\ttfamily \label{v0__3__header_8h_a6cfad1b6cdbe9b8f45ea04a2f4d7f5dd} 
+list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ vargsiuku\+\_\+atrinkimas\+\_\+naudojant\+\_\+list (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{}\end{DoxyParamCaption})}
+
+
+
+Filters students into a list of "{}vargsiukai"{} (students with low grades). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & The list of students to filter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of "{}vargsiukai"{} students.
+\end{DoxyReturn}
+Filters students into a list of "{}vargsiukai"{} (students with low grades).
+
+This function creates a list of students who have a final grade lower than 5.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & The list of \doxylink{class_studentas}{Studentas} objects to filter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new list of students with a final grade less than 5. 
+\end{DoxyReturn}

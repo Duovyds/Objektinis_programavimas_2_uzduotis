@@ -1,0 +1,444 @@
+\doxysection{Studentas Class Reference}
+\hypertarget{class_studentas}{}\label{class_studentas}\index{Studentas@{Studentas}}
+
+
+Represents a student, inheriting from the \doxylink{class_zmogus}{Zmogus} class.  
+
+
+
+
+{\ttfamily \#include $<$Studentas.\+h$>$}
+
+Inheritance diagram for Studentas\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_studentas}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539}{Studentas}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_studentas_a867e546b7e4fbaa5f1460168a3e68d26}{Studentas}} (string \mbox{\hyperlink{class_zmogus_a56da52b45c537a31d2c1fc3a53a73c65}{vardas}}, string \mbox{\hyperlink{class_zmogus_a00799e1396c82e4f6dffa0edec1f24e5}{pavarde}}, vector$<$ int $>$ namu\+\_\+darbai, int egzaminas)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_studentas_aef0484fe46cf05746f8ffc0d083fcf3e}{Studentas}} (const \mbox{\hyperlink{class_studentas}{Studentas}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_studentas}{Studentas}} \& \mbox{\hyperlink{class_studentas_a25bcc531503d3bc490dab4a656e3b8e9}{operator=}} (const \mbox{\hyperlink{class_studentas}{Studentas}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_studentas_a63e449e0f51a0b14340d02ee71b4be23}{\texorpdfstring{$\sim$}{\string~}\+Studentas}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_studentas_a05199b0b20b04356ecb150285ee1292a}{set\+Vardas}} (const string \&v)
+\begin{DoxyCompactList}\small\item\em Sets the student\textquotesingle{}s first name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_studentas_aa2f8644798ffa4396c35400dfb10ab23}{set\+Pavarde}} (const std\+::string \&p)
+\begin{DoxyCompactList}\small\item\em Sets the student\textquotesingle{}s last name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_studentas_a8a839205b58bd82537623e3d8dcdab48}{set\+Namu\+Darbai}} (const std\+::vector$<$ int $>$ \&nd)
+\begin{DoxyCompactList}\small\item\em Sets the student\textquotesingle{}s homework grades. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_studentas_af05b2d44e906fc5a92a23b28d7ffda95}{set\+Egzaminas}} (int egz)
+\begin{DoxyCompactList}\small\item\em Sets the student\textquotesingle{}s exam grade. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_studentas_a3ca6431a4e395c8cea0e47e71a064373}{get\+Vardas}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the student\textquotesingle{}s first name. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_studentas_ae9c8d8f8892d54d529fca28a4ad8268d}{get\+Pavarde}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the student\textquotesingle{}s last name. \end{DoxyCompactList}\item 
+const std\+::vector$<$ int $>$ \& \mbox{\hyperlink{class_studentas_a84491b8eb5e14e7e1a5f46f293fdf8e8}{get\+Namu\+Darbai}} () const
+\begin{DoxyCompactList}\small\item\em Gets the student\textquotesingle{}s homework grades. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_studentas_abe38c118e8e899b4de681f1d12adceab}{get\+Egzaminas}} () const
+\begin{DoxyCompactList}\small\item\em Gets the student\textquotesingle{}s exam grade. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_studentas_a50fb3dcf0be0e97934f41641b85ef9e5}{get\+Galutinis\+Vid}} () const
+\begin{DoxyCompactList}\small\item\em Gets the student\textquotesingle{}s final grade based on average calculation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_studentas_a77eed5a443b0e55e85ee4e895a78e71c}{get\+Galutinis\+Med}} () const
+\begin{DoxyCompactList}\small\item\em Gets the student\textquotesingle{}s final grade based on median calculation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_studentas_a86c398d55395c29be26246df0f7ae902}{vidurkio\+Skaiciavimas}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the average grade of the student. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_studentas_a6f286afd0e6ac514d271df3b2401e4b4}{medianos\+Skaiciavimas}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the median grade of the student. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_zmogus}{Zmogus}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574}{Zmogus}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_zmogus_abcea2eb5f4c209f8623405a3d838f1c2}{Zmogus}} (string \mbox{\hyperlink{class_zmogus_a56da52b45c537a31d2c1fc3a53a73c65}{vardas}}, string \mbox{\hyperlink{class_zmogus_a00799e1396c82e4f6dffa0edec1f24e5}{pavarde}})
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_zmogus_a6183937c7da8254430a6c99cfa89fe69}{\texorpdfstring{$\sim$}{\string~}\+Zmogus}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_studentas_a4062cbd3f4c44fac2063e38cfa00a8cf}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_studentas}{Studentas}} \&s)
+\begin{DoxyCompactList}\small\item\em Output stream operator for \doxylink{class_studentas}{Studentas}. \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{class_studentas_ac63003b577b137ac6ad5b1fb176bd59a}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{class_studentas}{Studentas}} \&s)
+\begin{DoxyCompactList}\small\item\em Input stream operator for \doxylink{class_studentas}{Studentas}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_zmogus}{Zmogus}}}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_zmogus_a56da52b45c537a31d2c1fc3a53a73c65}{vardas}}
+\begin{DoxyCompactList}\small\item\em The first name of the person. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_zmogus_a00799e1396c82e4f6dffa0edec1f24e5}{pavarde}}
+\begin{DoxyCompactList}\small\item\em The last name of the person. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a student, inheriting from the \doxylink{class_zmogus}{Zmogus} class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539}\index{Studentas@{Studentas}!Studentas@{Studentas}}
+\index{Studentas@{Studentas}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{Studentas()}{Studentas()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_studentas_ab459e995e8c9b24cdc9aec5b09a66539} 
+Studentas\+::\+Studentas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Default constructor for \doxylink{class_studentas}{Studentas}. \Hypertarget{class_studentas_a867e546b7e4fbaa5f1460168a3e68d26}\index{Studentas@{Studentas}!Studentas@{Studentas}}
+\index{Studentas@{Studentas}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{Studentas()}{Studentas()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_studentas_a867e546b7e4fbaa5f1460168a3e68d26} 
+Studentas\+::\+Studentas (\begin{DoxyParamCaption}\item[{string}]{vardas}{, }\item[{string}]{pavarde}{, }\item[{vector$<$ int $>$}]{namu\+\_\+darbai}{, }\item[{int}]{egzaminas}{}\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor. 
+
+Constructor with parameters for initializing a \doxylink{class_studentas}{Studentas} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vardas} & Student\textquotesingle{}s first name. \\
+\hline
+{\em pavarde} & Student\textquotesingle{}s last name. \\
+\hline
+{\em namu\+\_\+darbai} & Homework grades. \\
+\hline
+{\em egzaminas} & Exam grade.\\
+\hline
+{\em vardas} & Student\textquotesingle{}s first name. \\
+\hline
+{\em pavarde} & Student\textquotesingle{}s last name. \\
+\hline
+{\em namu\+\_\+darbai} & Vector of homework grades. \\
+\hline
+{\em egzaminas} & Exam grade. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_studentas_aef0484fe46cf05746f8ffc0d083fcf3e}\index{Studentas@{Studentas}!Studentas@{Studentas}}
+\index{Studentas@{Studentas}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{Studentas()}{Studentas()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_studentas_aef0484fe46cf05746f8ffc0d083fcf3e} 
+Studentas\+::\+Studentas (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+Copy constructor for \doxylink{class_studentas}{Studentas}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another \doxylink{class_studentas}{Studentas} object to copy from.\\
+\hline
+{\em other} & The \doxylink{class_studentas}{Studentas} object to copy from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_studentas_a63e449e0f51a0b14340d02ee71b4be23}\index{Studentas@{Studentas}!````~Studentas@{\texorpdfstring{$\sim$}{\string~}Studentas}}
+\index{````~Studentas@{\texorpdfstring{$\sim$}{\string~}Studentas}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Studentas()}{\string~Studentas()}}
+{\footnotesize\ttfamily \label{class_studentas_a63e449e0f51a0b14340d02ee71b4be23} 
+Studentas\+::\texorpdfstring{$\sim$}{\string~}\+Studentas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Destructor for \doxylink{class_studentas}{Studentas}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_studentas_abe38c118e8e899b4de681f1d12adceab}\index{Studentas@{Studentas}!getEgzaminas@{getEgzaminas}}
+\index{getEgzaminas@{getEgzaminas}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{getEgzaminas()}{getEgzaminas()}}
+{\footnotesize\ttfamily \label{class_studentas_abe38c118e8e899b4de681f1d12adceab} 
+int Studentas\+::get\+Egzaminas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the student\textquotesingle{}s exam grade. 
+
+\begin{DoxyReturn}{Returns}
+Exam grade.
+
+The exam grade. 
+\end{DoxyReturn}
+\Hypertarget{class_studentas_a77eed5a443b0e55e85ee4e895a78e71c}\index{Studentas@{Studentas}!getGalutinisMed@{getGalutinisMed}}
+\index{getGalutinisMed@{getGalutinisMed}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{getGalutinisMed()}{getGalutinisMed()}}
+{\footnotesize\ttfamily \label{class_studentas_a77eed5a443b0e55e85ee4e895a78e71c} 
+double Studentas\+::get\+Galutinis\+Med (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the student\textquotesingle{}s final grade based on median calculation. 
+
+Gets the student\textquotesingle{}s final grade (median-\/based).
+
+\begin{DoxyReturn}{Returns}
+Final grade based on median.
+
+The final grade. 
+\end{DoxyReturn}
+\Hypertarget{class_studentas_a50fb3dcf0be0e97934f41641b85ef9e5}\index{Studentas@{Studentas}!getGalutinisVid@{getGalutinisVid}}
+\index{getGalutinisVid@{getGalutinisVid}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{getGalutinisVid()}{getGalutinisVid()}}
+{\footnotesize\ttfamily \label{class_studentas_a50fb3dcf0be0e97934f41641b85ef9e5} 
+double Studentas\+::get\+Galutinis\+Vid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the student\textquotesingle{}s final grade based on average calculation. 
+
+Gets the student\textquotesingle{}s final grade (average-\/based).
+
+\begin{DoxyReturn}{Returns}
+Final grade based on average.
+
+The final grade. 
+\end{DoxyReturn}
+\Hypertarget{class_studentas_a84491b8eb5e14e7e1a5f46f293fdf8e8}\index{Studentas@{Studentas}!getNamuDarbai@{getNamuDarbai}}
+\index{getNamuDarbai@{getNamuDarbai}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{getNamuDarbai()}{getNamuDarbai()}}
+{\footnotesize\ttfamily \label{class_studentas_a84491b8eb5e14e7e1a5f46f293fdf8e8} 
+const std\+::vector$<$ int $>$ \& Studentas\+::get\+Namu\+Darbai (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the student\textquotesingle{}s homework grades. 
+
+\begin{DoxyReturn}{Returns}
+Vector of homework grades.
+
+A vector of homework grades. 
+\end{DoxyReturn}
+\Hypertarget{class_studentas_ae9c8d8f8892d54d529fca28a4ad8268d}\index{Studentas@{Studentas}!getPavarde@{getPavarde}}
+\index{getPavarde@{getPavarde}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{getPavarde()}{getPavarde()}}
+{\footnotesize\ttfamily \label{class_studentas_ae9c8d8f8892d54d529fca28a4ad8268d} 
+const std\+::string \& Studentas\+::get\+Pavarde (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the student\textquotesingle{}s last name. 
+
+\begin{DoxyReturn}{Returns}
+Last name.
+
+The last name. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_zmogus_a5ccca765659860fec609deb2f2269ab9}{Zmogus}}.
+
+\Hypertarget{class_studentas_a3ca6431a4e395c8cea0e47e71a064373}\index{Studentas@{Studentas}!getVardas@{getVardas}}
+\index{getVardas@{getVardas}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{getVardas()}{getVardas()}}
+{\footnotesize\ttfamily \label{class_studentas_a3ca6431a4e395c8cea0e47e71a064373} 
+const std\+::string \& Studentas\+::get\+Vardas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the student\textquotesingle{}s first name. 
+
+\begin{DoxyReturn}{Returns}
+First name.
+
+The first name. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_zmogus_aa2dd74627cfa0ca541c107333a30ce5b}{Zmogus}}.
+
+\Hypertarget{class_studentas_a6f286afd0e6ac514d271df3b2401e4b4}\index{Studentas@{Studentas}!medianosSkaiciavimas@{medianosSkaiciavimas}}
+\index{medianosSkaiciavimas@{medianosSkaiciavimas}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{medianosSkaiciavimas()}{medianosSkaiciavimas()}}
+{\footnotesize\ttfamily \label{class_studentas_a6f286afd0e6ac514d271df3b2401e4b4} 
+void Studentas\+::medianos\+Skaiciavimas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the median grade of the student. 
+
+Calculates the student\textquotesingle{}s median grade. \Hypertarget{class_studentas_a25bcc531503d3bc490dab4a656e3b8e9}\index{Studentas@{Studentas}!operator=@{operator=}}
+\index{operator=@{operator=}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_studentas_a25bcc531503d3bc490dab4a656e3b8e9} 
+\mbox{\hyperlink{class_studentas}{Studentas}} \& Studentas\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. 
+
+Copy assignment operator for \doxylink{class_studentas}{Studentas}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another \doxylink{class_studentas}{Studentas} object to assign from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the assigned \doxylink{class_studentas}{Studentas} object.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{class_studentas}{Studentas} object to copy from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the modified \doxylink{class_studentas}{Studentas} object. 
+\end{DoxyReturn}
+\Hypertarget{class_studentas_af05b2d44e906fc5a92a23b28d7ffda95}\index{Studentas@{Studentas}!setEgzaminas@{setEgzaminas}}
+\index{setEgzaminas@{setEgzaminas}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{setEgzaminas()}{setEgzaminas()}}
+{\footnotesize\ttfamily \label{class_studentas_af05b2d44e906fc5a92a23b28d7ffda95} 
+void Studentas\+::set\+Egzaminas (\begin{DoxyParamCaption}\item[{int}]{egz}{}\end{DoxyParamCaption})}
+
+
+
+Sets the student\textquotesingle{}s exam grade. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em egz} & Exam grade.\\
+\hline
+{\em egz} & The exam grade. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_studentas_a8a839205b58bd82537623e3d8dcdab48}\index{Studentas@{Studentas}!setNamuDarbai@{setNamuDarbai}}
+\index{setNamuDarbai@{setNamuDarbai}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{setNamuDarbai()}{setNamuDarbai()}}
+{\footnotesize\ttfamily \label{class_studentas_a8a839205b58bd82537623e3d8dcdab48} 
+void Studentas\+::set\+Namu\+Darbai (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{nd}{}\end{DoxyParamCaption})}
+
+
+
+Sets the student\textquotesingle{}s homework grades. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nd} & Vector of homework grades.\\
+\hline
+{\em nd} & A vector of homework grades. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_studentas_aa2f8644798ffa4396c35400dfb10ab23}\index{Studentas@{Studentas}!setPavarde@{setPavarde}}
+\index{setPavarde@{setPavarde}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{setPavarde()}{setPavarde()}}
+{\footnotesize\ttfamily \label{class_studentas_aa2f8644798ffa4396c35400dfb10ab23} 
+void Studentas\+::set\+Pavarde (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Sets the student\textquotesingle{}s last name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Last name.\\
+\hline
+{\em p} & The last name. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_studentas_a05199b0b20b04356ecb150285ee1292a}\index{Studentas@{Studentas}!setVardas@{setVardas}}
+\index{setVardas@{setVardas}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{setVardas()}{setVardas()}}
+{\footnotesize\ttfamily \label{class_studentas_a05199b0b20b04356ecb150285ee1292a} 
+void Studentas\+::set\+Vardas (\begin{DoxyParamCaption}\item[{const string \&}]{v}{}\end{DoxyParamCaption})}
+
+
+
+Sets the student\textquotesingle{}s first name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & First name.\\
+\hline
+{\em v} & The first name. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_studentas_a86c398d55395c29be26246df0f7ae902}\index{Studentas@{Studentas}!vidurkioSkaiciavimas@{vidurkioSkaiciavimas}}
+\index{vidurkioSkaiciavimas@{vidurkioSkaiciavimas}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{vidurkioSkaiciavimas()}{vidurkioSkaiciavimas()}}
+{\footnotesize\ttfamily \label{class_studentas_a86c398d55395c29be26246df0f7ae902} 
+void Studentas\+::vidurkio\+Skaiciavimas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the average grade of the student. 
+
+Calculates the student\textquotesingle{}s average grade. 
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_studentas_a4062cbd3f4c44fac2063e38cfa00a8cf}\index{Studentas@{Studentas}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{class_studentas_a4062cbd3f4c44fac2063e38cfa00a8cf} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream operator for \doxylink{class_studentas}{Studentas}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Output stream. \\
+\hline
+{\em s} & \doxylink{class_studentas}{Studentas} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Output stream with student information.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em os} & The output stream. \\
+\hline
+{\em s} & The \doxylink{class_studentas}{Studentas} object to output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the output stream. 
+\end{DoxyReturn}
+\Hypertarget{class_studentas_ac63003b577b137ac6ad5b1fb176bd59a}\index{Studentas@{Studentas}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Studentas@{Studentas}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily \label{class_studentas_ac63003b577b137ac6ad5b1fb176bd59a} 
+std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is}{, }\item[{\mbox{\hyperlink{class_studentas}{Studentas}} \&}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Input stream operator for \doxylink{class_studentas}{Studentas}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & Input stream. \\
+\hline
+{\em s} & \doxylink{class_studentas}{Studentas} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Input stream with student information.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em is} & The input stream. \\
+\hline
+{\em s} & The \doxylink{class_studentas}{Studentas} object to populate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the input stream. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_studentas_8h}{Studentas.\+h}}\item 
+\mbox{\hyperlink{_studentas_8cpp}{Studentas.\+cpp}}\end{DoxyCompactItemize}

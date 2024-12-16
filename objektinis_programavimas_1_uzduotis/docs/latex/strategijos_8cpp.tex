@@ -1,0 +1,140 @@
+\doxysection{strategijos.\+cpp File Reference}
+\hypertarget{strategijos_8cpp}{}\label{strategijos_8cpp}\index{strategijos.cpp@{strategijos.cpp}}
+
+
+This file contains functions for processing student data with different strategies for reading, sorting, filtering, and writing to files.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}v0\+\_\+3\+\_\+header.\+h"{}}\newline
+{\ttfamily \#include "{}Studentas.\+h"{}}\newline
+{\ttfamily \#include "{}Header.\+h"{}}\newline
+{\ttfamily \#include "{}Failas.\+h"{}}\newline
+{\ttfamily \#include "{}strategijos.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{strategijos_8cpp_a0954b0dec2256d23b2f42919e82c2b01}{operator==}} (const \mbox{\hyperlink{class_studentas}{Studentas}} \&a, const \mbox{\hyperlink{class_studentas}{Studentas}} \&b)
+\begin{DoxyCompactList}\small\item\em Compares two \doxylink{class_studentas}{Studentas} objects for equality. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{strategijos_8cpp_a05a0a8eac15ea72095bb25bc63aa6655}{skaidymas\+\_\+2\+\_\+strategija\+\_\+vector}} (string failo\+\_\+pavadinimas, int rikiavimo\+\_\+pasirinkimas)
+\begin{DoxyCompactList}\small\item\em Splits students into two categories using strategy 2 with vector container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{strategijos_8cpp_a57e1ab7a3d0b88a0dfd3d07b1a1cc7cf}{skaidymas\+\_\+2\+\_\+strategija\+\_\+list}} (string failo\+\_\+pavadinimas, int rikiavimo\+\_\+pasirinkimas)
+\begin{DoxyCompactList}\small\item\em Splits students into two categories using strategy 2 with list container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{strategijos_8cpp_a0fddac353ee8bd7920c546af94e3b3f2}{skaidymas\+\_\+3\+\_\+strategija\+\_\+vector}} (string failo\+\_\+pavadinimas, int rikiavimo\+\_\+pasirinkimas)
+\begin{DoxyCompactList}\small\item\em Splits students into two categories using strategy 3 with vector container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{strategijos_8cpp_add1d9760ed552908b0c2cf24e36637c5}{skaidymas\+\_\+3\+\_\+strategija\+\_\+list}} (string failo\+\_\+pavadinimas, int rikiavimo\+\_\+pasirinkimas)
+\begin{DoxyCompactList}\small\item\em Splits students into two categories using strategy 3 with list container. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains functions for processing student data with different strategies for reading, sorting, filtering, and writing to files. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{strategijos_8cpp_a0954b0dec2256d23b2f42919e82c2b01}\index{strategijos.cpp@{strategijos.cpp}!operator==@{operator==}}
+\index{operator==@{operator==}!strategijos.cpp@{strategijos.cpp}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{strategijos_8cpp_a0954b0dec2256d23b2f42919e82c2b01} 
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{a}{, }\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Compares two \doxylink{class_studentas}{Studentas} objects for equality. 
+
+Compares two {\ttfamily \doxylink{class_studentas}{Studentas}} objects for equality.
+
+This function is used to compare two \doxylink{class_studentas}{Studentas} objects to determine if they are equal based on their names and surnames. It is mainly used in the context of erasing students in the container.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first \doxylink{class_studentas}{Studentas} object. \\
+\hline
+{\em b} & The second \doxylink{class_studentas}{Studentas} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if both students have the same name and surname, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{strategijos_8cpp_a57e1ab7a3d0b88a0dfd3d07b1a1cc7cf}\index{strategijos.cpp@{strategijos.cpp}!skaidymas\_2\_strategija\_list@{skaidymas\_2\_strategija\_list}}
+\index{skaidymas\_2\_strategija\_list@{skaidymas\_2\_strategija\_list}!strategijos.cpp@{strategijos.cpp}}
+\doxysubsubsection{\texorpdfstring{skaidymas\_2\_strategija\_list()}{skaidymas\_2\_strategija\_list()}}
+{\footnotesize\ttfamily \label{strategijos_8cpp_a57e1ab7a3d0b88a0dfd3d07b1a1cc7cf} 
+void skaidymas\+\_\+2\+\_\+strategija\+\_\+list (\begin{DoxyParamCaption}\item[{string}]{failo\+\_\+pavadinimas}{, }\item[{int}]{rikiavimo\+\_\+pasirinkimas}{}\end{DoxyParamCaption})}
+
+
+
+Splits students into two categories using strategy 2 with list container. 
+
+Function for processing student data with a list using the second strategy.
+
+This function is similar to {\ttfamily skaidymas\+\_\+2\+\_\+strategija\+\_\+vector} but works with the list container. It reads students from a file, splits them into two groups (vargsiukai and others), sorts the groups based on a selected criterion (name, surname, or grades), and writes them to separate files. The function also measures and reports the time taken for reading, splitting, sorting, and writing the data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em failo\+\_\+pavadinimas} & The name of the input file. \\
+\hline
+{\em rikiavimo\+\_\+pasirinkimas} & The sorting criterion (1 for name, 2 for surname, 3 for grades). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{strategijos_8cpp_a05a0a8eac15ea72095bb25bc63aa6655}\index{strategijos.cpp@{strategijos.cpp}!skaidymas\_2\_strategija\_vector@{skaidymas\_2\_strategija\_vector}}
+\index{skaidymas\_2\_strategija\_vector@{skaidymas\_2\_strategija\_vector}!strategijos.cpp@{strategijos.cpp}}
+\doxysubsubsection{\texorpdfstring{skaidymas\_2\_strategija\_vector()}{skaidymas\_2\_strategija\_vector()}}
+{\footnotesize\ttfamily \label{strategijos_8cpp_a05a0a8eac15ea72095bb25bc63aa6655} 
+void skaidymas\+\_\+2\+\_\+strategija\+\_\+vector (\begin{DoxyParamCaption}\item[{string}]{failo\+\_\+pavadinimas}{, }\item[{int}]{rikiavimo\+\_\+pasirinkimas}{}\end{DoxyParamCaption})}
+
+
+
+Splits students into two categories using strategy 2 with vector container. 
+
+Function for processing student data with a vector using the second strategy.
+
+This function reads students from a file, divides them into two groups (vargsiukai and others), sorts them based on a chosen criterion (name, surname, or grade), and writes them back to separate files. It also measures and reports the time taken for reading, splitting, sorting, and writing the data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em failo\+\_\+pavadinimas} & The name of the input file. \\
+\hline
+{\em rikiavimo\+\_\+pasirinkimas} & The sorting criterion (1 for name, 2 for surname, 3 for grades). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{strategijos_8cpp_add1d9760ed552908b0c2cf24e36637c5}\index{strategijos.cpp@{strategijos.cpp}!skaidymas\_3\_strategija\_list@{skaidymas\_3\_strategija\_list}}
+\index{skaidymas\_3\_strategija\_list@{skaidymas\_3\_strategija\_list}!strategijos.cpp@{strategijos.cpp}}
+\doxysubsubsection{\texorpdfstring{skaidymas\_3\_strategija\_list()}{skaidymas\_3\_strategija\_list()}}
+{\footnotesize\ttfamily \label{strategijos_8cpp_add1d9760ed552908b0c2cf24e36637c5} 
+void skaidymas\+\_\+3\+\_\+strategija\+\_\+list (\begin{DoxyParamCaption}\item[{string}]{failo\+\_\+pavadinimas}{, }\item[{int}]{rikiavimo\+\_\+pasirinkimas}{}\end{DoxyParamCaption})}
+
+
+
+Splits students into two categories using strategy 3 with list container. 
+
+Function for processing student data with a list using the second strategy.
+
+
+\begin{DoxyParams}{Parameters}
+{\em failo\+\_\+pavadinimas} & The name of the input file. \\
+\hline
+{\em rikiavimo\+\_\+pasirinkimas} & The sorting criterion (1 for name, 2 for surname, 3 for grades). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{strategijos_8cpp_a0fddac353ee8bd7920c546af94e3b3f2}\index{strategijos.cpp@{strategijos.cpp}!skaidymas\_3\_strategija\_vector@{skaidymas\_3\_strategija\_vector}}
+\index{skaidymas\_3\_strategija\_vector@{skaidymas\_3\_strategija\_vector}!strategijos.cpp@{strategijos.cpp}}
+\doxysubsubsection{\texorpdfstring{skaidymas\_3\_strategija\_vector()}{skaidymas\_3\_strategija\_vector()}}
+{\footnotesize\ttfamily \label{strategijos_8cpp_a0fddac353ee8bd7920c546af94e3b3f2} 
+void skaidymas\+\_\+3\+\_\+strategija\+\_\+vector (\begin{DoxyParamCaption}\item[{string}]{failo\+\_\+pavadinimas}{, }\item[{int}]{rikiavimo\+\_\+pasirinkimas}{}\end{DoxyParamCaption})}
+
+
+
+Splits students into two categories using strategy 3 with vector container. 
+
+Function for processing student data with a vector using the third strategy.
+
+This function is based on the principles of strategy 1 but works with the vector container. It reads students from a file, compares and separetes them, then sorts the them based on a selected criterion (name, surname, or grades), and writes the groups to separate files. The function also measures and reports the time taken for reading, splitting, sorting, and writing the data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em failo\+\_\+pavadinimas} & The name of the input file. \\
+\hline
+{\em rikiavimo\+\_\+pasirinkimas} & The sorting criterion (1 for name, 2 for surname, 3 for grades). \\
+\hline
+\end{DoxyParams}

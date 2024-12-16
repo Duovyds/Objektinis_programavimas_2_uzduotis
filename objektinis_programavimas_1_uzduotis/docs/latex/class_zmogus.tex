@@ -1,0 +1,161 @@
+\doxysection{Zmogus Class Reference}
+\hypertarget{class_zmogus}{}\label{class_zmogus}\index{Zmogus@{Zmogus}}
+
+
+Represents a basic person entity with a name and surname.  
+
+
+
+
+{\ttfamily \#include $<$Zmogus.\+h$>$}
+
+Inheritance diagram for Zmogus\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_zmogus}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574}{Zmogus}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_zmogus_abcea2eb5f4c209f8623405a3d838f1c2}{Zmogus}} (string \mbox{\hyperlink{class_zmogus_a56da52b45c537a31d2c1fc3a53a73c65}{vardas}}, string \mbox{\hyperlink{class_zmogus_a00799e1396c82e4f6dffa0edec1f24e5}{pavarde}})
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_zmogus_a6183937c7da8254430a6c99cfa89fe69}{\texorpdfstring{$\sim$}{\string~}\+Zmogus}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual const std\+::string \& \mbox{\hyperlink{class_zmogus_aa2dd74627cfa0ca541c107333a30ce5b}{get\+Vardas}} () const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual getter for the first name. \end{DoxyCompactList}\item 
+virtual const std\+::string \& \mbox{\hyperlink{class_zmogus_a5ccca765659860fec609deb2f2269ab9}{get\+Pavarde}} () const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual getter for the last name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_zmogus_a56da52b45c537a31d2c1fc3a53a73c65}{vardas}}
+\begin{DoxyCompactList}\small\item\em The first name of the person. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_zmogus_a00799e1396c82e4f6dffa0edec1f24e5}{pavarde}}
+\begin{DoxyCompactList}\small\item\em The last name of the person. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a basic person entity with a name and surname. 
+
+The {\ttfamily \doxylink{class_zmogus}{Zmogus}} class provides protected attributes for a person\textquotesingle{}s first name ({\ttfamily vardas}) and last name ({\ttfamily pavarde}). It is designed as a base class with pure virtual methods for accessing these attributes, making it abstract. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574}\index{Zmogus@{Zmogus}!Zmogus@{Zmogus}}
+\index{Zmogus@{Zmogus}!Zmogus@{Zmogus}}
+\doxysubsubsection{\texorpdfstring{Zmogus()}{Zmogus()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_zmogus_aa7a8ba4d3c4778f9b35d59eef3e72574} 
+Zmogus\+::\+Zmogus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Default constructor for the {\ttfamily \doxylink{class_zmogus}{Zmogus}} class.
+
+Initializes the {\ttfamily \doxylink{class_zmogus}{Zmogus}} object with empty strings for the first name ({\ttfamily vardas}) and last name ({\ttfamily pavarde}). \Hypertarget{class_zmogus_abcea2eb5f4c209f8623405a3d838f1c2}\index{Zmogus@{Zmogus}!Zmogus@{Zmogus}}
+\index{Zmogus@{Zmogus}!Zmogus@{Zmogus}}
+\doxysubsubsection{\texorpdfstring{Zmogus()}{Zmogus()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_zmogus_abcea2eb5f4c209f8623405a3d838f1c2} 
+Zmogus\+::\+Zmogus (\begin{DoxyParamCaption}\item[{string}]{vardas}{, }\item[{string}]{pavarde}{}\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor. 
+
+Parameterized constructor for the {\ttfamily \doxylink{class_zmogus}{Zmogus}} class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vardas} & The first name of the person. \\
+\hline
+{\em pavarde} & The last name of the person.\\
+\hline
+\end{DoxyParams}
+Initializes the {\ttfamily \doxylink{class_zmogus}{Zmogus}} object with specified first name ({\ttfamily vardas}) and last name ({\ttfamily pavarde}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em vardas} & The first name of the person. \\
+\hline
+{\em pavarde} & The last name of the person. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_zmogus_a6183937c7da8254430a6c99cfa89fe69}\index{Zmogus@{Zmogus}!````~Zmogus@{\texorpdfstring{$\sim$}{\string~}Zmogus}}
+\index{````~Zmogus@{\texorpdfstring{$\sim$}{\string~}Zmogus}!Zmogus@{Zmogus}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Zmogus()}{\string~Zmogus()}}
+{\footnotesize\ttfamily \label{class_zmogus_a6183937c7da8254430a6c99cfa89fe69} 
+virtual Zmogus\+::\texorpdfstring{$\sim$}{\string~}\+Zmogus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_zmogus_a5ccca765659860fec609deb2f2269ab9}\index{Zmogus@{Zmogus}!getPavarde@{getPavarde}}
+\index{getPavarde@{getPavarde}!Zmogus@{Zmogus}}
+\doxysubsubsection{\texorpdfstring{getPavarde()}{getPavarde()}}
+{\footnotesize\ttfamily \label{class_zmogus_a5ccca765659860fec609deb2f2269ab9} 
+virtual const std\+::string \& Zmogus\+::get\+Pavarde (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual getter for the last name. 
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the {\ttfamily pavarde} string. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_studentas_ae9c8d8f8892d54d529fca28a4ad8268d}{Studentas}}.
+
+\Hypertarget{class_zmogus_aa2dd74627cfa0ca541c107333a30ce5b}\index{Zmogus@{Zmogus}!getVardas@{getVardas}}
+\index{getVardas@{getVardas}!Zmogus@{Zmogus}}
+\doxysubsubsection{\texorpdfstring{getVardas()}{getVardas()}}
+{\footnotesize\ttfamily \label{class_zmogus_aa2dd74627cfa0ca541c107333a30ce5b} 
+virtual const std\+::string \& Zmogus\+::get\+Vardas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual getter for the first name. 
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the {\ttfamily vardas} string. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_studentas_a3ca6431a4e395c8cea0e47e71a064373}{Studentas}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_zmogus_a00799e1396c82e4f6dffa0edec1f24e5}\index{Zmogus@{Zmogus}!pavarde@{pavarde}}
+\index{pavarde@{pavarde}!Zmogus@{Zmogus}}
+\doxysubsubsection{\texorpdfstring{pavarde}{pavarde}}
+{\footnotesize\ttfamily \label{class_zmogus_a00799e1396c82e4f6dffa0edec1f24e5} 
+string Zmogus\+::pavarde\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The last name of the person. 
+
+\Hypertarget{class_zmogus_a56da52b45c537a31d2c1fc3a53a73c65}\index{Zmogus@{Zmogus}!vardas@{vardas}}
+\index{vardas@{vardas}!Zmogus@{Zmogus}}
+\doxysubsubsection{\texorpdfstring{vardas}{vardas}}
+{\footnotesize\ttfamily \label{class_zmogus_a56da52b45c537a31d2c1fc3a53a73c65} 
+string Zmogus\+::vardas\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The first name of the person. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_zmogus_8h}{Zmogus.\+h}}\item 
+\mbox{\hyperlink{_zmogus_8cpp}{Zmogus.\+cpp}}\end{DoxyCompactItemize}

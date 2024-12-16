@@ -1,0 +1,440 @@
+\doxysection{Studentas.\+h File Reference}
+\hypertarget{_studentas_8h}{}\label{_studentas_8h}\index{Studentas.h@{Studentas.h}}
+
+
+Declaration of the {\ttfamily \doxylink{class_studentas}{Studentas}} class.  
+
+
+{\ttfamily \#include "{}Header.\+h"{}}\newline
+{\ttfamily \#include "{}Zmogus.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_studentas}{Studentas}}
+\begin{DoxyCompactList}\small\item\em Represents a student, inheriting from the \doxylink{class_zmogus}{Zmogus} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ int $>$ \mbox{\hyperlink{_studentas_8h_a9032be77c459e259ce6975ed366f05e0}{random\+\_\+pazymiai}} (int pazymiu\+\_\+sk)
+\begin{DoxyCompactList}\small\item\em Generates random grades for a student. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_studentas_8h_a40830878e97bf91a70edfd7ddbfeee87}{ivedimas}} (\mbox{\hyperlink{class_studentas}{Studentas}} \&Lok)
+\begin{DoxyCompactList}\small\item\em Inputs student information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_studentas_8h_ac4e00bcc13994a9ab2dccaa53dc50805}{valymas}} (\mbox{\hyperlink{class_studentas}{Studentas}} \&Lok)
+\begin{DoxyCompactList}\small\item\em Cleans up the student data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_studentas_8h_ae2c00be8165b860af83f37623d4c7e59}{palyginti\+\_\+pavardes}} (const \mbox{\hyperlink{class_studentas}{Studentas}} \&a, const \mbox{\hyperlink{class_studentas}{Studentas}} \&b)
+\begin{DoxyCompactList}\small\item\em Compares two students by last name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_studentas_8h_adc2cd9134b6141d37fecb62a4d3ed9d4}{palyginti\+\_\+vardus}} (const \mbox{\hyperlink{class_studentas}{Studentas}} \&a, const \mbox{\hyperlink{class_studentas}{Studentas}} \&b)
+\begin{DoxyCompactList}\small\item\em Compares two students by first name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_studentas_8h_a968e280f73da420be38a9d9ce2845cc1}{isvedimas}} (vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ studentai)
+\begin{DoxyCompactList}\small\item\em Outputs a list of students. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_studentas_8h_aacbcb8d1ac0952fdff31a5a52d29746a}{isvedimas\+\_\+su\+\_\+vidurkiu}} (vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ studentai)
+\begin{DoxyCompactList}\small\item\em Outputs students with their final grade based on average. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_studentas_8h_ae55afa254c7a50a84f98b2d6695ac610}{isvedimas\+\_\+su\+\_\+mediana}} (vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ studentai)
+\begin{DoxyCompactList}\small\item\em Outputs students with their final grade based on median. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \mbox{\hyperlink{_studentas_8h_a1dea45625656dc12b2e0aaacb6aeba44}{skaitymas\+\_\+is\+\_\+failo}} (vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ studentai, string failo\+\_\+pav)
+\begin{DoxyCompactList}\small\item\em Reads students from a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_studentas_8h_a6c13dc98693fd7d1438b6a4bc3876666}{irasymas}} (vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, string failo\+\_\+pav, int pasirinkimas)
+\begin{DoxyCompactList}\small\item\em Writes student data to a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_studentas_8h_adfd226cb20e38acec036794cc2318fcd}{random\+\_\+egz}} ()
+\begin{DoxyCompactList}\small\item\em Generates a random exam grade. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_studentas_8h_a86e0af2656da843837eceae1ee62056f}{irasymas\+\_\+list}} (list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, string failo\+\_\+pav, int pasirinkimas)
+\begin{DoxyCompactList}\small\item\em Writes student data to a file using a list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_studentas_8h_a2522d448d55d7a756957c89d2350f011}{isvedimas\+\_\+list}} (list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ studentai)
+\begin{DoxyCompactList}\small\item\em Outputs a list of students. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_studentas_8h_aa9b1186cb7fb7acaec49917d78a16a2d}{palyginti\+\_\+pazymius}} (const \mbox{\hyperlink{class_studentas}{Studentas}} \&a, const \mbox{\hyperlink{class_studentas}{Studentas}} \&b)
+\begin{DoxyCompactList}\small\item\em Compares two students by their grades. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_studentas_8h_a1f01d09a40a4257b4a9bfd2b3457f713}{rule\+\_\+of\+\_\+three\+\_\+metodu\+\_\+demonstracija}} ()
+\begin{DoxyCompactList}\small\item\em Demonstrates the rule of three methods. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_studentas_8h_a265818a4a5132e3a99fa9139161b910c}{ivesties\+\_\+isvesties\+\_\+metodu\+\_\+demonstracija}} ()
+\begin{DoxyCompactList}\small\item\em Demonstrates input and output methods. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of the {\ttfamily \doxylink{class_studentas}{Studentas}} class. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_studentas_8h_a6c13dc98693fd7d1438b6a4bc3876666}\index{Studentas.h@{Studentas.h}!irasymas@{irasymas}}
+\index{irasymas@{irasymas}!Studentas.h@{Studentas.h}}
+\doxysubsubsection{\texorpdfstring{irasymas()}{irasymas()}}
+{\footnotesize\ttfamily \label{_studentas_8h_a6c13dc98693fd7d1438b6a4bc3876666} 
+void irasymas (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{string}]{failo\+\_\+pav}{, }\item[{int}]{pasirinkimas}{}\end{DoxyParamCaption})}
+
+
+
+Writes student data to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Vector of students to write. \\
+\hline
+{\em failo\+\_\+pav} & File name to write to. \\
+\hline
+{\em pasirinkimas} & Option for file writing.\\
+\hline
+\end{DoxyParams}
+Writes student data to a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Vector of \doxylink{class_studentas}{Studentas} objects. \\
+\hline
+{\em failo\+\_\+pav} & File name to write data to. \\
+\hline
+{\em pasirinkimas} & Sorting option. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_studentas_8h_a86e0af2656da843837eceae1ee62056f}\index{Studentas.h@{Studentas.h}!irasymas\_list@{irasymas\_list}}
+\index{irasymas\_list@{irasymas\_list}!Studentas.h@{Studentas.h}}
+\doxysubsubsection{\texorpdfstring{irasymas\_list()}{irasymas\_list()}}
+{\footnotesize\ttfamily \label{_studentas_8h_a86e0af2656da843837eceae1ee62056f} 
+void irasymas\+\_\+list (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{string}]{failo\+\_\+pav}{, }\item[{int}]{pasirinkimas}{}\end{DoxyParamCaption})}
+
+
+
+Writes student data to a file using a list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & List of students to write. \\
+\hline
+{\em failo\+\_\+pav} & File name to write to. \\
+\hline
+{\em pasirinkimas} & Option for file writing.\\
+\hline
+\end{DoxyParams}
+Writes student data to a file using a list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Vector of \doxylink{class_studentas}{Studentas} objects. \\
+\hline
+{\em failo\+\_\+pav} & File name to write data to. \\
+\hline
+{\em pasirinkimas} & Sorting option. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_studentas_8h_a968e280f73da420be38a9d9ce2845cc1}\index{Studentas.h@{Studentas.h}!isvedimas@{isvedimas}}
+\index{isvedimas@{isvedimas}!Studentas.h@{Studentas.h}}
+\doxysubsubsection{\texorpdfstring{isvedimas()}{isvedimas()}}
+{\footnotesize\ttfamily \label{_studentas_8h_a968e280f73da420be38a9d9ce2845cc1} 
+void isvedimas (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$}]{studentai}{}\end{DoxyParamCaption})}
+
+
+
+Outputs a list of students. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Vector of students to output.\\
+\hline
+\end{DoxyParams}
+Outputs a list of students.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Vector of \doxylink{class_studentas}{Studentas} objects. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_studentas_8h_a2522d448d55d7a756957c89d2350f011}\index{Studentas.h@{Studentas.h}!isvedimas\_list@{isvedimas\_list}}
+\index{isvedimas\_list@{isvedimas\_list}!Studentas.h@{Studentas.h}}
+\doxysubsubsection{\texorpdfstring{isvedimas\_list()}{isvedimas\_list()}}
+{\footnotesize\ttfamily \label{_studentas_8h_a2522d448d55d7a756957c89d2350f011} 
+void isvedimas\+\_\+list (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$}]{studentai}{}\end{DoxyParamCaption})}
+
+
+
+Outputs a list of students. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & List of students to output.\\
+\hline
+\end{DoxyParams}
+Outputs a list of students.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Vector of \doxylink{class_studentas}{Studentas} objects. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_studentas_8h_ae55afa254c7a50a84f98b2d6695ac610}\index{Studentas.h@{Studentas.h}!isvedimas\_su\_mediana@{isvedimas\_su\_mediana}}
+\index{isvedimas\_su\_mediana@{isvedimas\_su\_mediana}!Studentas.h@{Studentas.h}}
+\doxysubsubsection{\texorpdfstring{isvedimas\_su\_mediana()}{isvedimas\_su\_mediana()}}
+{\footnotesize\ttfamily \label{_studentas_8h_ae55afa254c7a50a84f98b2d6695ac610} 
+void isvedimas\+\_\+su\+\_\+mediana (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$}]{studentai}{}\end{DoxyParamCaption})}
+
+
+
+Outputs students with their final grade based on median. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Vector of students to output.\\
+\hline
+\end{DoxyParams}
+Outputs students with their final grade based on median.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Vector of \doxylink{class_studentas}{Studentas} objects. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_studentas_8h_aacbcb8d1ac0952fdff31a5a52d29746a}\index{Studentas.h@{Studentas.h}!isvedimas\_su\_vidurkiu@{isvedimas\_su\_vidurkiu}}
+\index{isvedimas\_su\_vidurkiu@{isvedimas\_su\_vidurkiu}!Studentas.h@{Studentas.h}}
+\doxysubsubsection{\texorpdfstring{isvedimas\_su\_vidurkiu()}{isvedimas\_su\_vidurkiu()}}
+{\footnotesize\ttfamily \label{_studentas_8h_aacbcb8d1ac0952fdff31a5a52d29746a} 
+void isvedimas\+\_\+su\+\_\+vidurkiu (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$}]{studentai}{}\end{DoxyParamCaption})}
+
+
+
+Outputs students with their final grade based on average. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Vector of students to output.\\
+\hline
+\end{DoxyParams}
+Outputs students with their final grade based on average.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Vector of \doxylink{class_studentas}{Studentas} objects. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_studentas_8h_a40830878e97bf91a70edfd7ddbfeee87}\index{Studentas.h@{Studentas.h}!ivedimas@{ivedimas}}
+\index{ivedimas@{ivedimas}!Studentas.h@{Studentas.h}}
+\doxysubsubsection{\texorpdfstring{ivedimas()}{ivedimas()}}
+{\footnotesize\ttfamily \label{_studentas_8h_a40830878e97bf91a70edfd7ddbfeee87} 
+void ivedimas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_studentas}{Studentas}} \&}]{Lok}{}\end{DoxyParamCaption})}
+
+
+
+Inputs student information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Lok} & \doxylink{class_studentas}{Studentas} object to populate.\\
+\hline
+\end{DoxyParams}
+Inputs student information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Lok} & Reference to a \doxylink{class_studentas}{Studentas} object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_studentas_8h_a265818a4a5132e3a99fa9139161b910c}\index{Studentas.h@{Studentas.h}!ivesties\_isvesties\_metodu\_demonstracija@{ivesties\_isvesties\_metodu\_demonstracija}}
+\index{ivesties\_isvesties\_metodu\_demonstracija@{ivesties\_isvesties\_metodu\_demonstracija}!Studentas.h@{Studentas.h}}
+\doxysubsubsection{\texorpdfstring{ivesties\_isvesties\_metodu\_demonstracija()}{ivesties\_isvesties\_metodu\_demonstracija()}}
+{\footnotesize\ttfamily \label{_studentas_8h_a265818a4a5132e3a99fa9139161b910c} 
+void ivesties\+\_\+isvesties\+\_\+metodu\+\_\+demonstracija (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Demonstrates input and output methods. 
+
+Demonstrates input and output methods. \Hypertarget{_studentas_8h_ae2c00be8165b860af83f37623d4c7e59}\index{Studentas.h@{Studentas.h}!palyginti\_pavardes@{palyginti\_pavardes}}
+\index{palyginti\_pavardes@{palyginti\_pavardes}!Studentas.h@{Studentas.h}}
+\doxysubsubsection{\texorpdfstring{palyginti\_pavardes()}{palyginti\_pavardes()}}
+{\footnotesize\ttfamily \label{_studentas_8h_ae2c00be8165b860af83f37623d4c7e59} 
+bool palyginti\+\_\+pavardes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{a}{, }\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Compares two students by last name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First student. \\
+\hline
+{\em b} & Second student. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a\textquotesingle{}s last name is less than b\textquotesingle{}s.
+\end{DoxyReturn}
+Compares two students by last name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First \doxylink{class_studentas}{Studentas} object to compare. \\
+\hline
+{\em b} & Second \doxylink{class_studentas}{Studentas} object to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the last name of a comes before b lexicographically. 
+\end{DoxyReturn}
+\Hypertarget{_studentas_8h_aa9b1186cb7fb7acaec49917d78a16a2d}\index{Studentas.h@{Studentas.h}!palyginti\_pazymius@{palyginti\_pazymius}}
+\index{palyginti\_pazymius@{palyginti\_pazymius}!Studentas.h@{Studentas.h}}
+\doxysubsubsection{\texorpdfstring{palyginti\_pazymius()}{palyginti\_pazymius()}}
+{\footnotesize\ttfamily \label{_studentas_8h_aa9b1186cb7fb7acaec49917d78a16a2d} 
+bool palyginti\+\_\+pazymius (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{a}{, }\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Compares two students by their grades. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First student. \\
+\hline
+{\em b} & Second student. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a\textquotesingle{}s grades are less than b\textquotesingle{}s.
+\end{DoxyReturn}
+Compares two students by their grades.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First \doxylink{class_studentas}{Studentas} object to compare. \\
+\hline
+{\em b} & Second \doxylink{class_studentas}{Studentas} object to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the final average grade of a is less than b. 
+\end{DoxyReturn}
+\Hypertarget{_studentas_8h_adc2cd9134b6141d37fecb62a4d3ed9d4}\index{Studentas.h@{Studentas.h}!palyginti\_vardus@{palyginti\_vardus}}
+\index{palyginti\_vardus@{palyginti\_vardus}!Studentas.h@{Studentas.h}}
+\doxysubsubsection{\texorpdfstring{palyginti\_vardus()}{palyginti\_vardus()}}
+{\footnotesize\ttfamily \label{_studentas_8h_adc2cd9134b6141d37fecb62a4d3ed9d4} 
+bool palyginti\+\_\+vardus (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{a}{, }\item[{const \mbox{\hyperlink{class_studentas}{Studentas}} \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Compares two students by first name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First student. \\
+\hline
+{\em b} & Second student. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a\textquotesingle{}s first name is less than b\textquotesingle{}s.
+\end{DoxyReturn}
+Compares two students by first name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First \doxylink{class_studentas}{Studentas} object to compare. \\
+\hline
+{\em b} & Second \doxylink{class_studentas}{Studentas} object to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the first name of a comes before b lexicographically. 
+\end{DoxyReturn}
+\Hypertarget{_studentas_8h_adfd226cb20e38acec036794cc2318fcd}\index{Studentas.h@{Studentas.h}!random\_egz@{random\_egz}}
+\index{random\_egz@{random\_egz}!Studentas.h@{Studentas.h}}
+\doxysubsubsection{\texorpdfstring{random\_egz()}{random\_egz()}}
+{\footnotesize\ttfamily \label{_studentas_8h_adfd226cb20e38acec036794cc2318fcd} 
+int random\+\_\+egz (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Generates a random exam grade. 
+
+\begin{DoxyReturn}{Returns}
+Random exam grade.
+
+A random grade between 1 and 10. 
+\end{DoxyReturn}
+\Hypertarget{_studentas_8h_a9032be77c459e259ce6975ed366f05e0}\index{Studentas.h@{Studentas.h}!random\_pazymiai@{random\_pazymiai}}
+\index{random\_pazymiai@{random\_pazymiai}!Studentas.h@{Studentas.h}}
+\doxysubsubsection{\texorpdfstring{random\_pazymiai()}{random\_pazymiai()}}
+{\footnotesize\ttfamily \label{_studentas_8h_a9032be77c459e259ce6975ed366f05e0} 
+vector$<$ int $>$ random\+\_\+pazymiai (\begin{DoxyParamCaption}\item[{int}]{pazymiu\+\_\+sk}{}\end{DoxyParamCaption})}
+
+
+
+Generates random grades for a student. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pazymiu\+\_\+sk} & Number of grades to generate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of random grades.
+\end{DoxyReturn}
+Generates random grades for a student.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pazymiu\+\_\+sk} & Number of grades to generate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector containing random grades. 
+\end{DoxyReturn}
+\Hypertarget{_studentas_8h_a1f01d09a40a4257b4a9bfd2b3457f713}\index{Studentas.h@{Studentas.h}!rule\_of\_three\_metodu\_demonstracija@{rule\_of\_three\_metodu\_demonstracija}}
+\index{rule\_of\_three\_metodu\_demonstracija@{rule\_of\_three\_metodu\_demonstracija}!Studentas.h@{Studentas.h}}
+\doxysubsubsection{\texorpdfstring{rule\_of\_three\_metodu\_demonstracija()}{rule\_of\_three\_metodu\_demonstracija()}}
+{\footnotesize\ttfamily \label{_studentas_8h_a1f01d09a40a4257b4a9bfd2b3457f713} 
+void rule\+\_\+of\+\_\+three\+\_\+metodu\+\_\+demonstracija (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Demonstrates the rule of three methods. 
+
+Demonstrates the rule of three methods. \Hypertarget{_studentas_8h_a1dea45625656dc12b2e0aaacb6aeba44}\index{Studentas.h@{Studentas.h}!skaitymas\_is\_failo@{skaitymas\_is\_failo}}
+\index{skaitymas\_is\_failo@{skaitymas\_is\_failo}!Studentas.h@{Studentas.h}}
+\doxysubsubsection{\texorpdfstring{skaitymas\_is\_failo()}{skaitymas\_is\_failo()}}
+{\footnotesize\ttfamily \label{_studentas_8h_a1dea45625656dc12b2e0aaacb6aeba44} 
+vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$ skaitymas\+\_\+is\+\_\+failo (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_studentas}{Studentas}} $>$}]{studentai}{, }\item[{string}]{failo\+\_\+pav}{}\end{DoxyParamCaption})}
+
+
+
+Reads students from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Vector to store read students. \\
+\hline
+{\em failo\+\_\+pav} & File name to read from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of students.
+\end{DoxyReturn}
+Reads students from a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Vector of \doxylink{class_studentas}{Studentas} objects. \\
+\hline
+{\em failo\+\_\+pav} & File name to read data from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Updated vector of \doxylink{class_studentas}{Studentas} objects. 
+\end{DoxyReturn}
+\Hypertarget{_studentas_8h_ac4e00bcc13994a9ab2dccaa53dc50805}\index{Studentas.h@{Studentas.h}!valymas@{valymas}}
+\index{valymas@{valymas}!Studentas.h@{Studentas.h}}
+\doxysubsubsection{\texorpdfstring{valymas()}{valymas()}}
+{\footnotesize\ttfamily \label{_studentas_8h_ac4e00bcc13994a9ab2dccaa53dc50805} 
+void valymas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_studentas}{Studentas}} \&}]{Lok}{}\end{DoxyParamCaption})}
+
+
+
+Cleans up the student data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Lok} & \doxylink{class_studentas}{Studentas} object to clear.\\
+\hline
+\end{DoxyParams}
+Cleans up the student data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Lok} & Reference to a \doxylink{class_studentas}{Studentas} object. \\
+\hline
+\end{DoxyParams}
