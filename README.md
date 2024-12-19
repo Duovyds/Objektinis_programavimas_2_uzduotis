@@ -254,6 +254,20 @@ Kodo pavyzdys:<br/>
 <br/>
 
 
+## v2.0
+
+### Atnaujinimai:
+1. Sukurta dokumentacija;
+2. Sukurti unit testai.
+
+### Unit testai:<br/>
+
+Šis testas tikrina ar konstruktorius veikia teisingai.<br/>
+<img width="567" alt="Screenshot 2024-12-19 at 20 53 54" src="https://github.com/user-attachments/assets/2a352ace-e314-473c-9253-169418fc8a68" /><br/>
+
+Šis testas tikrina ar priskyrimo operatorius veikia teisingai.<br/> 
+<img width="614" alt="Screenshot 2024-12-19 at 20 54 10" src="https://github.com/user-attachments/assets/79cbb12d-9979-4cf3-bfd9-18a1286aa97a" /><br/>
+
 
 
 
